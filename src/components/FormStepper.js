@@ -5,9 +5,26 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import StepOne from './steps/StepOne';
 
-const steps = ['Step 1 Sample Text', 'Step 2 Sample Text', 'Step 3 Sample Text'];
+import Introduction from './steps/Introduction';
+import Step1 from './steps/Step1';
+import Step2 from './steps/Step2';
+import Step3 from './steps/Step3';
+import Step4 from './steps/Step4';
+import Step5 from './steps/Step5';
+import Step6 from './steps/Step6';
+import Step7 from './steps/Step7';
+import Step8 from './steps/Step8';
+
+const steps = ['Intro Text', 
+               'Step 1 Text', 
+               'Step 2 Text', 
+               'Step 3 Text', 
+               'Step 4 Text', 
+               'Step 5 Text', 
+               'Step 6 Text', 
+               'Step 7 Text', 
+               'Step 8 Text',];
 
 function FormStepper() {
 
@@ -84,10 +101,15 @@ function FormStepper() {
       component to render based on activeStep */}
       {
         {
-          0: <div/>,
-          1: <StepOne />,
-          2: <div/>,
-          3: <div/>
+          0: <Introduction />,
+          1: <Step1 />,
+          2: <Step2 />,
+          3: <Step3 />,
+          4: <Step4 />,
+          5: <Step5 />,
+          6: <Step6 />,
+          7: <Step7 />,
+          8: <Step8 />,
         }[activeStep]
       }
 
