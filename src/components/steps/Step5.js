@@ -8,10 +8,14 @@ import Checkbox from '@mui/material/Checkbox';
 export default function Step5() {
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      //alignItems="center"
+      component="form"
+      sx={{
+        "width": "60%",
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
       autoComplete="off"
+      margin="auto"
     >
       <div>
         <h2>Additional Document Sections</h2>
