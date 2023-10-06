@@ -29,7 +29,7 @@ const docTypeList = [
   },
   {
     value: 'type1',
-    label: 'Document Type 1',
+    label: 'Document Type 2',
   }
 ];
 
