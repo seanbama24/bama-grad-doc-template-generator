@@ -49,10 +49,12 @@ export default function Step2() {
     <Box
       component="form"
       sx={{
+        "width": "60%",
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
+      margin="auto"
     >
       <div>
         <h2>Document Information</h2>
