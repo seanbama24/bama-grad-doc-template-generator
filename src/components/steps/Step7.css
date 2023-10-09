@@ -1,0 +1,15 @@
+table {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+td {
+    color: white;
+    background-color: #ac1313;
+    padding: 1em;
+}
