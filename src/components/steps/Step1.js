@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-import DatePicker from 'react-date-picker'
-import 'react-date-picker/dist/DatePicker.css';
-import 'react-calendar/dist/Calendar.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const degreeList = [
   {value: 'computerScience', label: 'Computer Science'}
@@ -15,8 +14,26 @@ const degreeList = [
 //representing a step can be paired into the FormStepper component
 export default function Step1() {
 
-  const [defenseDate, setdefenseDate] = useState(new Date());
-  const [graduationDate, setgraduationDate] = useState(new Date());
+  function YearPicker() {
+    const MyDatePicker = () => {
+      const [startDate, setStartDate] = useState(new Date());
+  
+      return (
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          showYearPicker
+          dateFormat="yyyy"
+        />
+      );
+    };
+  
+    return (
+      <div>
+        <MyDatePicker />
+      </div>
+    );
+  }
 
   return (
     <Box
@@ -39,12 +56,8 @@ export default function Step1() {
               </MenuItem>
             ))}
         </TextField>
-        <h3>When is your anticipated defense date?</h3>
-        <DatePicker selected={defenseDate} value={defenseDate} onChange={(defenseDate) => setdefenseDate(defenseDate)} />
-        <p>Please select the month and year you will be defending.</p>
-        <h3>When is your anticipated graduation date?</h3>
-        <DatePicker selected={graduationDate} value={graduationDate} onChange={(graduationDate) => setgraduationDate(graduationDate)} />
-        <p>Please select the month and year you will be graduating.</p>
+        <h3>When is your anticipated graduation year?</h3>
+        <YearPicker/>
       </div>
     </Box>
   );

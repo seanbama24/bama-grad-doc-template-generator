@@ -28,11 +28,7 @@ export default function Step7() {
             <td>Placeholder</td>
           </tr>
           <tr>
-            <td>Defense Date</td>
-            <td>Placeholder</td>
-          </tr>
-          <tr>
-            <td>Graduation Date</td>
+            <td>Graduation Year</td>
             <td>Placeholder</td>
           </tr>
         </table>
@@ -46,10 +42,6 @@ export default function Step7() {
           </tr>
           <tr>
             <td>Style Guide</td>
-            <td>Placeholder</td>
-          </tr>
-          <tr>
-            <td>Document Type</td>
             <td>Placeholder</td>
           </tr>
           <tr>
@@ -124,11 +116,11 @@ export default function Step7() {
             <td>Placeholder</td>
           </tr>
           <tr>
-            <td>Appendix:</td>
+            <td>References:</td>
             <td>Placeholder</td>
           </tr>
           <tr>
-            <td>Biographical:</td>
+            <td>Appendix:</td>
             <td>Placeholder</td>
           </tr>
         </table> 
@@ -138,6 +130,10 @@ export default function Step7() {
         <table>
           <tr>
             <td>Chair</td>
+            <td>Placeholder</td>
+          </tr>
+          <tr>
+            <td>Co Chair</td>
             <td>Placeholder</td>
           </tr>
           <tr>
