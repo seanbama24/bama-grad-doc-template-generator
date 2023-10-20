@@ -15,6 +15,7 @@ import Step5 from './steps/Step5';
 import Step6 from './steps/Step6';
 import Step7 from './steps/Step7';
 import Step8 from './steps/Step8';
+import generateDocument from '../generateDocument';
 
 const steps = ['Intro Text', 
                'Step 1 Text', 
@@ -130,9 +131,7 @@ function FormStepper() {
           </Button>
         )}
 
-        <Button onClick={handleNext}>
-          {activeStep === steps.length - 1 ? 'Create Document' : 'Next'}
-        </Button>
+        {activeStep === steps.length - 1 ? <Button onClick={generateDocument}>Generate Document</Button> : <Button onClick={handleNext}>Next</Button>}
       </Box>
 
 
