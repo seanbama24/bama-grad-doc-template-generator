@@ -16,18 +16,25 @@ import Input from '@mui/material/Input';
 export default function Step3() {
   const styles = [
     {value: 'None', label: 'Void Style'},
-    { value: 'MLA', label: 'MLA' },
+    { value: 'APA', label: 'APA' },
     { value: 'Chicago Style', label: 'Chicago Style' },
+    { value: 'MLA', label: 'MLA' },
+    { value: 'Turabian', label: 'Turabian' }
   ];
   const documentTypes = [
     {value: 'None', label: 'Void Style'},
     { value: 'Dissertation', label: 'Dissertation' },
-    { value: 'Doctoral Paper', label: 'Doctoral Paper' },
+    { value: 'Thesis', label: 'Doctoral Paper' },
   ];
   const fontList = [
-    {value: 'None', label: 'Void Style'},
+    { value: 'None', label: 'Void Style' },
+    { value: 'Arial', label: 'Arial' },
+    { value: 'Century', label: 'Century' },
+    { value: 'Garamond', label: 'Garamond' },
+    { value: 'Georgia', label: 'Georgia'},
+    { value: 'Tahoma', label: 'Tahoma' },
     { value: 'Times New Roman', label: 'Times New Roman' },
-    { value: 'Comic Sans', label: 'Comic Sans' },
+    { value: 'Veranda', label: 'Veranda' }
   ];
   const [style, setSetStyle] = React.useState(styles[0].value);
   const [docType, setDocType] = React.useState(documentTypes[0].value);

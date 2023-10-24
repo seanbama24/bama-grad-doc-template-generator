@@ -6,9 +6,16 @@ import { useState } from 'react';
 //This component is a placeholder for now to show that a component
 //representing a step can be paired into the FormStepper component
 export default function Step4() {
+  const [abstractText, setAbstractText] = useState('');
 
-  const [wordCount, setWordCount] = useState(0);
-
+  function handleAbstractTextChange(event) {
+    setAbstractText(event.target.value)
+  }
+  const getWordCount = () => {
+    // Split the text by whitespace and filter out empty strings
+    const words = abstractText.trim().split(/\s+/).filter(Boolean);
+    return words.length;
+  };
   return (
     <Box
       component="form"
@@ -27,7 +34,9 @@ export default function Step4() {
           multiline
           fullWidth
           rows={4} 
-          width="100%"/>
+          width="100%"
+          value={abstractText}
+          onChange={handleAbstractTextChange}/>
         <Typography marginBottom="20px">Type or copy your abstract here</Typography>
 
         <Typography>Quick notes about the abstract:</Typography>
@@ -40,7 +49,7 @@ export default function Step4() {
         </ol>
 
         <Typography fontWeight="bold">Please note: The abstract must not exceed 350 words.</Typography>
-        <Typography>Your word count is {wordCount}</Typography>
+        <Typography>Your word count is {getWordCount()}</Typography>
       </div>
     </Box>
   );
