@@ -90,7 +90,15 @@ function FormStepper() {
             stepProps.completed = false;
           }
           return (
-            <Step key={label} {...stepProps}>
+            <Step key={label} {...stepProps}
+                  sx={{ 
+                    '& .MuiStepLabel-root .Mui-completed': {
+                    color: '#9E1B32'
+                  },
+                    '& .MuiStepLabel-root .Mui-active': {
+                      color: '#9E1B32'
+                  }
+                  }}>
               <StepLabel {...labelProps}>{label}</StepLabel>
             </Step>
           );
