@@ -117,6 +117,7 @@ function FormStepper() {
       {/* This contains previous, next, skip buttons for stepping */}
       <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
         <Button
+          style={{color: '#9E1B32'}}
           color="inherit"
           disabled={activeStep === 0}
           onClick={handleBack}
@@ -131,7 +132,7 @@ function FormStepper() {
           </Button>
         )}
 
-        {activeStep === steps.length - 1 ? <Button onClick={generateDocument}>Generate Document</Button> : <Button onClick={handleNext}>Next</Button>}
+        {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: '#9E1B32'}}>Generate Document</Button> : <Button onClick={handleNext} style={{color: '#9E1B32'}}>Next</Button>}
       </Box>
 
 
