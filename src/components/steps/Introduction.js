@@ -13,7 +13,7 @@ export default function Introduction() {
       noValidate
       autoComplete="off"
     >
-      <div>
+      <div style={{margin: '5em'}}>
         <p>The Format WIzard is designed to aid students who must produce a thesis, disseration or equivalent under the supervision of their committee chai, and successfully defend it as part of their degree requirements. The Format Wizard employs The Univeristy of Alabama's specific formatting guidelines to generate a template to which you insert your document's text.</p>
         <p>Copies of Your Document will be places in UA Libraru Digital Repository and ProQuest (UMI/ProQuest). Because of this, your document must meet professional standards of published research. Both your committee and the Graduate College expect to see of careful attention to style and format in the document that you present to fulfill the requirements for your graduate degree.</p>
         <p>Each page contains instructions and guides. Below is a sample formatted document. Please look at the document before using the Format Wizard so you have an idea of the final product being created as you walk through the steps.</p>
