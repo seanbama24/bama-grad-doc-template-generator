@@ -44,8 +44,9 @@ export default function Step1() {
       noValidate
       autoComplete="off"
     >
-      <div style={{textAlign: 'center'}}>
-        <h2>Tell us about yourself</h2>
+      <div style={{margin: '5em'}}>
+        <h2 style={{color: '#9E1B32'}}>Tell Us About Yourself</h2>
+        <hr></hr>
         <h3>What is your full name?</h3>
         <TextField></TextField>
         <h3>What degree are you currently pursuing?</h3>
