@@ -10,24 +10,24 @@ export default function Step5() {
     <Box
       component="form"
       sx={{
-        "width": "60%",
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
       margin="auto"
     >
-      <div>
-        <h2>Additional Document Sections</h2>
+      <div style={{margin: '5em'}}>
+        <h2 style={{color: '#9E1B32'}}>Additional Document Sections</h2>
+        <hr></hr>
         <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="Dedication" />
-          <FormControlLabel control={<Checkbox />} label="Acknowledgements" />
-          <FormControlLabel control={<Checkbox />} label="Preface" />
-          <FormControlLabel control={<Checkbox />} label="Figures" />
-          <FormControlLabel control={<Checkbox />} label="Tables" />
-          <FormControlLabel control={<Checkbox />} label="Symbols" />
-          <FormControlLabel control={<Checkbox />} label="Appendix" />
-          <FormControlLabel control={<Checkbox />} label="Biographical" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Dedication" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Acknowledgements" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Preface" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Figures" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Tables" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Symbols" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Appendix" />
+          <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Biographical" />
         </FormGroup>
         <h3>Please refer to the sample document and the Format Manual for an example of each additional field.</h3>
       </div>
