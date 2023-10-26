@@ -18,8 +18,8 @@ import Step8 from './steps/Step8';
 import generateDocument from '../generateDocument';
 
 const steps = ['Introduction', 
-               'Personal Info', 
-               'Document Info', 
+               'Personal Information', 
+               'Document Information', 
                'Table of Contents', 
                'Abstract', 
                'Additional Document Sections', 
