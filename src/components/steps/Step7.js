@@ -14,11 +14,12 @@ export default function Step7() {
       noValidate
       autoComplete="off"
     >
-      <div style={{textAlign: 'center'}}>
-        <h1>Review Your Paper</h1>
+      <div style={{margin: '5em'}}>
+        <h1 style={{color: '#9E1B32'}}>Review Your Paper</h1>
+        <hr></hr>
         <h2>Student information</h2>
         <h4>Edit this section</h4>
-        <table>
+        <table style={{margin: '5em'}}>
           <tr>
             <td>Student's Full Legal Name</td>
             <td>Placeholder</td>
@@ -35,7 +36,7 @@ export default function Step7() {
 
         <h2>Document Information</h2>
         <h4>Edit this section</h4>
-        <table>
+        <table style={{margin: '5em'}}>
           <tr>
             <td>Template Type</td>
             <td>Placeholder</td>
@@ -68,7 +69,7 @@ export default function Step7() {
 
         <h2>Table of Contents</h2>
         <h4>Edit this section</h4>
-        <table>
+        <table style={{margin: '5em'}}>
           <tr>
             <td>Format Type</td>
             <td>Placeholder</td>
@@ -81,7 +82,7 @@ export default function Step7() {
 
         <h2>Abstract</h2>
         <h4>Edit this section</h4>
-        <table>
+        <table style={{margin: '5em'}}>
           <tr>
             <td>Abstract</td>
             <td>Placeholder</td>
@@ -90,7 +91,7 @@ export default function Step7() {
 
         <h2>Optional Sections</h2>
         <h4>Edit this section</h4>
-        <table>
+        <table style={{margin: '5em'}}>
           <tr>
             <td>Dedication:</td>
             <td>Placeholder</td>
@@ -127,7 +128,7 @@ export default function Step7() {
 
         <h2>Graduate Supervisory Committee Members</h2>
         <h4>Edit this section</h4>
-        <table>
+        <table style={{margin: '5em'}}>
           <tr>
             <td>Chair</td>
             <td>Placeholder</td>
