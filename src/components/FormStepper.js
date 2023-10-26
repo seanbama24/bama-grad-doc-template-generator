@@ -17,15 +17,15 @@ import Step7 from './steps/Step7';
 import Step8 from './steps/Step8';
 import generateDocument from '../generateDocument';
 
-const steps = ['Intro Text', 
-               'Step 1 Text', 
-               'Step 2 Text', 
-               'Step 3 Text', 
-               'Step 4 Text', 
-               'Step 5 Text', 
-               'Step 6 Text', 
-               'Step 7 Text', 
-               'Step 8 Text',];
+const steps = ['Introduction', 
+               'Personal Info', 
+               'Document Info', 
+               'Table of Contents', 
+               'Abstract', 
+               'Additional Document Sections', 
+               'Graduate Supervisory Committee Information', 
+               'Review', 
+               'Create Document',];
 
 function FormStepper() {
 
@@ -140,7 +140,7 @@ function FormStepper() {
           </Button>
         )}
 
-        {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: '#9E1B32'}}>Generate Document</Button> : <Button onClick={handleNext} style={{color: '#9E1B32'}}>Next</Button>}
+        {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: '#9E1B32'}}>Next</Button>}
       </Box>
 
 
