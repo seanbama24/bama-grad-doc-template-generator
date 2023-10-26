@@ -40,57 +40,59 @@ export default function Step3() {
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
     >
-      <label htmlFor='chapter-checkbox'>
-        <input type="checkbox" id='chapter-checkbox' checked={isChecked} onChange={checkHandler}/>
-        Would you like to create sample chapter headings
-      </label> 
-      {isChecked ? 
-      <div id="chapter-input">
-        {generatedChapters}
-        {/* <div>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-            <TextField
-              id="filled-adornment-weight"
-              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-              aria-describedby="filled-weight-helper-text"
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-            />
-          </FormControl>
-        </div>
-        <div>
-          <h3>Chapter Title 2</h3>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-            <TextField
-              id="filled-adornment-weight"
-              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-              aria-describedby="filled-weight-helper-text"
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-            />
-          </FormControl>
-        </div>  
-        <div>
-          <h3>Chapter Title 3</h3>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-            <TextField
-              id="filled-adornment-weight"
-              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-              aria-describedby="filled-weight-helper-text"
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-            />
-          </FormControl>
-        </div> */}
-        {/* <ChapterTitleBox num={4} /> */}
-        <div>
-          <Button onClick={generateNewChapter}>Add one more</Button>
-          <Button onClick={removeLastChapter}>Remove previous</Button>
-        </div>
-      </div> : <div id="empty-input"></div>}
+      <div style={{margin: '5em'}}>
+        <label htmlFor='chapter-checkbox'>
+          <input type="checkbox" id='chapter-checkbox' checked={isChecked} onChange={checkHandler}/>
+          Would you like to create sample chapter headings
+        </label> 
+        {isChecked ? 
+        <div id="chapter-input">
+          {generatedChapters}
+          {/* <div>
+            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+              <TextField
+                id="filled-adornment-weight"
+                endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+                aria-describedby="filled-weight-helper-text"
+                inputProps={{
+                  'aria-label': 'weight',
+                }}
+              />
+            </FormControl>
+          </div>
+          <div>
+            <h3>Chapter Title 2</h3>
+            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+              <TextField
+                id="filled-adornment-weight"
+                endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+                aria-describedby="filled-weight-helper-text"
+                inputProps={{
+                  'aria-label': 'weight',
+                }}
+              />
+            </FormControl>
+          </div>  
+          <div>
+            <h3>Chapter Title 3</h3>
+            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+              <TextField
+                id="filled-adornment-weight"
+                endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+                aria-describedby="filled-weight-helper-text"
+                inputProps={{
+                  'aria-label': 'weight',
+                }}
+              />
+            </FormControl>
+          </div> */}
+          {/* <ChapterTitleBox num={4} /> */}
+          <div>
+            <Button onClick={generateNewChapter}>Add one more</Button>
+            <Button onClick={removeLastChapter}>Remove previous</Button>
+          </div>
+        </div> : <div id="empty-input"></div>}
+      </div>
     </Box>
   );
 }
