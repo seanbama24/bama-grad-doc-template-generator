@@ -58,109 +58,111 @@ export default function Step3() {
       noValidate
       autoComplete="off"
     >
-    <div>
-        <h3>Choose Style Guide *</h3>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">Style</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={style}
-          label="Style"
-          onChange={handleChangeStyle}
-        >
-          <MenuItem disabled={true} value={styles[0].value}>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={styles[1].value}>{styles[1].value}</MenuItem>
-          <MenuItem value={styles[2].value}>{styles[2].value}</MenuItem>
-        </Select>
-        <FormHelperText>Select Prefered Style Ex. MLA</FormHelperText>
-      </FormControl>
-      </div>
+    <div style={{margin: '5em'}}>
       <div>
-        <h3>What is your document type? *</h3>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">Document Type</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={docType}
-          label="Document Type"
-          onChange={handleChangeDocumentType}
-        >
-          <MenuItem disabled={true} value={documentTypes[0].value}>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={documentTypes[1].value}>{documentTypes[1].value}</MenuItem>
-          <MenuItem value={documentTypes[2].value}>{documentTypes[2].value}</MenuItem>
-        </Select>
-        <FormHelperText>Select Document Type Ex. Dissertation</FormHelperText>
-      </FormControl>
-      </div>
-      <div>
-        <h3>Choose an approved font *</h3>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">Font Type</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={font}
-          label="Font Type"
-          onChange={handleChangeFont}
-        >
-          <MenuItem disabled={true} value={fontList[0].value}>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={fontList[1].value}>{fontList[1].value}</MenuItem>
-          <MenuItem value={fontList[2].value}>{fontList[2].value}</MenuItem>
-        </Select>
-        <FormHelperText>Select Prefered Font Ex. Times New Roman</FormHelperText>
-      </FormControl>
-      <div>
-        <h3>Please enter the first line of your title here</h3>
-        {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-          <TextField
-            id="filled-adornment-weight"
-            endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-            aria-describedby="filled-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
-          />
-          <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+          <h3>Choose Style Guide *</h3>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-helper-label">Style</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={style}
+            label="Style"
+            onChange={handleChangeStyle}
+          >
+            <MenuItem disabled={true} value={styles[0].value}>
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={styles[1].value}>{styles[1].value}</MenuItem>
+            <MenuItem value={styles[2].value}>{styles[2].value}</MenuItem>
+          </Select>
+          <FormHelperText>Select Prefered Style Ex. MLA</FormHelperText>
         </FormControl>
-      </div>
-      <div>
-        <h3>Please enter the second line of your title here</h3>
-        {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-          <TextField
-            id="filled-adornment-weight"
-            endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-            aria-describedby="filled-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
-          />
-          <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+        </div>
+        <div>
+          <h3>What is your document type? *</h3>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-helper-label">Document Type</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={docType}
+            label="Document Type"
+            onChange={handleChangeDocumentType}
+          >
+            <MenuItem disabled={true} value={documentTypes[0].value}>
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={documentTypes[1].value}>{documentTypes[1].value}</MenuItem>
+            <MenuItem value={documentTypes[2].value}>{documentTypes[2].value}</MenuItem>
+          </Select>
+          <FormHelperText>Select Document Type Ex. Dissertation</FormHelperText>
         </FormControl>
-      </div>
-      <div>
-        <h3>Please enter the third line of your title here</h3>
-        {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-          <TextField
-            id="filled-adornment-weight"
-            endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-            aria-describedby="filled-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
-          />
-          <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+        </div>
+        <div>
+          <h3>Choose an approved font *</h3>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-helper-label">Font Type</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={font}
+            label="Font Type"
+            onChange={handleChangeFont}
+          >
+            <MenuItem disabled={true} value={fontList[0].value}>
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={fontList[1].value}>{fontList[1].value}</MenuItem>
+            <MenuItem value={fontList[2].value}>{fontList[2].value}</MenuItem>
+          </Select>
+          <FormHelperText>Select Prefered Font Ex. Times New Roman</FormHelperText>
         </FormControl>
+        <div>
+          <h3>Please enter the first line of your title here</h3>
+          {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+            <TextField
+              id="filled-adornment-weight"
+              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+              aria-describedby="filled-weight-helper-text"
+              inputProps={{
+                'aria-label': 'weight',
+              }}
+            />
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+          </FormControl>
+        </div>
+        <div>
+          <h3>Please enter the second line of your title here</h3>
+          {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+            <TextField
+              id="filled-adornment-weight"
+              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+              aria-describedby="filled-weight-helper-text"
+              inputProps={{
+                'aria-label': 'weight',
+              }}
+            />
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+          </FormControl>
+        </div>
+        <div>
+          <h3>Please enter the third line of your title here</h3>
+          {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+            <TextField
+              id="filled-adornment-weight"
+              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+              aria-describedby="filled-weight-helper-text"
+              inputProps={{
+                'aria-label': 'weight',
+              }}
+            />
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+          </FormControl>
+        </div>
       </div>
     </div>
     </Box>
