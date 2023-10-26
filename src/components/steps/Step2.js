@@ -59,6 +59,8 @@ export default function Step3() {
       autoComplete="off"
     >
     <div style={{margin: '5em'}}>
+      <h2 style={{color: '#9E1B32'}}>Document Information</h2>
+      <hr></hr>
       <div>
           <h3>Choose Style Guide *</h3>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
