@@ -21,7 +21,7 @@ export default function Step2() {
     <Box
       component="form"
       sx={{
-        "width": "60%",
+        "margin": "5em",
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
@@ -29,7 +29,8 @@ export default function Step2() {
       margin="auto"
     >
       <div>
-        <h2>Graduate Supervisory Committee Information</h2>
+        <h2 style={{color: '#9E1B32'}}>Graduate Supervisory Committee Information</h2>
+        <hr></hr>
         <Typography variant="h5">Do you have one committee chair or two co-chairs?</Typography>
         <TextField
           id="template-selector"
