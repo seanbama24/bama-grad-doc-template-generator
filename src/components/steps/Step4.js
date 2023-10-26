@@ -20,14 +20,14 @@ export default function Step4() {
     <Box
       component="form"
       sx={{
-        "width": "60%"
+        "margin": "5em"
       }}
       noValidate
       autoComplete="off"
       margin="auto"
     >
       <div>
-        <Typography variant="h5">Abstract</Typography>
+        <Typography variant="h5" style={{color: '#9E1B32'}}>Abstract</Typography>
         <TextField 
           variant="outlined" 
           required
