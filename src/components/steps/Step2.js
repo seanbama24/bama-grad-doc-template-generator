@@ -9,7 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export default function Step3() {
+export default function Step2() {
   const styles = [
     {value: 'None', label: 'Void Style'},
     { value: 'APA', label: 'APA' },
