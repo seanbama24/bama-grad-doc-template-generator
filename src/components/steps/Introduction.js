@@ -1,8 +1,7 @@
+// Step 0 - Introduction
 import * as React from 'react';
 import Box from '@mui/material/Box';
 
-//This component is a placeholder for now to show that a component
-//representing a step can be paired into the FormStepper component
 export default function Introduction() {
   return (
     <Box
@@ -14,6 +13,8 @@ export default function Introduction() {
       autoComplete="off"
     >
       <div style={{margin: '5em'}}>
+        <h2 style={{color: '#9E1B32'}}>Format Wizard</h2>
+        <hr></hr>
         <p>The Format WIzard is designed to aid students who must produce a thesis, disseration or equivalent under the supervision of their committee chair, and successfully defend it as part of their degree requirements. The Format Wizard employs The Univeristy of Alabama's specific formatting guidelines to generate a template to which you insert your document's text.</p>
         <p>Copies of Your Document will be places in UA Libraru Digital Repository and ProQuest (UMI/ProQuest). Because of this, your document must meet professional standards of published research. Both your committee and the Graduate College expect to see of careful attention to style and format in the document that you present to fulfill the requirements for your graduate degree.</p>
         <p>Each page contains instructions and guides. Below is a sample formatted document. Please look at the document before using the Format Wizard so you have an idea of the final product being created as you walk through the steps.</p>

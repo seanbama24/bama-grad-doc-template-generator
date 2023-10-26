@@ -13,6 +13,8 @@ export default function Step8() {
       autoComplete="off"
     >
       <div style={{margin: '5em'}}>
+        <h2 style={{color: '#9E1B32'}}>Create Document</h2>
+        <hr></hr>
         <p>Once you have created your document, insert your text into the Additional information sections, and into each chapter. Please note: you must update the page numbers in the Table of Contents to correspond with your chapters in the document once you have inserted your content. Return to the review step to make changes to the document.</p>
         <p>For your reference, please review the <a href='http://services.graduate.ua.edu/etd/templates.html' target='_blank'>Graduate College Format Manual</a> and <a href='http://services.graduate.ua.edu/etd/td_sample.pdf' target='_blank'>Sample Formatted Document</a>.</p>
         <p>By clicking the Create Document button, a Word document will be generated that meets ASU Format Review guidelines. The Format Wizard has successfully been tested and verified with Word 2003, Word 2007, and Word 2010 on Windows XP/Vista/7 and Word 2004, Word 2008, Word 2011 on Mac OSX.</p>

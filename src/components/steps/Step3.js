@@ -33,6 +33,8 @@ export default function Step3() {
       }}
     >
       <div style={{margin: '5em'}}>
+        <h2 style={{color: '#9E1B32'}}>Table of Contents Information</h2>
+        <hr></hr>
         <label htmlFor='chapter-checkbox'>
           <input type="checkbox" id='chapter-checkbox' checked={isChecked} onChange={checkHandler}/>
           Would you like to create sample chapter headings

@@ -26,7 +26,9 @@ export default function Step4() {
       margin="auto"
     >
       <div>
-        <Typography variant="h5" style={{color: '#9E1B32'}}>Abstract</Typography>
+        <h2 style={{color: '#9E1B32'}}>Abstract Information</h2>
+        <hr></hr>
+        <Typography variant="h7" fontWeight="bold">Abstract</Typography>
         <TextField 
           variant="outlined" 
           required

@@ -14,7 +14,7 @@ export default function Step7() {
       autoComplete="off"
     >
       <div style={{margin: '5em'}}>
-        <h1 style={{color: '#9E1B32'}}>Review Your Paper</h1>
+        <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
         <hr></hr>
         <h2>Student information</h2>
         <h4>Edit this section</h4>
