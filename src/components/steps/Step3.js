@@ -1,20 +1,12 @@
+// Step 3 - Table of Contents
 import * as React from 'react';
 import { useState } from 'react'
 import Box from '@mui/material/Box';
 import { TextField} from '@mui/material';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
-import FilledInput from '@mui/material/FilledInput';
-
-import Input from '@mui/material/Input';
 import { Button } from '@mui/base';
 
-//This component is a placeholder for now to show that a component
-//representing a step can be paired into the FormStepper component
 export default function Step3() {
   const [isChecked, setIsChecked] = useState(false)
   const [generatedChapters, setGenerateChapters] = useState([< ChapterTitleBox num={1}/>])

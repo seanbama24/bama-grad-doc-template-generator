@@ -1,9 +1,8 @@
+// Step 7 - Review
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import './Step7.css';
 
-//This component is a placeholder for now to show that a component
-//representing a step can be paired into the FormStepper component
 export default function Step7() {
   return (
     <Box

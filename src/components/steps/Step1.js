@@ -1,3 +1,4 @@
+// Step 1 - Student Information
 // import * as React from 'react';
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
@@ -10,8 +11,6 @@ const degreeList = [
   {value: 'computerScience', label: 'Computer Science'}
 ];
 
-//This component is a placeholder for now to show that a component
-//representing a step can be paired into the FormStepper component
 export default function Step1() {
 
   function YearPicker() {

@@ -1,3 +1,4 @@
+// Step 2 - Document Information
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { TextField} from '@mui/material';
@@ -7,12 +8,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
-import FilledInput from '@mui/material/FilledInput';
 
-import Input from '@mui/material/Input';
-
-//This component is a placeholder for now to show that a component
-//representing a step can be paired into the FormStepper component
 export default function Step3() {
   const styles = [
     {value: 'None', label: 'Void Style'},
