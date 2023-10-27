@@ -7,13 +7,10 @@ export default function Step7() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
     >
-      <div style={{margin: '5em'}}>
+      <div>
         <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
         <hr></hr>
         <h2>Student information</h2>

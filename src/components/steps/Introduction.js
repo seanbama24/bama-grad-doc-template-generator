@@ -6,13 +6,9 @@ export default function Introduction() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
     >
-      <div style={{margin: '5em'}}>
         <h2 style={{color: '#9E1B32'}}>Format Wizard</h2>
         <hr></hr>
         <p>The Format WIzard is designed to aid students who must produce a thesis, disseration or equivalent under the supervision of their committee chair, and successfully defend it as part of their degree requirements. The Format Wizard employs The Univeristy of Alabama's specific formatting guidelines to generate a template to which you insert your document's text.</p>
@@ -26,7 +22,6 @@ export default function Introduction() {
           <input type="checkbox" />
           Clear Previous Document Data
         </label>
-      </div>
     </Box>
   );
 }

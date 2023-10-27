@@ -77,7 +77,7 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <Stepper activeStep={activeStep} style={{margin: '2em 5em 2em 5em'}}>
+      <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -93,11 +93,11 @@ function FormStepper() {
             <Step key={label} {...stepProps}
                   sx={{ 
                     '& .MuiStepLabel-root .Mui-completed': {
-                    color: '#9E1B32'
-                  },
+                      color: '#9E1B32'
+                    },
                     '& .MuiStepLabel-root .Mui-active': {
                       color: '#9E1B32'
-                  }
+                    }
                   }}>
               <StepLabel {...labelProps}>{label}</StepLabel>
             </Step>
@@ -105,23 +105,23 @@ function FormStepper() {
         })}
       </Stepper>
 
-
-      {/* This acts as a switch statement to decide what
-      component to render based on activeStep */}
-      {
+      {/* This acts as a switch statement to decide what component to render based on activeStep */}
+      <div id="textView" style={{"height": "650px", "margin-left": "20px", "margin-right": "20px", "margin-top": "20px", "overflow-y": "auto"}}>
         {
-          0: <Introduction />,
-          1: <Step1 />,
-          2: <Step2 />,
-          3: <Step3 />,
-          4: <Step4 />,
-          5: <Step5 />,
-          6: <Step6 />,
-          7: <Step7 />,
-          8: <Step8 />,
-        }[activeStep]
-      }
-
+          {
+            0: <Introduction />,
+            1: <Step1 />,
+            2: <Step2 />,
+            3: <Step3 />,
+            4: <Step4 />,
+            5: <Step5 />,
+            6: <Step6 />,
+            7: <Step7 />,
+            8: <Step8 />,
+          }[activeStep]
+        }
+      </div>
+      
       {/* This contains previous, next, skip buttons for stepping */}
       <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
         <Button

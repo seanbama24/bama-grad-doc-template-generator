@@ -2,8 +2,9 @@
 // import * as React from 'react';
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -37,28 +38,25 @@ export default function Step1() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
     >
-      <div style={{margin: '5em'}}>
-        <h2 style={{color: '#9E1B32'}}>Tell Us About Yourself</h2>
-        <hr></hr>
-        <h3>What is your full name?</h3>
-        <TextField></TextField>
-        <h3>What degree are you currently pursuing?</h3>
+      <h2 style={{ color: '#9E1B32' }}>Tell Us About Yourself</h2>
+      <hr></hr>
+      <h3>What is your full name?</h3>
+      <TextField></TextField>
+      <h3>What degree are you currently pursuing?</h3>
+      <FormControl sx={{ m: 1, minWidth: 250 }}>
         <TextField id="degree-selection" select label="Select">
-          {degreeList.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
+            {degreeList.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
             ))}
         </TextField>
-        <h3>When is your anticipated graduation year?</h3>
-        <YearPicker/>
-      </div>
+      </FormControl>
+      <h3>When is your anticipated graduation year?</h3>
+      <YearPicker />
     </Box>
   );
 }

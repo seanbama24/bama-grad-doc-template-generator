@@ -28,59 +28,18 @@ export default function Step3() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
     >
-      <div style={{margin: '5em'}}>
+      <div>
         <h2 style={{color: '#9E1B32'}}>Table of Contents Information</h2>
         <hr></hr>
         <label htmlFor='chapter-checkbox'>
           <input type="checkbox" id='chapter-checkbox' checked={isChecked} onChange={checkHandler}/>
-          Would you like to create sample chapter headings
+          Would you like to auto-create sample chapter headings?
         </label> 
+
         {isChecked ? 
         <div id="chapter-input">
           {generatedChapters}
-          {/* <div>
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-              <TextField
-                id="filled-adornment-weight"
-                endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                aria-describedby="filled-weight-helper-text"
-                inputProps={{
-                  'aria-label': 'weight',
-                }}
-              />
-            </FormControl>
-          </div>
-          <div>
-            <h3>Chapter Title 2</h3>
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-              <TextField
-                id="filled-adornment-weight"
-                endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                aria-describedby="filled-weight-helper-text"
-                inputProps={{
-                  'aria-label': 'weight',
-                }}
-              />
-            </FormControl>
-          </div>  
-          <div>
-            <h3>Chapter Title 3</h3>
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
-              <TextField
-                id="filled-adornment-weight"
-                endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                aria-describedby="filled-weight-helper-text"
-                inputProps={{
-                  'aria-label': 'weight',
-                }}
-              />
-            </FormControl>
-          </div> */}
-          {/* <ChapterTitleBox num={4} /> */}
           <div>
             <Button onClick={generateNewChapter}>Add one more</Button>
             <Button onClick={removeLastChapter}>Remove previous</Button>
@@ -104,7 +63,6 @@ const ChapterTitleBox = ({ num }) => {
             'aria-label': 'weight',
           }}
         />
-        {/* <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText> */}
       </FormControl>
     </div>
   )

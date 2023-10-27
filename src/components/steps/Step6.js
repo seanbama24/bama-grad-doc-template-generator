@@ -20,13 +20,8 @@ export default function Step2() {
   return (
     <Box
       component="form"
-      sx={{
-        "margin": "5em",
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
-      margin="auto"
     >
       <div>
         <h2 style={{color: '#9E1B32'}}>Graduate Supervisory Committee Information</h2>

@@ -48,13 +48,9 @@ export default function Step2() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
     >
-    <div style={{margin: '5em'}}>
       <h2 style={{color: '#9E1B32'}}>Document Information</h2>
       <hr></hr>
       <div>
@@ -162,7 +158,6 @@ export default function Step2() {
           </FormControl>
         </div>
       </div>
-    </div>
     </Box>
   );
 }

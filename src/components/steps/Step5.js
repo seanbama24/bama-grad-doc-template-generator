@@ -9,14 +9,10 @@ export default function Step5() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
-      margin="auto"
     >
-      <div style={{margin: '5em'}}>
+      <div>
         <h2 style={{color: '#9E1B32'}}>Additional Document Sections</h2>
         <hr></hr>
         <FormGroup>

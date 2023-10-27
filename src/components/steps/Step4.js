@@ -18,12 +18,8 @@ export default function Step4() {
   return (
     <Box
       component="form"
-      sx={{
-        "margin": "5em"
-      }}
       noValidate
       autoComplete="off"
-      margin="auto"
     >
       <div>
         <h2 style={{color: '#9E1B32'}}>Abstract Information</h2>

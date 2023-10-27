@@ -6,13 +6,10 @@ export default function Step8() {
   return (
     <Box
       component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
       noValidate
       autoComplete="off"
     >
-      <div style={{margin: '5em'}}>
+      <div>
         <h2 style={{color: '#9E1B32'}}>Create Document</h2>
         <hr></hr>
         <p>Once you have created your document, insert your text into the Additional information sections, and into each chapter. Please note: you must update the page numbers in the Table of Contents to correspond with your chapters in the document once you have inserted your content. Return to the review step to make changes to the document.</p>
