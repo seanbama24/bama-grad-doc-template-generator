@@ -61,8 +61,8 @@ export default function Step2() {
           fullWidth
           rows={1}/>
       </div>
-      <div>
-        <button>
+      <div style={{marginTop: '2em'}}>
+        <button style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>
           Add another committee member
         </button>
       </div>
