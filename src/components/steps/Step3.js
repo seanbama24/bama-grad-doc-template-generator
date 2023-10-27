@@ -6,6 +6,8 @@ import { TextField} from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Button } from '@mui/base';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 export default function Step3() {
   const [isChecked, setIsChecked] = useState(false)
@@ -32,10 +34,11 @@ export default function Step3() {
       <div>
         <h2 style={{color: '#9E1B32'}}>Table of Contents Information</h2>
         <hr></hr>
-        <label htmlFor='chapter-checkbox'>
+        {/* <label htmlFor='chapter-checkbox'>
           <input type="checkbox" id='chapter-checkbox' checked={isChecked} onChange={checkHandler}/>
           Would you like to auto-create sample chapter headings?
-        </label> 
+        </label>  */}
+        <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={isChecked} onChange={checkHandler} style={{color: '#9E1B32'}}/>} label="Would you like to auto-create sample chapter headings?" />
 
         {isChecked ? 
         <div id="chapter-input">
