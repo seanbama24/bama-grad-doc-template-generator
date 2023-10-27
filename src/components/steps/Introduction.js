@@ -1,6 +1,8 @@
 // Step 0 - Introduction
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 export default function Introduction() {
   return (
@@ -18,10 +20,11 @@ export default function Introduction() {
         <p><strong> For people with Macintosh (MAC), MacBook's, MacAir's, etc. computers if you have a high screen resolution sometimes the instructions will overlap the text fields. The recommended resolution for a Mac computers for this tool is 1040+ by 1280+.</strong></p>
         <p>If you revieve an error message while trying to access or use the Format Wizard, please clear your browser's cache and try accessing the tool again.</p>
         <p><strong>If you do not want previous created document data to be included, please check the below box and click next button.</strong></p>
-        <label>
-          <input type="checkbox" />
+        {/* <label>
+          <input type="checkbox" style={{color: 'red'}}/>
           Clear Previous Document Data
-        </label>
+        </label> */}
+        <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Clear Previous Document Data" />
     </Box>
   );
 }
