@@ -40,9 +40,9 @@ export default function Step3() {
         {isChecked ? 
         <div id="chapter-input">
           {generatedChapters}
-          <div>
-            <Button onClick={generateNewChapter}>Add one more</Button>
-            <Button onClick={removeLastChapter}>Remove previous</Button>
+          <div style={{marginTop: '1em'}}>
+            <Button onClick={generateNewChapter} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add one more</Button>
+            <Button onClick={removeLastChapter} style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Remove previous</Button>
           </div>
         </div> : <div id="empty-input"></div>}
       </div>
