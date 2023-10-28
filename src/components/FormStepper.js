@@ -31,7 +31,16 @@ function FormStepper() {
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+  // Introduction
   const [att, setATT] = React.useState(false);
+  // Step 1
+  const [userName, setUserName] = React.useState('');
+  const [userDegree, setUserDegree] = React.useState(null);
+  const [userGraduationYear, setUserGraduationYear] = React.useState(new Date());
+  // Step 2
+  const [style, setStyle] = React.useState(null);
+  const [docType, setDocType] = React.useState(null);
+  const [font, setFont] = React.useState(null);
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -113,7 +122,7 @@ function FormStepper() {
       <div id="textView" style={{"height": "650px", "margin-left": "20px", "margin-right": "20px", "margin-top": "20px", "overflow-y": "auto"}}>
         {
           {
-            0: <Introduction checkmark={att} handler={() => handleCheckBox()} />,
+            0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
             1: <Step1 />,
             2: <Step2 />,
             3: <Step3 />,

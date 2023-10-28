@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function Introduction({checkmark, handler}) {
+export default function Introduction({checkmark, onClick}) {
   return (
     <Box
       component="form"
@@ -24,7 +24,7 @@ export default function Introduction({checkmark, handler}) {
           <input type="checkbox" style={{color: 'red'}}/>
           Clear Previous Document Data
         </label> */}
-        <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Clear Previous Document Data" checked={checkmark} onClick ={handler}/>
+        <FormControlLabel control={<Checkbox style={{color: '#9E1B32'}}/>} label="Clear Previous Document Data" checked={checkmark} onClick ={onClick}/>
     </Box>
   );
 }

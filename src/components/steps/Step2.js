@@ -11,14 +11,14 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 export default function Step2() {
   const styles = [
-    {value: 'None', label: 'Void Style'},
+    { value: 'None', label: 'Void Style' },
     { value: 'APA', label: 'APA' },
     { value: 'Chicago Style', label: 'Chicago Style' },
     { value: 'MLA', label: 'MLA' },
     { value: 'Turabian', label: 'Turabian' }
   ];
   const documentTypes = [
-    {value: 'None', label: 'Void Style'},
+    { value: 'None', label: 'Void Style' },
     { value: 'Dissertation', label: 'Dissertation' },
     { value: 'Thesis', label: 'Doctoral Paper' },
   ];
