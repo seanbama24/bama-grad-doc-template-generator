@@ -31,7 +31,7 @@ function FormStepper() {
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-
+  const [att, setATT] = React.useState(false);
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -74,6 +74,10 @@ function FormStepper() {
     setActiveStep(0);
   };
 
+  const handleCheckBox = () => {
+    const newATTVal = !att
+    setATT(newATTVal);
+  };
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
@@ -109,7 +113,7 @@ function FormStepper() {
       <div id="textView" style={{"height": "650px", "margin-left": "20px", "margin-right": "20px", "margin-top": "20px", "overflow-y": "auto"}}>
         {
           {
-            0: <Introduction />,
+            0: <Introduction checkmark={att} handler={() => handleCheckBox()} />,
             1: <Step1 />,
             2: <Step2 />,
             3: <Step3 />,
