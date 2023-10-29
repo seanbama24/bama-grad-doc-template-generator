@@ -181,19 +181,16 @@ const degreeList = [
   { value: "Women Studies MA", label: "Women Studies MA" }
 ];
 
-export default function Step1() {
-  // degreeList.sort(function(a, b) { 
-  //   return a.value < b.value;
-  // });
+export default function Step1({ name, degree, gradYear, updateName, updateDegree, updateGradYear}) {
   console.log(degreeList.sort());
   function YearPicker() {
     const MyDatePicker = () => {
-      const [startDate, setStartDate] = useState(new Date());
+      // const [startDate, setStartDate] = useState(new Date());
   
       return (
         <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          selected={gradYear}
+          onChange={updateGradYear}
           showYearPicker
           dateFormat="yyyy"
         />
@@ -216,10 +213,10 @@ export default function Step1() {
       <h2 style={{ color: '#9E1B32' }}>Tell Us About Yourself</h2>
       <hr></hr>
       <h3>What is your full name?</h3>
-      <TextField></TextField>
+      <TextField value={name} onChange={updateName}></TextField>
       <h3>What degree are you currently pursuing?</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
-        <TextField id="degree-selection" select label="Select" defaultValue = {degreeList[0]}>
+        <TextField id="degree-selection" select label="Select" value={degree} onChange={updateDegree}>
             {degreeList.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                     {option.label}

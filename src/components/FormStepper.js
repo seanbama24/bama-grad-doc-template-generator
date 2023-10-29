@@ -34,13 +34,17 @@ function FormStepper() {
   // Introduction
   const [att, setATT] = React.useState(false);
   // Step 1
-  const [userName, setUserName] = React.useState('');
-  const [userDegree, setUserDegree] = React.useState(null);
-  const [userGraduationYear, setUserGraduationYear] = React.useState(new Date());
+  const [name, setName] = React.useState('');
+  const [degree, setDegree] = React.useState(null);
+  const [graduationYear, setGraduationYear] = React.useState(new Date());
   // Step 2
   const [style, setStyle] = React.useState(null);
   const [docType, setDocType] = React.useState(null);
   const [font, setFont] = React.useState(null);
+  const [titleLine1, setTitleLine1] = React.useState('');
+  const [titleLine2, setTitleLine2] = React.useState('');
+  const [titleLine3, setTitleLine3] = React.useState('');
+
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -87,6 +91,43 @@ function FormStepper() {
     const newATTVal = !att
     setATT(newATTVal);
   };
+
+  const handleName = (event) => {
+    setName(event.target.value);
+  }
+
+  const handleDegree = (event) => {
+    setDegree(event.target.value);
+  };
+
+  const handleYear = (date) => {
+    setGraduationYear(date);
+  };
+
+  const handleStyle = (event) => {
+    setStyle(event.target.value);
+  };
+
+  const handleDocType = (event) => {
+    setDocType(event.target.value);
+  };
+
+  const handleFont = (event) => {
+    setFont(event.target.value);
+  };
+
+  const handleTL1 = (event) => { // Title Line 1
+    setTitleLine1(event.target.value);
+  };
+
+  const handleTL2 = (event) => { // Title Line 2
+    setTitleLine2(event.target.value);
+  };
+
+  const handleTL3 = (event) => { // Title Line 3
+    setTitleLine3(event.target.value);
+  };
+
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
@@ -123,8 +164,8 @@ function FormStepper() {
         {
           {
             0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
-            1: <Step1 />,
-            2: <Step2 />,
+            1: <Step1 name={name} degree={degree} gradYear={graduationYear} updateName={handleName} updateDegree={handleDegree} updateGradYear={handleYear}/>,
+            2: <Step2 style={style} documentType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} updateStyle={handleStyle} updateDocumentType={handleDocType} updateFont={handleFont} updateLine1={handleTL1} updateLine2={handleTL2} updateLine3={handleTL3}/>,
             3: <Step3 />,
             4: <Step4 />,
             5: <Step5 />,
