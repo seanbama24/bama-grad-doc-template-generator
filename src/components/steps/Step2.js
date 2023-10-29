@@ -18,9 +18,9 @@ export default function Step2() {
     { value: 'Turabian', label: 'Turabian' }
   ];
   const documentTypes = [
-    { value: 'None', label: 'Void Style' },
-    { value: 'Dissertation', label: 'Dissertation' },
-    { value: 'Thesis', label: 'Doctoral Paper' },
+    { value: 'None', label: 'Void Document Type' },
+    { value: 'Dissertation', label: 'Thesis' },
+    { value: 'Thesis', label: 'Dissertation' },
   ];
   const fontList = [
     { value: 'None', label: 'Void Style' },
@@ -64,11 +64,18 @@ export default function Step2() {
             label="Style"
             onChange={handleChangeStyle}
           >
-            <MenuItem disabled={true} value={styles[0].value}>
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={styles[1].value}>{styles[1].value}</MenuItem>
-            <MenuItem value={styles[2].value}>{styles[2].value}</MenuItem>
+            {styles.map( function (option) {
+                if (option.value == 'None') {
+                  return <MenuItem disabled={true} value={styles[0].value}>
+                    <em>None</em>
+                  </MenuItem>
+                } 
+                else {
+                return <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
+                }
+            })}            
           </Select>
           <FormHelperText>Select Prefered Style Ex. MLA</FormHelperText>
         </FormControl>
@@ -84,11 +91,18 @@ export default function Step2() {
             label="Document Type"
             onChange={handleChangeDocumentType}
           >
-            <MenuItem disabled={true} value={documentTypes[0].value}>
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={documentTypes[1].value}>{documentTypes[1].value}</MenuItem>
-            <MenuItem value={documentTypes[2].value}>{documentTypes[2].value}</MenuItem>
+            {documentTypes.map( function (option) {
+                if (option.value == 'None') {
+                  return <MenuItem disabled={true} value={styles[0].value}>
+                    <em>None</em>
+                  </MenuItem>
+                } 
+                else {
+                return <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
+                }
+            })}   
           </Select>
           <FormHelperText>Select Document Type Ex. Dissertation</FormHelperText>
         </FormControl>
@@ -104,11 +118,18 @@ export default function Step2() {
             label="Font Type"
             onChange={handleChangeFont}
           >
-            <MenuItem disabled={true} value={fontList[0].value}>
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={fontList[1].value}>{fontList[1].value}</MenuItem>
-            <MenuItem value={fontList[2].value}>{fontList[2].value}</MenuItem>
+            {fontList.map( function (option) {
+                if (option.value == 'None') {
+                  return <MenuItem disabled={true} value={styles[0].value}>
+                    <em>None</em>
+                  </MenuItem>
+                } 
+                else {
+                return <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
+                }
+            })}       
           </Select>
           <FormHelperText>Select Prefered Font Ex. Times New Roman</FormHelperText>
         </FormControl>
