@@ -16,6 +16,7 @@ import Step6 from './steps/Step6';
 import Step7 from './steps/Step7';
 import Step8 from './steps/Step8';
 import generateDocument from '../generateDocument';
+import { ChapterTitleBox } from './ChapterTitleBox';
 
 const steps = ['Introduction', 
                'Student Information', 
@@ -44,6 +45,20 @@ function FormStepper() {
   const [titleLine1, setTitleLine1] = React.useState('');
   const [titleLine2, setTitleLine2] = React.useState('');
   const [titleLine3, setTitleLine3] = React.useState('');
+  // Step 3
+  const [includesChapterHeadings, setIncludesChapterHeadings] = React.useState(false)
+  const [chapterHeadings, setChapterHeadings] = React.useState([<ChapterTitleBox num={1} />])
+  // Step 4
+  const [abstractText, setAbstractText] = React.useState('');
+  // Step 5
+  const [includeDedication, setIncludeDedication] = React.useState(false);
+  const [includeAcknowledgement, setIncludeAcknowledgement] = React.useState(false);
+  const [includePreface, setIncludePreface] = React.useState(false);
+  const [includeFigures, setIncludeFigures] = React.useState(false);
+  const [includeTables, setIncludeTables] = React.useState(false);
+  const [includeSymbols, setIncludeSymbols] = React.useState(false);
+  const [includeAppendix, setIncludeAppendix] = React.useState(false);
+  const [includeBiographical, setInlcudeBiographical] = React.useState(false);
 
   const isStepOptional = (step) => {
     return step === 1;
@@ -128,6 +143,41 @@ function FormStepper() {
     setTitleLine3(event.target.value);
   };
 
+  const handleIncludeChapterHeadings = () => {
+    setIncludesChapterHeadings(!includesChapterHeadings);
+  };
+
+  // const handleChapterHeadings = (event) => {
+  //   setChapterHeadings(event.target.value);
+  // };
+  const handleAbstractText = (event) => {
+    setAbstractText(event.target.value)
+  };
+  const handleIncludeDedication = () => {
+    setIncludeDedication(!includeDedication);
+  };
+  const handleIncludeAcknowledgments = () => {
+    setIncludeAcknowledgement(!includeAcknowledgement);
+  };
+  const handleIncludePreface = () => {
+    setIncludePreface(!includePreface);
+  };
+  const handleIncludeFigures = () => {
+    setIncludeFigures(!includeFigures);
+  };
+  const handleIncludeTables = () => {
+    setIncludeTables(!includeTables);
+  };
+  const handleIncludeSymbols = () => {
+    setIncludeSymbols(!includeSymbols);
+  };
+  const handleIncludeAppendix = () => {
+    setIncludeAppendix(!includeAppendix);
+  };
+  const handleIncludeBiographical = () => {
+    setInlcudeBiographical(!includeBiographical);
+  }
+
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
@@ -166,11 +216,11 @@ function FormStepper() {
             0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
             1: <Step1 name={name} degree={degree} gradYear={graduationYear} updateName={handleName} updateDegree={handleDegree} updateGradYear={handleYear}/>,
             2: <Step2 style={style} documentType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} updateStyle={handleStyle} updateDocumentType={handleDocType} updateFont={handleFont} updateLine1={handleTL1} updateLine2={handleTL2} updateLine3={handleTL3}/>,
-            3: <Step3 />,
-            4: <Step4 />,
-            5: <Step5 />,
+            3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings}/>,
+            4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
+            5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
             6: <Step6 />,
-            7: <Step7 />,
+            7: <Step7 name={name} degree={degree} graduationYear={graduationYear}/>,
             8: <Step8 />,
           }[activeStep]
         }
