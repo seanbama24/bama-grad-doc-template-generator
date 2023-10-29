@@ -1,0 +1,170 @@
+Accounting MMA
+Accounting PhD
+Advertising Public Relations MA
+Aerospace Engineering and Mechanics MSAEM
+Aerospace Engineering and Mechanics PhD
+American Studies MA
+Anthropology MA
+Anthropology PhD
+Applied Mathematics PhD
+Applied Statistics MS
+Applied Statistics PhD
+Archival Studies CRT
+Art History MA
+Athletic Training MS
+Biological Sciences MA
+Biology MS
+Biology PhD
+Book Arts CRT
+Book Arts MFA
+Business Administration EMBA
+Business Administration MBA
+Business Analytics MS
+Chemical Engineering MCE
+Chemical Engineering PhD
+Chemistry MSC
+Chemistry PhD
+Civil Engineering MCV
+Civil Engineering PhD
+College Teaching CRT
+Communication & Information Sciences PhD
+Communication Studies MA
+Computer Science MSCS
+Computer Science PhD
+Conflict Resolution CRT
+Consumer Sciences MS
+Counselor Education EDS
+Counselor Education PhD
+Counselor Education-Clinical Mental Health Counseling MA
+Counselor Education-Rehabilitation Counseling MA
+Counselor Education-School Counseling MA
+Creative Writing MFA
+Criminology & Criminal Justice MS
+Curriculum and Instruction EDD
+Curriculum and Instruction PHD
+Dance MFA
+Digital Communication CRT
+Economics (Quantitative) MA
+Economics (Quantitative) PHD
+Educational Leadership EDD
+Educational Leadership EDS
+Educational Leadership MA
+Educational Leadership PhD
+Educational Psychology EDS
+Educational Psychology MA
+Educational Psychology PhD
+Educational Research PhD
+Electrical Engineering MSEE
+Electrical Engineering PhD
+Elementary Education EDS
+Elementary Education MA
+English MA
+English PhD
+English as a Second Language MA
+Environmental Engineering MS
+Family Nurse Practitioner CRT
+Finance MS
+Finance PhD
+Geographic Information Systems CRT
+Geography MS
+Geography PhD
+Geology MS
+Geology PhD
+German MA
+Health Education & Promotion MPH
+Health Education & Promotion PhD
+Health Studies MA
+Higher Education Administration EDD
+Higher Education Administration MA
+Higher Education Administration PhD
+History MA
+History PhD
+Hospitality Management MS
+Human Development and Family Studies MS
+Human Environmental Sciences MHS
+Human Nutrition MS
+Human Nutrition PhD
+Instructional Leadership EDD
+Instructional Leadership PhD
+Instructional Technology CRT
+Instructional Technology MA
+Interdisciplinary MA
+Interdisciplinary MS
+Interdisciplinary PhD
+Journalism and Media Studies MA
+Kinesiology MA
+Kinesiology PhD
+Library & Information Studies MLIS
+Literacy Research, Theory & Pedagogy CRT
+Management Information Systems MS
+Management MA
+Management PhD
+Marine Science MS
+Marketing MS
+Marketing PhD
+Master's Entry to the Profession of Nursing MSN
+Materials Metallurgical Engineering PhD
+Materials Science PhD
+Mathematics MA
+Mathematics PhD
+Mechanical Engineering MSME
+Mechanical Engineering PhD
+Metallurgical Engineering MS
+Museum Studies CRT
+Music DMA
+Music MM
+Non-Degree Arts & Sciences Student
+Non-Degree Business Student
+Non-Degree Business Student (Distance Learning)
+Non-Degree Communication & Information Sciences Student
+Non-Degree Communication & Information Sciences Student (Distance Learning)
+Non-Degree Community Health Sciences Student
+Non-Degree Education Student
+Non-Degree Education Student (Distance Learning)
+Non-Degree Education Student Certification
+Non-Degree Engineering Student
+Non-Degree Engineering Student (Distance Learning)
+Non-Degree Human Environmental Sciences Student
+Non-Degree Human Environmental Sciences Student (Distance Learning)
+Non-Degree Nursing Student
+Non-Degree Nursing Student (Distance Learning)
+Non-Degree Social Work Student
+Non-Degree Social Work Student (Distance Learning)
+Nursing DNP
+Nursing MSN
+Nursing PhD
+Operations Management MS
+Operations Management PhD
+Physics MS
+Physics PhD
+Political Science MA
+Political Science PhD
+Population Health Sciences MS
+Psychiatric Mental Health Nurse Practitioner CRT
+Psychology PhD
+Public Administration MPA
+Qualitative Research CRT
+Quantitative Research CRT
+Religion in Culture MA
+Romance Languages MA
+Romance Languages PhD
+Rural Community Health MS
+School Psychology PhD
+Secondary Education EDS
+Secondary Education MA
+Social & Cultural Studies CRT
+Social Work DSW
+Social Work MSW
+Social Work PhD
+Special Education EDD
+Special Education EDS
+Special Education MA
+Special Education PhD
+Speech Language Pathology MS
+Studio Art MA
+Studio Art MFA
+Tax Accounting MTA
+Teaching English to Speakers of Other Languages
+Theatre MFA
+Women Studies CRT
+Women Studies MA
