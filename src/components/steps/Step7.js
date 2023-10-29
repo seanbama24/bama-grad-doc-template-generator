@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import './Step7.css';
 
-export default function Step7() {
+export default function Step7({name, degree, graduationYear}) {
   return (
     <Box
       component="form"
@@ -17,15 +17,15 @@ export default function Step7() {
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Student's Full Legal Name</td>
-            <td>Placeholder</td>
+            <td>{name}</td>
           </tr>
           <tr>
             <td>Degree</td>
-            <td>Placeholder</td>
+            <td>{degree}</td>
           </tr>
           <tr>
             <td>Graduation Year</td>
-            <td>Placeholder</td>
+            <td>{graduationYear.getFullYear().toString()}</td>
           </tr>
         </table>
 
