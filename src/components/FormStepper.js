@@ -17,6 +17,7 @@ import Step7 from './steps/Step7';
 import Step8 from './steps/Step8';
 import generateDocument from '../generateDocument';
 import { ChapterTitleBox } from './ChapterTitleBox';
+import { CommitteeMemberBox } from './CommitteeMemberBox';
 
 const steps = ['Introduction', 
                'Student Information', 
@@ -61,7 +62,9 @@ function FormStepper() {
   const [includeAppendix, setIncludeAppendix] = React.useState(false);
   const [includeBiographical, setInlcudeBiographical] = React.useState(false);
   // Step 6
-  // Needs to be updated before implementation
+  const [includesCoChair, setIncludesCoChair] = React.useState(false)
+  const [committeeMembers, setCommitteeMembers] = React.useState([<CommitteeMemberBox title={"Committee Member"} />])
+
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -148,6 +151,7 @@ function FormStepper() {
   const handleIncludeChapterHeadings = () => {
     setIncludesChapterHeadings(!includesChapterHeadings);
   };
+
   // const handleChapterHeadings = (event) => {
   //   setChapterHeadings(event.target.value);
   // };
@@ -186,6 +190,9 @@ function FormStepper() {
   };
   const handleIncludeBiographical = () => {
     setInlcudeBiographical(!includeBiographical);
+  }
+  const handleIncludeCoChairs = () => {
+    setIncludesCoChair(!includesCoChair);
   };
 
   return (
@@ -229,7 +236,7 @@ function FormStepper() {
             3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} chapterHeadingsText={chapterHeadingStrings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings} updateChapterHeadingsText={handleChapterHeadingStrings} handleNewText={handleAddNewText}/>,
             4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
             5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
-            6: <Step6 />,
+            6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
             7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix}/>,
             8: <Step8 />,
           }[activeStep]

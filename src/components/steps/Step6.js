@@ -1,22 +1,26 @@
 // Step 6 - Graduate Supervisory Committee Information
 import * as React from 'react';
+import { useState } from 'react'
 import Box from '@mui/material/Box';
 import { TextField, Typography } from '@mui/material';
-import { useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
+import { Button } from '@mui/base';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { CommitteeMemberBox } from '../CommitteeMemberBox';
 
-const committeeChairList = [
-  {
-    value: '1',
-    label: 'I have one chair',
-  },
-  {
-    value: '2',
-    label: 'I have two co-chairs',
-  }
-];
-
-export default function Step2() {
+export default function Step6({ checkmark, committeeMembers, updateCheckmark, updateCommitteeMembers }) {
+  const generateNewMember = () => {
+    const newChapter = <CommitteeMemberBox title={"Committee Member"}/>;
+    updateCommitteeMembers([...committeeMembers, newChapter]);
+  };
+  const removeLastMember = () => {
+    if (committeeMembers.length > 0) {
+      const newMemberList = [...committeeMembers]
+      newMemberList.splice(committeeMembers.length - 1, 1)
+      updateCommitteeMembers(newMemberList);
+    }
+  };
+  // const headingObjects = chapterHeadings.map((heading) => heading.object)
   return (
     <Box
       component="form"
@@ -26,45 +30,33 @@ export default function Step2() {
       <div>
         <h2 style={{color: '#9E1B32'}}>Graduate Supervisory Committee Information</h2>
         <hr></hr>
-        <Typography variant="h5">Do you have one committee chair or two co-chairs?</Typography>
-        <TextField
-          id="template-selector"
-          select
-          label="Select"
-          helperText="Please enter your committee members."
-        >
-          {committeeChairList.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
+        <Typography variant="h5">Adding Committee Members:</Typography>
+        <Typography variant="h6">For a Thesis, you need three at least three people on the committee</Typography>
+        <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
+        <Typography variant="h6">For a PhD, you need three at least five people on the committee</Typography>
 
-        <Typography variant="h5">Chair</Typography>
-        <TextField 
-          variant="outlined" 
-          required
-          fullWidth
-          rows={1}/>
-        
-        <Typography variant="h5">Committee Member</Typography>
-        <TextField 
-          variant="outlined" 
-          required
-          fullWidth
-          rows={1}/>
-        
-        <Typography variant="h5">Committee Member</Typography>
-        <TextField 
-          variant="outlined" 
-          required
-          fullWidth
-          rows={1}/>
+      <div>
+        <CommitteeMemberBox title={"Committee Chair"}/>
       </div>
-      <div style={{marginTop: '2em'}}>
-        <button style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>
-          Add another committee member
-        </button>
+
+        
+        <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={checkmark} onChange={updateCheckmark} style={{color: '#9E1B32'}}/>} label="Would you like add a Co-Chair?" />
+        
+        {checkmark ? 
+        <div id="chapter-input">
+          <CommitteeMemberBox title={"Co-Chair"}/>
+        </div> : <div id="empty-input"></div>}
+        
+
+      </div>
+      <div>
+        <div id="chapter-input">
+          {committeeMembers}
+          <div style={{marginTop: '1em'}}>
+            <Button onClick={generateNewMember} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add committee member</Button>
+            <Button onClick={removeLastMember} style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Remove last committee member</Button>
+          </div>
+        </div>
       </div>
     </Box>
   );
