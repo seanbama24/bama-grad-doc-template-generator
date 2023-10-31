@@ -8,10 +8,10 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { CommitteeMemberBox } from '../CommitteeMemberBox';
 
-export default function Step6({ checkmark, committeeMembers, updateCommitteeChair, updateCommitteeCoChair, updateCheckmark, updateCommitteeMembers }) {
+export default function Step6({ checkmark, committeeMembers, committeeChairName, committeeCoChairName, updateCommitteeChair, updateCommitteeCoChair, updateCheckmark, updateCommitteeMembers }) {
   const generateNewMember = () => {
-    const newChapter = <CommitteeMemberBox title={"Committee Member"}/>;
-    updateCommitteeMembers([...committeeMembers, newChapter]);
+    const newMember = <CommitteeMemberBox boxtitle={"Committee Member"}/>;
+    updateCommitteeMembers([...committeeMembers, newMember]);
   };
   const removeLastMember = () => {
     if (committeeMembers.length > 0) {
@@ -20,7 +20,6 @@ export default function Step6({ checkmark, committeeMembers, updateCommitteeChai
       updateCommitteeMembers(newMemberList);
     }
   };
-  // const headingObjects = chapterHeadings.map((heading) => heading.object)
   return (
     <Box
       component="form"
@@ -35,12 +34,12 @@ export default function Step6({ checkmark, committeeMembers, updateCommitteeChai
         <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
         <Typography variant="h6">For a PhD, you need three at least five people on the committee</Typography>
 
-        <CommitteeMemberBox title={"Committee Chair"} handler={updateCommitteeChair}/>
+        <CommitteeMemberBox boxtitle={"Committee Chair"} handler={updateCommitteeChair} text={committeeChairName}/>
         
         <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={checkmark} onChange={updateCheckmark} style={{color: '#9E1B32'}}/>} label="Would you like add a Co-Chair?" />
         {checkmark ? 
         <div id="chapter-input">
-          <CommitteeMemberBox title={"Co-Chair"} handler={updateCommitteeCoChair}/>
+          <CommitteeMemberBox boxtitle={"Co-Chair"} handler={updateCommitteeCoChair} text={committeeCoChairName}/>
         </div> : <div id="empty-input"></div>}
       </div>
       

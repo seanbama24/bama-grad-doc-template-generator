@@ -193,6 +193,9 @@ function FormStepper() {
   };
   const handleIncludeCoChairs = () => {
     setIncludesCoChair(!includesCoChair);
+    if (includesCoChair){ // if box is not checked
+        setCommitteeCoChair('');
+    }
   };
   const handleCommitteeChair = (event) => {
     setCommitteeChair(event.target.value);
@@ -242,8 +245,8 @@ function FormStepper() {
             3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} chapterHeadingsText={chapterHeadingStrings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings} updateChapterHeadingsText={handleChapterHeadingStrings} handleNewText={handleAddNewText}/>,
             4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
             5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
-            6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} updateCommitteeChair={handleCommitteeChair} updateCommitteeCoChair={handleCommitteeCoChair} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
-            7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair}/>,
+            6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} committeeChairName={committeeChair} committeeCoChairName={committeeCoChair} updateCommitteeChair={handleCommitteeChair} updateCommitteeCoChair={handleCommitteeCoChair} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
+            7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair} includesCoChair={includesCoChair}/>,
             8: <Step8 />,
           }[activeStep]
         }

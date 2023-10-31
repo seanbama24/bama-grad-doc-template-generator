@@ -3,14 +3,14 @@ import { TextField } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export const CommitteeMemberBox = ({ title, text, handler }) => {
+export const CommitteeMemberBox = ({ boxtitle, text, handler }) => {
     // const [text, setText] = React.useState('')
     // const handleText = (event) => {
     //     setText(event.target.value);
     // };
     return (
       <div>
-        <h3>{title}</h3>
+        <h3>{boxtitle}</h3>
         <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
           <TextField
             id="filled-adornment-weight"
