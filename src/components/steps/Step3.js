@@ -1,26 +1,40 @@
 // Step 3 - Table of Contents
 import * as React from 'react';
-import { useState } from 'react'
+// import { useState } from 'react'
 import Box from '@mui/material/Box';
 import { Button } from '@mui/base';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { ChapterTitleBox } from '../ChapterTitleBox';
 
-export default function Step3({ checkmark, chapterHeadings, updateCheckmark, updateChapterHeadings }) {
+export default function Step3({ checkmark, chapterHeadings, chapterHeadingsText, updateCheckmark, updateChapterHeadings, updateChapterHeadingsText, handleNewText}) {
   const generateNewChapter = () => {
-    // const newText = ''
-    const newChapter = <ChapterTitleBox num={chapterHeadings.length + 1}/>;
+    const fillerText = 'Title Goes Here...';
+    // var updatedChapterTexts = [...chapterHeadingsText, fillerText];
+    const newChapter = <ChapterTitleBox num={chapterHeadings.length + 1} text={fillerText} updateText={updateChapterHeadingsText}/>;
     updateChapterHeadings([...chapterHeadings, newChapter]);
+    // chapterHeadingsText.push(newText);
+    // handleNewText(updatedChapterTexts);
+    // console.log('adding ' + chapterHeadingsText);
   };
   const removeLastChapter = () => {
     if (chapterHeadings.length > 1) {
-      const newChapterList = [...chapterHeadings]
-      newChapterList.splice(chapterHeadings.length - 1, 1)
+      const newChapterList = [...chapterHeadings];
+      newChapterList.pop();
+      const newTextList = [...chapterHeadingsText];
+      newTextList.pop();
+      newTextList.pop();
+      // chapterHeadings.pop();
+      // newTextList.splice(chapterHeadings.length - 1, 1);
       updateChapterHeadings(newChapterList);
+      handleNewText(newTextList);
+      console.log('deleting ' + chapterHeadingsText);
       // chapterHeadings = newChapterList
     }
   };
+  if (chapterHeadings.length === 0) {
+    generateNewChapter();
+  }
   // const headingObjects = chapterHeadings.map((heading) => heading.object)
   return (
     <Box

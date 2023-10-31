@@ -3,11 +3,10 @@ import { TextField } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export const ChapterTitleBox = ({ num, text }) => {
-    // const [text, setText] = React.useState('')
-    // const handleText = (event) => {
-    //     setText(event.target.value);
-    // };
+export const ChapterTitleBox = ({ num, text, updateText}) => {
+    // const handleTextsUpdate = (event) => {
+    //   updateText(num, event);
+    // }
     return (
       <div>
         <h3>Chapter Title {num}</h3>
@@ -20,6 +19,7 @@ export const ChapterTitleBox = ({ num, text }) => {
               'aria-label': 'weight',
             }}
             value={text}
+            onChange={updateText(num)}
           />
         </FormControl>
       </div>
