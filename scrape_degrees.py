@@ -21,12 +21,11 @@ try:
     degrees = []
     for link in all_links:
         degrees.append(link.text)
-    # print(f'\nDegrees = {degrees}\n')
     degrees.sort()
     file = open('degrees.txt','w')
     for degree in degrees:
         file.write(degree + '\n')
-        print(degree)
+        # print(degree)
 except:
     file = open('error.txt','w')
     file.write('Unable to open webpage and parse tables')
