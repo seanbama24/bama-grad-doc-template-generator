@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { CommitteeMemberBox } from '../CommitteeMemberBox';
 
-export default function Step6({ checkmark, committeeMembers, updateCheckmark, updateCommitteeMembers }) {
+export default function Step6({ checkmark, committeeMembers, updateCommitteeChair, updateCommitteeCoChair, updateCheckmark, updateCommitteeMembers }) {
   const generateNewMember = () => {
     const newChapter = <CommitteeMemberBox title={"Committee Member"}/>;
     updateCommitteeMembers([...committeeMembers, newChapter]);
@@ -35,12 +35,12 @@ export default function Step6({ checkmark, committeeMembers, updateCheckmark, up
         <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
         <Typography variant="h6">For a PhD, you need three at least five people on the committee</Typography>
 
-        <CommitteeMemberBox title={"Committee Chair"}/>
+        <CommitteeMemberBox title={"Committee Chair"} handler={updateCommitteeChair}/>
         
         <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={checkmark} onChange={updateCheckmark} style={{color: '#9E1B32'}}/>} label="Would you like add a Co-Chair?" />
         {checkmark ? 
         <div id="chapter-input">
-          <CommitteeMemberBox title={"Co-Chair"}/>
+          <CommitteeMemberBox title={"Co-Chair"} handler={updateCommitteeCoChair}/>
         </div> : <div id="empty-input"></div>}
       </div>
       

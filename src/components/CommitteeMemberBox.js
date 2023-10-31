@@ -3,7 +3,7 @@ import { TextField } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export const CommitteeMemberBox = ({ title, text }) => {
+export const CommitteeMemberBox = ({ title, text, handler }) => {
     // const [text, setText] = React.useState('')
     // const handleText = (event) => {
     //     setText(event.target.value);
@@ -20,6 +20,7 @@ export const CommitteeMemberBox = ({ title, text }) => {
               'aria-label': 'weight',
             }}
             value={text}
+            onChange={handler}
           />
         </FormControl>
       </div>

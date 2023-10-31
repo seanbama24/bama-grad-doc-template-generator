@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import './Step7.css';
 
-export default function Step7({name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix}) {
+export default function Step7({name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix, comchair, comcochair}) {
   return (
     <Box
       component="form"
@@ -121,11 +121,11 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Chair</td>
-            <td>Placeholder</td>
+            <td>{comchair}</td>
           </tr>
           <tr>
             <td>Co Chair</td>
-            <td>Placeholder</td>
+            <td>{comcochair}</td>
           </tr>
           <tr>
             <td>Committee Member</td>
