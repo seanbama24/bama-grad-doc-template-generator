@@ -35,20 +35,15 @@ export default function Step6({ checkmark, committeeMembers, updateCheckmark, up
         <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
         <Typography variant="h6">For a PhD, you need three at least five people on the committee</Typography>
 
-      <div>
         <CommitteeMemberBox title={"Committee Chair"}/>
-      </div>
-
         
         <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={checkmark} onChange={updateCheckmark} style={{color: '#9E1B32'}}/>} label="Would you like add a Co-Chair?" />
-        
         {checkmark ? 
         <div id="chapter-input">
           <CommitteeMemberBox title={"Co-Chair"}/>
         </div> : <div id="empty-input"></div>}
-        
-
       </div>
+      
       <div>
         <div id="chapter-input">
           {committeeMembers}

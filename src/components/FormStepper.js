@@ -16,8 +16,6 @@ import Step6 from './steps/Step6';
 import Step7 from './steps/Step7';
 import Step8 from './steps/Step8';
 import generateDocument from '../generateDocument';
-import { ChapterTitleBox } from './ChapterTitleBox';
-import { CommitteeMemberBox } from './CommitteeMemberBox';
 
 const steps = ['Introduction', 
                'Student Information', 
@@ -63,7 +61,7 @@ function FormStepper() {
   const [includeBiographical, setInlcudeBiographical] = React.useState(false);
   // Step 6
   const [includesCoChair, setIncludesCoChair] = React.useState(false)
-  const [committeeMembers, setCommitteeMembers] = React.useState([<CommitteeMemberBox title={"Committee Member"} />])
+  const [committeeMembers, setCommitteeMembers] = React.useState([])
 
   const isStepOptional = (step) => {
     return step === 1;
