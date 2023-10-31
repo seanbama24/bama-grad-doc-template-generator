@@ -10,7 +10,7 @@ function App() {
       <img src={logo} width={500} height={75} alt="logo" style={{margin: '1em 5em 0 0'}}/>
       <img src={picture} width={500} height={60} alt="logo" style={{margin: '1em 0 0 5em'}}/>
       <p style={{margin: '1em 0 0 0'}}>
-        The University of <span style={{color: '#9E1B32'}}>Alabama</span> Graduate School Thesis Document Generator
+        The University of <span style={{color: '#9E1B32'}}>Alabama</span> Graduate School Thesis and Dissertation Document Generator
       </p>
       <FormStepper/>
     </div>
