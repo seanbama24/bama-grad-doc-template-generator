@@ -46,8 +46,9 @@ function FormStepper() {
   const [titleLine2, setTitleLine2] = React.useState('');
   const [titleLine3, setTitleLine3] = React.useState('');
   // Step 3
-  const [includesChapterHeadings, setIncludesChapterHeadings] = React.useState(false)
-  const [chapterHeadings, setChapterHeadings] = React.useState([<ChapterTitleBox num={1} />])
+  const [includesChapterHeadings, setIncludesChapterHeadings] = React.useState(false);
+  const [chapterHeadingStrings, setChapterHeadingStrings] = React.useState([]);
+  const [chapterHeadings, setChapterHeadings] = React.useState([]);
   // Step 4
   const [abstractText, setAbstractText] = React.useState('');
   // Step 5
@@ -59,7 +60,8 @@ function FormStepper() {
   const [includeSymbols, setIncludeSymbols] = React.useState(false);
   const [includeAppendix, setIncludeAppendix] = React.useState(false);
   const [includeBiographical, setInlcudeBiographical] = React.useState(false);
-
+  // Step 6
+  // Needs to be updated before implementation
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -146,10 +148,18 @@ function FormStepper() {
   const handleIncludeChapterHeadings = () => {
     setIncludesChapterHeadings(!includesChapterHeadings);
   };
-
   // const handleChapterHeadings = (event) => {
   //   setChapterHeadings(event.target.value);
   // };
+  const handleChapterHeadingStrings = (event, index) => {
+    const specificString = chapterHeadingStrings[index];
+    const newStrings = [...chapterHeadingStrings];
+    // newStrings[index] = event.target;
+    setChapterHeadingStrings(newStrings);
+  };
+  const handleAddNewText = (updatedArray) => {
+    setChapterHeadingStrings(updatedArray);
+  };
   const handleAbstractText = (event) => {
     setAbstractText(event.target.value)
   };
@@ -176,7 +186,7 @@ function FormStepper() {
   };
   const handleIncludeBiographical = () => {
     setInlcudeBiographical(!includeBiographical);
-  }
+  };
 
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
@@ -216,11 +226,11 @@ function FormStepper() {
             0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
             1: <Step1 name={name} degree={degree} gradYear={graduationYear} updateName={handleName} updateDegree={handleDegree} updateGradYear={handleYear}/>,
             2: <Step2 style={style} documentType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} updateStyle={handleStyle} updateDocumentType={handleDocType} updateFont={handleFont} updateLine1={handleTL1} updateLine2={handleTL2} updateLine3={handleTL3}/>,
-            3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings}/>,
+            3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} chapterHeadingsText={chapterHeadingStrings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings} updateChapterHeadingsText={handleChapterHeadingStrings} handleNewText={handleAddNewText}/>,
             4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
             5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
             6: <Step6 />,
-            7: <Step7 name={name} degree={degree} graduationYear={graduationYear}/>,
+            7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix}/>,
             8: <Step8 />,
           }[activeStep]
         }

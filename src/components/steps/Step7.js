@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import './Step7.css';
 
-export default function Step7({name, degree, graduationYear}) {
+export default function Step7({name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix}) {
   return (
     <Box
       component="form"
@@ -32,16 +32,16 @@ export default function Step7({name, degree, graduationYear}) {
         <h2>Document Information</h2>
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
-            <td>Template Type</td>
-            <td>Placeholder</td>
+            <td>Style Guide</td>
+            <td>{style}</td>
           </tr>
           <tr>
-            <td>Style Guide</td>
-            <td>Placeholder</td>
+            <td>Template Type</td>
+            <td>{docType}</td>
           </tr>
           <tr>
             <td>Font Type</td>
-            <td>Placeholder</td>
+            <td>{font}</td>
           </tr>
           <tr>
             <td>Font Size</td>
@@ -49,15 +49,15 @@ export default function Step7({name, degree, graduationYear}) {
           </tr>
           <tr>
             <td>Title Line 1</td>
-            <td>Placeholder</td>
+            <td>{titleLine1}</td>
           </tr>
           <tr>
             <td>Title Line 2</td>
-            <td>Placeholder</td>
+            <td>{titleLine2}</td>
           </tr>
           <tr>
             <td>Title Line 3</td>
-            <td>Placeholder</td>
+            <td>{titleLine3}</td>
           </tr>
         </table>
 
@@ -77,7 +77,7 @@ export default function Step7({name, degree, graduationYear}) {
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Abstract</td>
-            <td>Placeholder</td>
+            <td>{abstract}</td>
           </tr>
         </table>  
 
@@ -85,35 +85,35 @@ export default function Step7({name, degree, graduationYear}) {
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Dedication:</td>
-            <td>Placeholder</td>
+            <td>{dedication ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>Acknowledgments:</td>
-            <td>Placeholder</td>
+            <td>{acknowledgements ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>Preface:</td>
-            <td>Placeholder</td>
+            <td>{preface ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>Figures:</td>
-            <td>Placeholder</td>
+            <td>{figures ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>Tables:</td>
-            <td>Placeholder</td>
+            <td>{tables ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>Symbols:</td>
-            <td>Placeholder</td>
+            <td>{symbols ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>References:</td>
-            <td>Placeholder</td>
+            <td>{references ? 'Enabled':'Disabled'}</td>
           </tr>
           <tr>
             <td>Appendix:</td>
-            <td>Placeholder</td>
+            <td>{appendix ? 'Enabled':'Disabled'}</td>
           </tr>
         </table> 
 
