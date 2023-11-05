@@ -207,7 +207,7 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <h2 style={{"color": "grey"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
+      <h2 style={{"color": "black"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
       <hr></hr>
       <div style={{"display": "flex", "flexGrow": "1"}}>
         <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
@@ -241,7 +241,7 @@ function FormStepper() {
         </div>
 
         {/* This acts as a switch statement to decide what component to render based on activeStep */}
-        <div id="textView" style={{"height": "650px", "margin-left": "20px", /*"margin-right": "20px", "margin-top": "20px", "overflow-y": "auto", */"flexGrow": "4", "max-width": "1000px"}}>
+        <div id="textView" style={{"height": "650px", "margin-left": "20px", /*"margin-right": "20px", "margin-top": "20px", "overflow-y": "auto", */"flexGrow": "4", "max-width": "900px"}}>
           {
             {
               0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
