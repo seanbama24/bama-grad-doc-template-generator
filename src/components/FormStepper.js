@@ -207,52 +207,78 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          // if (isStepOptional(index)) {
-          //   labelProps.optional = (
-          //     <Typography variant="caption">Optional</Typography>
-          //   );
-          // }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
-          return (
-            <Step key={label} {...stepProps}
-                  sx={{ 
-                    '& .MuiStepLabel-root .Mui-completed': {
-                      color: '#9E1B32'
-                    },
-                    '& .MuiStepLabel-root .Mui-active': {
-                      color: '#9E1B32'
-                    }
-                  }}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
+      <h2 style={{"color": "grey"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
+      <hr></hr>
+      <div style={{"display": "flex", "flexGrow": "1"}}>
+        <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
+          <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
+            {steps.map((label, index) => {
+              const stepProps = {};
+              const labelProps = {};
+              // if (isStepOptional(index)) {
+              //   labelProps.optional = (
+              //     <Typography variant="caption">Optional</Typography>
+              //   );
+              // }
+              if (isStepSkipped(index)) {
+                stepProps.completed = false;
+              }
+              return (
+                <Step key={label} {...stepProps}
+                      sx={{ 
+                        '& .MuiStepLabel-root .Mui-completed': {
+                          color: '#9E1B32'
+                        },
+                        '& .MuiStepLabel-root .Mui-active': {
+                          color: '#9E1B32'
+                        }
+                      }}>
+                  <StepLabel {...labelProps}>{label}</StepLabel>
+                </Step>
+              );
+            })}
+          </Stepper>
+        </div>
 
-      {/* This acts as a switch statement to decide what component to render based on activeStep */}
-      <div id="textView" style={{"height": "650px", "margin-left": "20px", "margin-right": "20px", "margin-top": "20px", "overflow-y": "auto"}}>
-        {
+        {/* This acts as a switch statement to decide what component to render based on activeStep */}
+        <div id="textView" style={{"height": "650px", "margin-left": "20px", /*"margin-right": "20px", "margin-top": "20px", "overflow-y": "auto", */"flexGrow": "4", "max-width": "1000px"}}>
           {
-            0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
-            1: <Step1 name={name} degree={degree} gradYear={graduationYear} updateName={handleName} updateDegree={handleDegree} updateGradYear={handleYear}/>,
-            2: <Step2 style={style} documentType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} updateStyle={handleStyle} updateDocumentType={handleDocType} updateFont={handleFont} updateLine1={handleTL1} updateLine2={handleTL2} updateLine3={handleTL3}/>,
-            3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} chapterHeadingsText={chapterHeadingStrings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings} updateChapterHeadingsText={handleChapterHeadingStrings} handleNewText={handleAddNewText}/>,
-            4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
-            5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
-            6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} committeeChairName={committeeChair} committeeCoChairName={committeeCoChair} updateCommitteeChair={handleCommitteeChair} updateCommitteeCoChair={handleCommitteeCoChair} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
-            7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair} includesCoChair={includesCoChair}/>,
-            8: <Step8 />,
-          }[activeStep]
-        }
+            {
+              0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
+              1: <Step1 name={name} degree={degree} gradYear={graduationYear} updateName={handleName} updateDegree={handleDegree} updateGradYear={handleYear}/>,
+              2: <Step2 style={style} documentType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} updateStyle={handleStyle} updateDocumentType={handleDocType} updateFont={handleFont} updateLine1={handleTL1} updateLine2={handleTL2} updateLine3={handleTL3}/>,
+              3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} chapterHeadingsText={chapterHeadingStrings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings} updateChapterHeadingsText={handleChapterHeadingStrings} handleNewText={handleAddNewText}/>,
+              4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
+              5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
+              6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} committeeChairName={committeeChair} committeeCoChairName={committeeCoChair} updateCommitteeChair={handleCommitteeChair} updateCommitteeCoChair={handleCommitteeCoChair} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
+              7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair} includesCoChair={includesCoChair}/>,
+              8: <Step8 />,
+            }[activeStep]
+          }
+          {/* This contains previous, next, skip buttons for stepping */}
+          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+            <Button
+              style={{color: '#9E1B32'}}
+              color="inherit"
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              sx={{ mr: 1 }}
+            >
+              Back
+            </Button>
+            <Box sx={{ flex: '1 1 auto' }} />
+            {isStepOptional(activeStep) && (
+              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+                Skip
+              </Button>
+            )}
+
+            {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: '#9E1B32'}}>Next</Button>}
+          </Box>
+        </div>
       </div>
       
-      {/* This contains previous, next, skip buttons for stepping */}
+      {/* This contains previous, next, skip buttons for stepping
       <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
         <Button
           style={{color: '#9E1B32'}}
@@ -271,7 +297,7 @@ function FormStepper() {
         )}
 
         {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: '#9E1B32'}}>Next</Button>}
-      </Box>
+      </Box> */}
 
 
       {/* This contains old code used as a reference when setting up this component */}
