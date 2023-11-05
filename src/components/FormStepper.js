@@ -207,7 +207,7 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <h2 style={{"color": "black"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
+      <h2 style={{"color": "black"}}>Thesis and Dissertation Document Generator</h2>
       <hr></hr>
       <div style={{"display": "flex", "flexGrow": "1"}}>
         <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
