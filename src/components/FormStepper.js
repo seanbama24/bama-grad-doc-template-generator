@@ -207,7 +207,7 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}}>
+      <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
