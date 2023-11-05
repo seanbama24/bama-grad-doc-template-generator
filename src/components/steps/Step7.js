@@ -11,8 +11,6 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
       autoComplete="off"
     >
       <div>
-        <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
-        <hr></hr>
         <h2>Student information</h2>
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>

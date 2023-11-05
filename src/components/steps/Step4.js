@@ -18,8 +18,6 @@ export default function Step4({abstractText, updateAbstractText}) {
       autoComplete="off"
     >
       <div>
-        <h2 style={{color: '#9E1B32'}}>Abstract Information</h2>
-        <hr></hr>
         <Typography variant="h7" fontWeight="bold">Abstract</Typography>
         <TextField 
           variant="outlined" 
