@@ -3,7 +3,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import './Step7.css';
 
-export default function Step7({name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix, comchair, comcochair, includesCoChair}) {
+export default function Step7({updateStep, name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix, comchair, comcochair, includesCoChair}) {
+  const handleEditInfo = (index) => {
+    updateStep(index);
+  };
   return (
     <Box
       component="form"
@@ -11,9 +14,9 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
       autoComplete="off"
     >
       <div>
-        <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
-        <hr></hr>
-        <h2>Student information</h2>
+        {/* <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
+        <hr></hr> */}
+        <h2>Student Info: <a onClick={() => handleEditInfo(1)}>Edit Student Info</a></h2>
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Student's Full Legal Name</td>
@@ -29,7 +32,7 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
           </tr>
         </table>
 
-        <h2>Document Information</h2>
+        <h2>Document Information: <a onClick={() => handleEditInfo(2)}></a></h2>
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Style Guide</td>
@@ -61,7 +64,7 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
           </tr>
         </table>
 
-        <h2>Table of Contents</h2>
+        <h2>Table of Contents: <a onClick={() => handleEditInfo(3)}></a></h2>{/*<div onClick={handleEditInfo(3)}>Edit Table of Contents</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Format Type</td>
@@ -73,7 +76,7 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
           </tr>
         </table>
 
-        <h2>Abstract</h2>
+        <h2>Abstract: <a onClick={() => handleEditInfo(4)}></a></h2>{/*<div onClick={handleEditInfo(4)}>Edit Abstract</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Abstract</td>
@@ -81,43 +84,43 @@ export default function Step7({name, degree, graduationYear, style, docType, fon
           </tr>
         </table>  
 
-        <h2>Optional Sections</h2>
+        <h2>Optional Sections: <a onClick={() => handleEditInfo(5)}></a></h2>{/*<div onClick={handleEditInfo(5)}>Edit Optional Sections</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Dedication:</td>
-            <td>{dedication ? 'Enabled':'Disabled'}</td>
+            <td>{dedication ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>Acknowledgments:</td>
-            <td>{acknowledgements ? 'Enabled':'Disabled'}</td>
+            <td>{acknowledgements ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>Preface:</td>
-            <td>{preface ? 'Enabled':'Disabled'}</td>
+            <td>{preface ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>Figures:</td>
-            <td>{figures ? 'Enabled':'Disabled'}</td>
+            <td>{figures ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>Tables:</td>
-            <td>{tables ? 'Enabled':'Disabled'}</td>
+            <td>{tables ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>Symbols:</td>
-            <td>{symbols ? 'Enabled':'Disabled'}</td>
+            <td>{symbols ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>References:</td>
-            <td>{references ? 'Enabled':'Disabled'}</td>
+            <td>{references ? 'Included':'Not Included'}</td>
           </tr>
           <tr>
             <td>Appendix:</td>
-            <td>{appendix ? 'Enabled':'Disabled'}</td>
+            <td>{appendix ? 'Included':'Not Included'}</td>
           </tr>
         </table> 
 
-        <h2>Graduate Supervisory Committee Members</h2>
+        <h2>Graduate Supervisory Committee Members: <a onClick={() => handleEditInfo(6)}></a></h2>{/*<div onClick={handleEditInfo(6)}>Edit Committee Info</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Chair</td>
