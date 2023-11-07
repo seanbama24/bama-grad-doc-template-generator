@@ -103,6 +103,10 @@ function FormStepper() {
     });
   };
 
+  const handleEditActiveStep = (index) => {
+    setActiveStep(index);
+  };
+
   const handleReset = () => {
     setActiveStep(0);
   };
@@ -207,7 +211,7 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <h2 style={{"color": "black"}}>Thesis and Dissertation Document Generator</h2>
+      <h2 style={{"color": "grey"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
       <hr></hr>
       <div style={{"display": "flex", "flexGrow": "1"}}>
         <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
@@ -241,7 +245,7 @@ function FormStepper() {
         </div>
 
         {/* This acts as a switch statement to decide what component to render based on activeStep */}
-        <div id="textView" style={{"height": "650px", "margin-left": "20px", /*"margin-right": "20px", "margin-top": "20px", "overflow-y": "auto", */"flexGrow": "4", "max-width": "900px"}}>
+        <div id="textView" style={{"height": "650px", "margin-left": "20px", /*"margin-right": "20px", "margin-top": "20px", "overflow-y": "auto", */"flexGrow": "4", "max-width": "1000px"}}>
           {
             {
               0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
@@ -251,7 +255,7 @@ function FormStepper() {
               4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
               5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
               6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} committeeChairName={committeeChair} committeeCoChairName={committeeCoChair} updateCommitteeChair={handleCommitteeChair} updateCommitteeCoChair={handleCommitteeCoChair} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
-              7: <Step7 name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair} includesCoChair={includesCoChair}/>,
+              7: <Step7 updateStep={handleEditActiveStep} name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair} includesCoChair={includesCoChair}/>,
               8: <Step8 />,
             }[activeStep]
           }

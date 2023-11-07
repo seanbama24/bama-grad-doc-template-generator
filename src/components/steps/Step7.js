@@ -16,7 +16,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
       <div>
         {/* <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
         <hr></hr> */}
-        <h2>Student Info: <a onClick={() => handleEditInfo(1)}>Edit Student Info</a></h2>
+        <h2>Student Info: <a onClick={() => handleEditInfo(1)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Student Info</a></h2>
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Student's Full Legal Name</td>
@@ -32,7 +32,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           </tr>
         </table>
 
-        <h2>Document Information: <a onClick={() => handleEditInfo(2)}></a></h2>
+        <h2>Document Information: <a onClick={() => handleEditInfo(2)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Document Info</a></h2>
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Style Guide</td>
@@ -64,7 +64,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           </tr>
         </table>
 
-        <h2>Table of Contents: <a onClick={() => handleEditInfo(3)}></a></h2>{/*<div onClick={handleEditInfo(3)}>Edit Table of Contents</div>*/}
+        <h2>Table of Contents: <a onClick={() => handleEditInfo(3)} style={{'color':'blue', 'text-decoration': 'underline'}} >Edit Table of Contents</a></h2>{/*<div onClick={handleEditInfo(3)}>Edit Table of Contents</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Format Type</td>
@@ -76,7 +76,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           </tr>
         </table>
 
-        <h2>Abstract: <a onClick={() => handleEditInfo(4)}></a></h2>{/*<div onClick={handleEditInfo(4)}>Edit Abstract</div>*/}
+        <h2>Abstract: <a onClick={() => handleEditInfo(4)} style={{'color':'blue', 'text-decoration': 'underline'}} >Edit Abstract</a></h2>{/*<div onClick={handleEditInfo(4)}>Edit Abstract</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Abstract</td>
@@ -84,7 +84,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           </tr>
         </table>  
 
-        <h2>Optional Sections: <a onClick={() => handleEditInfo(5)}></a></h2>{/*<div onClick={handleEditInfo(5)}>Edit Optional Sections</div>*/}
+        <h2>Optional Sections: <a onClick={() => handleEditInfo(5)} style={{'color':'blue', 'text-decoration': 'underline'}}>Change Optional Sections Included</a></h2>{/*<div onClick={handleEditInfo(5)}>Edit Optional Sections</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Dedication:</td>
@@ -120,7 +120,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           </tr>
         </table> 
 
-        <h2>Graduate Supervisory Committee Members: <a onClick={() => handleEditInfo(6)}></a></h2>{/*<div onClick={handleEditInfo(6)}>Edit Committee Info</div>*/}
+        <h2>Graduate Supervisory Committee Members: <a onClick={() => handleEditInfo(6)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Committee Members</a></h2>{/*<div onClick={handleEditInfo(6)}>Edit Committee Info</div>*/}
         <table style={{margin: '0 0 5em 2em'}}>
           <tr>
             <td>Chair</td>
