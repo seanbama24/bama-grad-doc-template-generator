@@ -210,8 +210,6 @@ export default function Step1({ name, degree, gradYear, updateName, updateDegree
       noValidate
       autoComplete="off"
     >
-      <h2 style={{ color: '#9E1B32' }}>Tell Us About Yourself</h2>
-      <hr></hr>
       <h3>What is your full name?</h3>
       <TextField value={name} onChange={updateName}></TextField>
       <h3>What degree are you currently pursuing?</h3>

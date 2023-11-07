@@ -13,8 +13,6 @@ export default function Step5({ dedication, acknowledgements, preface, figures, 
       autoComplete="off"
     >
       <div>
-        <h2 style={{color: '#9E1B32'}}>Additional Document Sections</h2>
-        <hr></hr>
         <FormGroup>
           <FormControlLabel control={<Checkbox checked={dedication} onChange={updateDedication} style={{color: '#9E1B32'}} />} label="Dedication" />
           <FormControlLabel control={<Checkbox checked={acknowledgements} onChange={updateAcknowledgements} style={{color: '#9E1B32'}}/>} label="Acknowledgements" />

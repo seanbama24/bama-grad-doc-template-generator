@@ -27,8 +27,6 @@ export default function Step6({ checkmark, committeeMembers, committeeChairName,
       autoComplete="off"
     >
       <div>
-        <h2 style={{color: '#9E1B32'}}>Graduate Supervisory Committee Information</h2>
-        <hr></hr>
         <Typography variant="h5">Adding Committee Members:</Typography>
         <Typography variant="h6">For a Thesis, you need three at least three people on the committee</Typography>
         <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
