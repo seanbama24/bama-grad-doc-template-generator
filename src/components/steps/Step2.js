@@ -51,8 +51,6 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
       noValidate
       autoComplete="off"
     >
-      <h2 style={{color: '#9E1B32'}}>Document Information</h2>
-      <hr></hr>
       <div>
           <h3>Choose Style Guide *</h3>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
