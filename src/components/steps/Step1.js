@@ -8,6 +8,8 @@ import TextField from '@mui/material/TextField';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { degreeList } from '../../fieldValues';
+import { colors } from '@mui/material';
+import { red } from '@mui/material/colors';
 
 export default function Step1({ name, degree, gradYear, updateName, updateDegree, updateGradYear}) {
   console.log(degreeList.sort());
@@ -17,6 +19,7 @@ export default function Step1({ name, degree, gradYear, updateName, updateDegree
   
       return (
         <DatePicker
+          style={{borderColor: "red"}}
           selected={gradYear}
           onChange={updateGradYear}
           showYearPicker
@@ -39,9 +42,9 @@ export default function Step1({ name, degree, gradYear, updateName, updateDegree
       autoComplete="off"
     >
       <h3>What is your full name?</h3>
-      <TextField value={name} onChange={updateName}></TextField>
+      <TextField value={name} onChange={updateName} /* required={true} label="What is your full name?"*/></TextField>
       <h3>What degree are you currently pursuing?</h3>
-      <FormControl sx={{ m: 1, minWidth: 250 }}>
+      <FormControl sx={{ minWidth: 250 }}>
         <TextField id="degree-selection" select label="Select" value={degree} onChange={updateDegree}>
             {degreeList.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
