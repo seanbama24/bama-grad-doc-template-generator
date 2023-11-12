@@ -8,42 +8,9 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
+import { styles, documentTypes, fontList } from '../../fieldValues';
 
 export default function Step2({ style, documentType, font, titleLine1, titleLine2, titleLine3, updateStyle, updateDocumentType, updateFont, updateLine1, updateLine2, updateLine3}) {
-  const styles = [
-    { value: 'None', label: 'Void' },
-    { value: 'APA', label: 'APA' },
-    { value: 'Chicago Style', label: 'Chicago Style' },
-    { value: 'MLA', label: 'MLA' },
-    { value: 'Turabian', label: 'Turabian' }
-  ];
-  const documentTypes = [
-    { value: 'None', label: 'Void' },
-    { value: 'Dissertation', label: 'Thesis' },
-    { value: 'Thesis', label: 'Dissertation' },
-  ];
-  const fontList = [
-    { value: 'None', label: 'Void' },
-    { value: 'Arial', label: 'Arial' },
-    { value: 'Century', label: 'Century' },
-    { value: 'Garamond', label: 'Garamond' },
-    { value: 'Georgia', label: 'Georgia'},
-    { value: 'Tahoma', label: 'Tahoma' },
-    { value: 'Times New Roman', label: 'Times New Roman' },
-    { value: 'Veranda', label: 'Veranda' }
-  ];
-  // const [style, setSetStyle] = React.useState(styles[0].value);
-  // const [docType, setDocType] = React.useState(documentTypes[0].value);
-  // const [font, setFont] = React.useState(documentTypes[0].value);
-  // const handleChangeStyle = (event) => {
-  //   setSetStyle(event.target.value);
-  // };
-  // const handleChangeDocumentType = (event) => {
-  //   setDocType(event.target.value);
-  // };
-  // const handleChangeFont = (event) => {
-  //   setFont(event.target.value);
-  // };
 
   return (
     <Box
