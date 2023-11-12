@@ -169,7 +169,11 @@ function FormStepper() {
     setChapterHeadingStrings(updatedArray);
   };
   const handleAbstractText = (event) => {
-    setAbstractText(event.target.value)
+    const words = event.target.value.trim().split(/\s+/).filter(Boolean)
+    if (words.length <= 350) {
+      setAbstractText(event.target.value)
+    }
+    
   };
   const handleIncludeDedication = () => {
     setIncludeDedication(!includeDedication);
