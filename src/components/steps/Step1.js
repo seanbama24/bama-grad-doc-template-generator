@@ -41,7 +41,7 @@ export default function Step1({ name, degree, gradYear, updateName, updateDegree
       noValidate
       autoComplete="off"
     >
-      <h3>What is your full name?</h3>
+      <h3>What is your full legal name?</h3>
       <TextField value={name} onChange={updateName} /* required={true} label="What is your full name?"*/></TextField>
       <h3>What degree are you currently pursuing?</h3>
       <FormControl sx={{ minWidth: 250 }}>
