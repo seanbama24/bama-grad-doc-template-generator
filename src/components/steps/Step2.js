@@ -108,6 +108,7 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
+                maxLength: 90
               }}
               value={titleLine1}
               onChange={updateLine1}
@@ -124,11 +125,12 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
+                maxLength: 60
               }}
               value={titleLine2}
               onChange={updateLine2}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 60 characters.</FormHelperText>
           </FormControl>
         </div>
         <div>
@@ -141,11 +143,12 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
+                maxLength: 30
               }}
               value={titleLine3}
               onChange={updateLine3}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 30 characters.</FormHelperText>
           </FormControl>
         </div>
       </div>
