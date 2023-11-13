@@ -1,7 +1,11 @@
 // Step 7 - Review
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import './Step7.css';
+// import './Step7.css';
+import {
+  TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper
+} from '@mui/material'
+import { tab } from '@testing-library/user-event/dist/tab';
 
 export default function Step7({updateStep, name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix, comchair, comcochair, includesCoChair}) {
   const handleEditInfo = (index) => {
@@ -13,130 +17,151 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
       noValidate
       autoComplete="off"
     >
-      <div>
-        {/* <h2 style={{color: '#9E1B32'}}>Review Your Paper</h2>
-        <hr></hr> */}
-        <h2>Student Info: <a onClick={() => handleEditInfo(1)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Student Info</a></h2>
-        <table style={{margin: '0 0 5em 2em'}}>
-          <tr>
-            <td>Student's Full Legal Name</td>
-            <td>{name}</td>
-          </tr>
-          <tr>
-            <td>Degree</td>
-            <td>{degree}</td>
-          </tr>
-          <tr>
-            <td>Graduation Year</td>
-            <td>{graduationYear.getFullYear().toString()}</td>
-          </tr>
-        </table>
 
-        <h2>Document Information: <a onClick={() => handleEditInfo(2)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Document Info</a></h2>
-        <table style={{margin: '0 0 5em 2em'}}>
-          <tr>
-            <td>Style Guide</td>
-            <td>{style}</td>
-          </tr>
-          <tr>
-            <td>Template Type</td>
-            <td>{docType}</td>
-          </tr>
-          <tr>
-            <td>Font Type</td>
-            <td>{font}</td>
-          </tr>
-          <tr>
-            <td>Font Size</td>
-            <td>Placeholder</td>
-          </tr>
-          <tr>
-            <td>Title Line 1</td>
-            <td>{titleLine1}</td>
-          </tr>
-          <tr>
-            <td>Title Line 2</td>
-            <td>{titleLine2}</td>
-          </tr>
-          <tr>
-            <td>Title Line 3</td>
-            <td>{titleLine3}</td>
-          </tr>
-        </table>
+    <h3><a onClick={() => handleEditInfo(1)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Student Information</a></h3>
+      <TableContainer sx={{border: '1px solid black'}}>
+        <Table aria-label='simple table'>
+          <TableBody>
+            <TableRow>
+              <TableCell>Students Full Legal Name</TableCell>
+              <TableCell>{name}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Degree</TableCell>
+              <TableCell>{degree}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Graduation Year</TableCell>
+              <TableCell>{graduationYear.getFullYear().toString()}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-        <h2>Table of Contents: <a onClick={() => handleEditInfo(3)} style={{'color':'blue', 'text-decoration': 'underline'}} >Edit Table of Contents</a></h2>{/*<div onClick={handleEditInfo(3)}>Edit Table of Contents</div>*/}
-        <table style={{margin: '0 0 5em 2em'}}>
-          <tr>
-            <td>Format Type</td>
-            <td>Placeholder</td>
-          </tr>
-          <tr>
-            <td>Generate TOC</td>
-            <td>Placeholder</td>
-          </tr>
-        </table>
+    <h3><a onClick={() => handleEditInfo(2)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Document Information</a></h3>
+      <TableContainer sx={{border: '1px solid black'}}>
+        <Table aria-label='simple table'>
+          <TableBody>
+            <TableRow>
+              <TableCell>Style Guide</TableCell>
+              <TableCell>{style}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Template Type</TableCell>
+              <TableCell>{docType}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Font Type</TableCell>
+              <TableCell>{font}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Font Size</TableCell>
+              <TableCell>{12}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Title Line 1</TableCell>
+              <TableCell>{titleLine1}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Title Line 2</TableCell>
+              <TableCell>{titleLine2}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Title Line 3</TableCell>
+              <TableCell>{titleLine3}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-        <h2>Abstract: <a onClick={() => handleEditInfo(4)} style={{'color':'blue', 'text-decoration': 'underline'}} >Edit Abstract</a></h2>{/*<div onClick={handleEditInfo(4)}>Edit Abstract</div>*/}
-        <table style={{margin: '0 0 5em 2em'}}>
-          <tr>
-            <td>Abstract</td>
-            <td>{abstract}</td>
-          </tr>
-        </table>  
+      <h3><a onClick={() => handleEditInfo(3)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Table of Contents</a></h3>
+      <TableContainer sx={{border: '1px solid black'}}>
+        <Table aria-label='simple table'>
+          <TableBody>
+            <TableRow>
+              <TableCell>Format Type</TableCell>
+              <TableCell>Placeholder</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Generate TOC</TableCell>
+              <TableCell>Placeholder</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-        <h2>Optional Sections: <a onClick={() => handleEditInfo(5)} style={{'color':'blue', 'text-decoration': 'underline'}}>Change Optional Sections Included</a></h2>{/*<div onClick={handleEditInfo(5)}>Edit Optional Sections</div>*/}
-        <table style={{margin: '0 0 5em 2em'}}>
-          <tr>
-            <td>Dedication:</td>
-            <td>{dedication ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>Acknowledgments:</td>
-            <td>{acknowledgements ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>Preface:</td>
-            <td>{preface ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>Figures:</td>
-            <td>{figures ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>Tables:</td>
-            <td>{tables ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>Symbols:</td>
-            <td>{symbols ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>References:</td>
-            <td>{references ? 'Included':'Not Included'}</td>
-          </tr>
-          <tr>
-            <td>Appendix:</td>
-            <td>{appendix ? 'Included':'Not Included'}</td>
-          </tr>
-        </table> 
+      <h3><a onClick={() => handleEditInfo(4)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Abstract</a></h3>
+      <TableContainer sx={{border: '1px solid black'}}>
+        <Table aria-label='simple table'>
+          <TableBody>
+            <TableRow>
+              {/* <TableCell>Abstract</TableCell> */}
+              <TableCell>{abstract}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-        <h2>Graduate Supervisory Committee Members: <a onClick={() => handleEditInfo(6)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Committee Members</a></h2>{/*<div onClick={handleEditInfo(6)}>Edit Committee Info</div>*/}
-        <table style={{margin: '0 0 5em 2em'}}>
-          <tr>
-            <td>Chair</td>
-            <td>{comchair}</td>
-          </tr>
-          {includesCoChair ? 
-          <tr>
-            <td>Co-Chair</td>
-            <td>{comcochair}</td>
-          </tr> : <div></div>}
-          <tr>
-            <td>Committee Member</td>
-            <td>Placeholder</td>
-          </tr>
-        </table> 
-      </div>
+      <h3><a onClick={() => handleEditInfo(5)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Optional Sections</a></h3>
+      <TableContainer sx={{border: '1px solid black'}}>
+        <Table aria-label='simple table'>
+          <TableBody>
+            <TableRow>
+              <TableCell>Dedication</TableCell>
+              <TableCell>{dedication ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Acknowledgements</TableCell>
+              <TableCell>{acknowledgements ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Preface</TableCell>
+              <TableCell>{preface ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Figures</TableCell>
+              <TableCell>{figures ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Tables</TableCell>
+              <TableCell>{tables ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Symbols</TableCell>
+              <TableCell>{symbols ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>References</TableCell>
+              <TableCell>{references ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Appendix</TableCell>
+              <TableCell>{appendix ? 'Included':'Not Included'}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      <h3><a onClick={() => handleEditInfo(6)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Committee Members</a></h3>
+      <TableContainer sx={{border: '1px solid black'}}>
+        <Table aria-label='simple table'>
+          <TableBody>
+            <TableRow>
+              <TableCell>Chair</TableCell>
+              <TableCell>{comchair}</TableCell>
+            </TableRow>
+            { includesCoChair ?
+            <TableRow>
+              <TableCell>Co-Chair</TableCell>
+              <TableCell>{comcochair}</TableCell>
+            </TableRow> : <div></div>}
+            <TableRow>
+              <TableCell>Committee Member</TableCell>
+              <TableCell>Placeholder</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Box>
   );
 }
