@@ -18,7 +18,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
       autoComplete="off"
     >
 
-    <h3><a onClick={() => handleEditInfo(1)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Student Information</a></h3>
+    <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(1)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Student Information</h3>
       <TableContainer sx={{border: '1px solid black'}}>
         <Table aria-label='simple table'>
           <TableBody>
@@ -38,7 +38,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
         </Table>
       </TableContainer>
 
-    <h3><a onClick={() => handleEditInfo(2)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Document Information</a></h3>
+    <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(2)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Document Information</h3>
       <TableContainer sx={{border: '1px solid black'}}>
         <Table aria-label='simple table'>
           <TableBody>
@@ -74,7 +74,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
         </Table>
       </TableContainer>
 
-      <h3><a onClick={() => handleEditInfo(3)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Table of Contents</a></h3>
+      <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(3)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Table of Contents</h3>
       <TableContainer sx={{border: '1px solid black'}}>
         <Table aria-label='simple table'>
           <TableBody>
@@ -90,7 +90,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
         </Table>
       </TableContainer>
 
-      <h3><a onClick={() => handleEditInfo(4)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Abstract</a></h3>
+      <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(4)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Abstract</h3>
       <TableContainer sx={{border: '1px solid black'}}>
         <Table aria-label='simple table'>
           <TableBody>
@@ -102,7 +102,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
         </Table>
       </TableContainer>
 
-      <h3><a onClick={() => handleEditInfo(5)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Optional Sections</a></h3>
+      <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(5)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Additional Document Sections</h3>
       <TableContainer sx={{border: '1px solid black'}}>
         <Table aria-label='simple table'>
           <TableBody>
@@ -142,7 +142,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
         </Table>
       </TableContainer>
 
-      <h3><a onClick={() => handleEditInfo(6)} style={{'color':'blue', 'text-decoration': 'underline'}}>Edit Committee Members</a></h3>
+      <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(6)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Graduate Supervisory Committee Information</h3>
       <TableContainer sx={{border: '1px solid black'}}>
         <Table aria-label='simple table'>
           <TableBody>
