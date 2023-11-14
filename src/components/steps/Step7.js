@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { tab } from '@testing-library/user-event/dist/tab';
 
-export default function Step7({updateStep, name, degree, graduationYear, style, docType, font, titleLine1, titleLine2, titleLine3, abstract, dedication, acknowledgements, preface, figures, tables, symbols, references, appendix, comchair, comcochair, includesCoChair}) {
+export default function Step7({updateStep, form, setForm}) {
   const handleEditInfo = (index) => {
     updateStep(index);
   };
@@ -24,15 +24,15 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           <TableBody>
             <TableRow>
               <TableCell>Students Full Legal Name</TableCell>
-              <TableCell>{name}</TableCell>
+              <TableCell>{form.name}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Degree</TableCell>
-              <TableCell>{degree}</TableCell>
+              <TableCell>{form.degree}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Graduation Year</TableCell>
-              <TableCell>{graduationYear.getFullYear().toString()}</TableCell>
+              <TableCell>{form.gradYear.getFullYear().toString()}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -44,15 +44,15 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           <TableBody>
             <TableRow>
               <TableCell>Style Guide</TableCell>
-              <TableCell>{style}</TableCell>
+              <TableCell>{form.style}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Template Type</TableCell>
-              <TableCell>{docType}</TableCell>
+              <TableCell>{form.docType}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Font Type</TableCell>
-              <TableCell>{font}</TableCell>
+              <TableCell>{form.font}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Font Size</TableCell>
@@ -60,15 +60,15 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
             </TableRow>
             <TableRow>
               <TableCell>Title Line 1</TableCell>
-              <TableCell>{titleLine1}</TableCell>
+              <TableCell>{form.titleLine1}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Title Line 2</TableCell>
-              <TableCell>{titleLine2}</TableCell>
+              <TableCell>{form.titleLine2}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Title Line 3</TableCell>
-              <TableCell>{titleLine3}</TableCell>
+              <TableCell>{form.titleLine3}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -96,7 +96,7 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           <TableBody>
             <TableRow>
               {/* <TableCell>Abstract</TableCell> */}
-              <TableCell>{abstract}</TableCell>
+              <TableCell>{form.abstractText}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -108,35 +108,35 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           <TableBody>
             <TableRow>
               <TableCell>Dedication</TableCell>
-              <TableCell>{dedication ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeDedication ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Acknowledgements</TableCell>
-              <TableCell>{acknowledgements ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeAcknowledgements ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Preface</TableCell>
-              <TableCell>{preface ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includePreface ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Figures</TableCell>
-              <TableCell>{figures ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeFigures ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Tables</TableCell>
-              <TableCell>{tables ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeTables ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Symbols</TableCell>
-              <TableCell>{symbols ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeSymbols ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>References</TableCell>
-              <TableCell>{references ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeReferences ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Appendix</TableCell>
-              <TableCell>{appendix ? 'Included':'Not Included'}</TableCell>
+              <TableCell>{form.includeAppendix ? 'Included':'Not Included'}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -148,12 +148,12 @@ export default function Step7({updateStep, name, degree, graduationYear, style, 
           <TableBody>
             <TableRow>
               <TableCell>Chair</TableCell>
-              <TableCell>{comchair}</TableCell>
+              <TableCell>{form.committeeChair}</TableCell>
             </TableRow>
-            { includesCoChair ?
+            { form.includesCoChair ?
             <TableRow>
               <TableCell>Co-Chair</TableCell>
-              <TableCell>{comcochair}</TableCell>
+              <TableCell>{form.committeeCoChair}</TableCell>
             </TableRow> : <div></div>}
             <TableRow>
               <TableCell>Committee Member</TableCell>
