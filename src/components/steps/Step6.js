@@ -8,18 +8,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { CommitteeMemberBox } from '../CommitteeMemberBox';
 
-export default function Step6({ checkmark, committeeMembers, committeeChairName, committeeCoChairName, updateCommitteeChair, updateCommitteeCoChair, updateCheckmark, updateCommitteeMembers }) {
-  const generateNewMember = () => {
-    const newMember = <CommitteeMemberBox boxtitle={"Committee Member"}/>;
-    updateCommitteeMembers([...committeeMembers, newMember]);
-  };
-  const removeLastMember = () => {
-    if (committeeMembers.length > 0) {
-      const newMemberList = [...committeeMembers]
-      newMemberList.splice(committeeMembers.length - 1, 1)
-      updateCommitteeMembers(newMemberList);
-    }
-  };
+export default function Step6({ form, setForm }) {
+  const updateMember = (member, index) => {
+    let newMembers = form.committeeMembers
+    newMembers[index] = member
+    setForm({...form, committeeMembers: newMembers})
+  }
+
   return (
     <Box
       component="form"
@@ -32,21 +27,21 @@ export default function Step6({ checkmark, committeeMembers, committeeChairName,
         <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
         <Typography variant="h6">For a PhD, you need three at least five people on the committee</Typography>
 
-        <CommitteeMemberBox boxtitle={"Committee Chair"} handler={updateCommitteeChair} text={committeeChairName}/>
+        <CommitteeMemberBox boxtitle={"Committee Chair"} handler={(e) => setForm({...form, committeeChair: e.target.value})} text={form.committeeChair}/>
         
-        <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={checkmark} onChange={updateCheckmark} style={{color: '#9E1B32'}}/>} label="Would you like add a Co-Chair?" />
-        {checkmark ? 
+        <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={form.includesCoChair} onChange={(e) => setForm({...form, includesCoChair: e.target.checked})} style={{color: '#9E1B32'}}/>} label="Would you like add a Co-Chair?" />
+        {form.includesCoChair ? 
         <div id="chapter-input">
-          <CommitteeMemberBox boxtitle={"Co-Chair"} handler={updateCommitteeCoChair} text={committeeCoChairName}/>
+          <CommitteeMemberBox boxtitle={"Co-Chair"} handler={(e) => setForm({...form, committeeCoChair: e.target.value})} text={form.committeeCoChair}/>
         </div> : <div id="empty-input"></div>}
       </div>
       
       <div>
         <div id="chapter-input">
-          {committeeMembers}
+          {form.committeeMembers.map((member, index) => <CommitteeMemberBox boxtitle={"Committee Member"} handler={(e) => updateMember(e.target.value, index)} text={form.committeeMembers[index]}/>)}
           <div style={{marginTop: '1em'}}>
-            <Button onClick={generateNewMember} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add committee member</Button>
-            <Button onClick={removeLastMember} style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Remove last committee member</Button>
+            <Button onClick={() => setForm({...form, committeeMembers: [...form.committeeMembers, '']})} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add committee member</Button>
+            <Button onClick={() => setForm({...form, committeeMembers: form.committeeMembers.slice(0, form.committeeMembers.length-1)})} style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Remove last committee member</Button>
           </div>
         </div>
       </div>

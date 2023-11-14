@@ -5,6 +5,7 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 
 import Introduction from './steps/Introduction';
 import Step1 from './steps/Step1';
@@ -31,6 +32,35 @@ function FormStepper() {
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+
+  const [form, setForm] = useState({
+    att: false,
+    gradYear: new Date(),
+    name: '',
+    degree: '',
+    style: '',
+    docType: '',
+    font: '',
+    titleLine1: '',
+    titleLine2: '',
+    titleLine3: '',
+    includesChapterHeadings: false,
+    chapterHeadings: ["Title goes here..."],
+    abstractText: '',
+    includeDedication: false,
+    includeAcknowledgement: false,
+    includePreface: false,
+    includeFigures: false,
+    includeTables: false,
+    includeSymbols: false,
+    includeAppendix: false,
+    includeBiographical: false,
+    includesCoChair: false,
+    committeeChair: '',
+    committeeCoChair: '',
+    committeeMembers: ['']
+  });
+
   // Introduction
   const [att, setATT] = React.useState(false);
   // Step 1
@@ -249,14 +279,14 @@ function FormStepper() {
           {
             {
               0: <Introduction checkmark={att} onClick={() => handleCheckBox()} />,
-              1: <Step1 name={name} degree={degree} gradYear={graduationYear} updateName={handleName} updateDegree={handleDegree} updateGradYear={handleYear}/>,
-              2: <Step2 style={style} documentType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} updateStyle={handleStyle} updateDocumentType={handleDocType} updateFont={handleFont} updateLine1={handleTL1} updateLine2={handleTL2} updateLine3={handleTL3}/>,
-              3: <Step3 checkmark={includesChapterHeadings} chapterHeadings={chapterHeadings} chapterHeadingsText={chapterHeadingStrings} updateCheckmark={handleIncludeChapterHeadings} updateChapterHeadings={setChapterHeadings} updateChapterHeadingsText={handleChapterHeadingStrings} handleNewText={handleAddNewText}/>,
-              4: <Step4 abstractText={abstractText} updateAbstractText={handleAbstractText}/>,
-              5: <Step5 dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} appendix={includeAppendix} biographical={includeBiographical} updateDedication={handleIncludeDedication} updateAcknowledgements={handleIncludeAcknowledgments} updatePreface={handleIncludePreface} updateFigures={handleIncludeFigures} updateTables={handleIncludeTables} updateSymbols={handleIncludeSymbols} updateAppendix={handleIncludeAppendix} updateBiographical={handleIncludeBiographical}/>,
-              6: <Step6 checkmark={includesCoChair} committeeMembers={committeeMembers} committeeChairName={committeeChair} committeeCoChairName={committeeCoChair} updateCommitteeChair={handleCommitteeChair} updateCommitteeCoChair={handleCommitteeCoChair} updateCheckmark={handleIncludeCoChairs} updateCommitteeMembers={setCommitteeMembers}/>,
-              7: <Step7 updateStep={handleEditActiveStep} name={name} degree={degree} graduationYear={graduationYear} style={style} docType={docType} font={font} titleLine1={titleLine1} titleLine2={titleLine2} titleLine3={titleLine3} abstract={abstractText} dedication={includeDedication} acknowledgements={includeAcknowledgement} preface={includePreface} figures={includeFigures} tables={includeTables} symbols={includeSymbols} references={includeBiographical} appendix={includeAppendix} comchair={committeeChair} comcochair={committeeCoChair} includesCoChair={includesCoChair}/>,
-              8: <Step8 />,
+              1: <Step1 form={form} setForm={setForm}/>,
+              2: <Step2 form={form} setForm={setForm}/>,
+              3: <Step3 form={form} setForm={setForm}/>,
+              4: <Step4 form={form} setForm={setForm}/>,
+              5: <Step5 form={form} setForm={setForm}/>,
+              6: <Step6 form={form} setForm={setForm}/>,
+              7: <Step7 updateStep={handleEditActiveStep} form={form} setForm={setForm}/>,
+              8: <Step8 form={form}/>,
             }[activeStep]
           }
           {/* This contains previous, next, skip buttons for stepping */}

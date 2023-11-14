@@ -3,38 +3,17 @@ import * as React from 'react';
 // import { useState } from 'react'
 import Box from '@mui/material/Box';
 import { Button } from '@mui/base';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import { ChapterTitleBox } from '../ChapterTitleBox';
+import { FormControl, FormControlLabel, Checkbox, TextField, InputAdornment } from '@mui/material';
 
-export default function Step3({ checkmark, chapterHeadings, chapterHeadingsText, updateCheckmark, updateChapterHeadings, updateChapterHeadingsText, handleNewText}) {
-  const generateNewChapter = () => {
-    const fillerText = 'Title Goes Here...';
-    // var updatedChapterTexts = [...chapterHeadingsText, fillerText];
-    const newChapter = <ChapterTitleBox num={chapterHeadings.length + 1} text={fillerText} updateText={updateChapterHeadingsText}/>;
-    updateChapterHeadings([...chapterHeadings, newChapter]);
-    // chapterHeadingsText.push(newText);
-    // handleNewText(updatedChapterTexts);
-    // console.log('adding ' + chapterHeadingsText);
-  };
-  const removeLastChapter = () => {
-    if (chapterHeadings.length > 1) {
-      const newChapterList = [...chapterHeadings];
-      newChapterList.pop();
-      const newTextList = [...chapterHeadingsText];
-      newTextList.pop();
-      newTextList.pop();
-      // chapterHeadings.pop();
-      // newTextList.splice(chapterHeadings.length - 1, 1);
-      updateChapterHeadings(newChapterList);
-      handleNewText(newTextList);
-      console.log('deleting ' + chapterHeadingsText);
-      // chapterHeadings = newChapterList
-    }
-  };
-  if (chapterHeadings.length === 0) {
-    generateNewChapter();
+export default function Step3({ form, setForm }) {
+
+  const updateHeading = (heading, index) => {
+    let newHeadings = form.chapterHeadings
+    newHeadings[index] = heading
+    setForm({...form, chapterHeadings: newHeadings})
   }
+
   // const headingObjects = chapterHeadings.map((heading) => heading.object)
   return (
     <Box
@@ -45,14 +24,38 @@ export default function Step3({ checkmark, chapterHeadings, chapterHeadingsText,
           <input type="checkbox" id='chapter-checkbox' checked={isChecked} onChange={checkHandler}/>
           Would you like to auto-create sample chapter headings?
         </label>  */}
-        <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={checkmark} onChange={updateCheckmark} style={{color: '#9E1B32'}}/>} label="Would you like to auto-create sample chapter headings?" />
+        <FormControlLabel control={<Checkbox id='chapter-checkbox' checked={form.includesChapterHeadings} onChange={(e) => setForm({...form, includesChapterHeadings: e.target.checked})} style={{color: '#9E1B32'}}/>} label="Would you like to auto-create sample chapter headings?" />
 
-        {checkmark ? 
-        <div id="chapter-input">
-          {chapterHeadings}
+        {form.includesChapterHeadings ? <div id="chapter-input">
+          {form.chapterHeadings.map((heading, index) => {
+            return(<div>
+                    <h3>Chapter Title {index + 1}</h3>
+                    <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+                      <TextField
+                        id="filled-adornment-weight"
+                        endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+                        aria-describedby="filled-weight-helper-text"
+                        inputProps={{
+                          'aria-label': 'weight',
+                        }}
+                        value={form.chapterHeadings[index]}
+                        onChange={(e) => updateHeading(e.target.value, index)}
+                      />
+                    </FormControl>
+                  </div>)
+          })}
           <div style={{marginTop: '1em'}}>
-            <Button onClick={generateNewChapter} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add one more</Button>
-            <Button onClick={removeLastChapter} style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Remove previous</Button>
+            <Button onClick={() => setForm({...form, chapterHeadings: [...form.chapterHeadings, "Title goes here..."]})} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add one more</Button>
+            <Button 
+              onClick={() => {
+                if(form.chapterHeadings.length > 0) {
+                    setForm({...form, chapterHeadings: form.chapterHeadings.slice(0, form.chapterHeadings.length-1)})
+                  }
+                }
+              } 
+              style={{backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>
+                Remove previous
+            </Button>
           </div>
         </div> : <div id="empty-input"></div>}
       </div>

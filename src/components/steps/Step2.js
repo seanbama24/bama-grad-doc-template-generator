@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
 import { styles, documentTypes, fontList } from '../../fieldValues';
 
-export default function Step2({ style, documentType, font, titleLine1, titleLine2, titleLine3, updateStyle, updateDocumentType, updateFont, updateLine1, updateLine2, updateLine3}) {
+export default function Step2({ form, setForm }) {
 
   return (
     <Box
@@ -25,9 +25,9 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={style}
+            value={form.style}
             label="Style"
-            onChange={updateStyle}
+            onChange={(e) => setForm({...form, style: e.target.value})}
           >
             {styles.map( function (option) {
                 if (option.value === 'None') {
@@ -52,9 +52,9 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={documentType}
+            value={form.documentType}
             label="Document Type"
-            onChange={updateDocumentType}
+            onChange={(e) => setForm({...form, documentType: e.target.value})}
           >
             {documentTypes.map( function (option) {
                 if (option.value === 'None') {
@@ -79,9 +79,9 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={font}
+            value={form.font}
             label="Font Type"
-            onChange={updateFont}
+            onChange={(e) => setForm({...form, font: e.target.value})}
           >
             {fontList.map( function (option) {
                 if (option.value === 'None') {
@@ -109,8 +109,8 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
               inputProps={{
                 'aria-label': 'weight',
               }}
-              value={titleLine1}
-              onChange={updateLine1}
+              value={form.titleLine1}
+              onChange={(e) => setForm({...form, titleLine1: e.target.value})}
             />
             <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
           </FormControl>
@@ -125,8 +125,8 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
               inputProps={{
                 'aria-label': 'weight',
               }}
-              value={titleLine2}
-              onChange={updateLine2}
+              value={form.titleLine2}
+              onChange={(e) => setForm({...form, titleLine2: e.target.value})}
             />
             <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
           </FormControl>
@@ -142,8 +142,8 @@ export default function Step2({ style, documentType, font, titleLine1, titleLine
               inputProps={{
                 'aria-label': 'weight',
               }}
-              value={titleLine3}
-              onChange={updateLine3}
+              value={form.titleLine3}
+              onChange={(e) => setForm({...form, titleLine3: e.target.value})}
             />
             <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
           </FormControl>

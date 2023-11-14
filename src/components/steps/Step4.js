@@ -4,11 +4,11 @@ import Box from '@mui/material/Box';
 import { TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 
-export default function Step4({abstractText, updateAbstractText}) {
+export default function Step4({form, setForm}) {
   // const [abstractText, setAbstractText] = useState('');
   const getWordCount = () => {
     // Split the text by whitespace and filter out empty strings
-    const words = abstractText.trim().split(/\s+/).filter(Boolean);
+    const words = form.abstractText.trim().split(/\s+/).filter(Boolean);
     return words.length;
   };
   return (
@@ -26,8 +26,8 @@ export default function Step4({abstractText, updateAbstractText}) {
           fullWidth
           rows={4} 
           width="100%"
-          value={abstractText}
-          onChange={updateAbstractText}/>
+          value={form.abstractText}
+          onChange={(e) => setForm({...form, abstractText: e.target.value})}/>
         <Typography marginBottom="20px">Type or copy your abstract here</Typography>
 
         <Typography>Quick notes about the abstract:</Typography>
