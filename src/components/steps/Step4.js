@@ -2,7 +2,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { TextField, Typography } from '@mui/material';
-import { useState } from 'react';
 
 export default function Step4({form, setForm}) {
   // const [abstractText, setAbstractText] = useState('');

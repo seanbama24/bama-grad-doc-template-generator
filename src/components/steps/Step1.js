@@ -8,6 +8,8 @@ import TextField from '@mui/material/TextField';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { degreeList } from '../../fieldValues';
+import { colors } from '@mui/material';
+import { red } from '@mui/material/colors';
 
 export default function Step1({ form, setForm }) {
   degreeList.sort();

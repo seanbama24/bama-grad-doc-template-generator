@@ -22,10 +22,10 @@ export default function Step6({ form, setForm }) {
       autoComplete="off"
     >
       <div>
-        <Typography variant="h5">Adding Committee Members:</Typography>
-        <Typography variant="h6">For a Thesis, you need three at least three people on the committee</Typography>
-        <Typography variant="h6">For an EdD, you need three at least four people on the committee</Typography>
-        <Typography variant="h6">For a PhD, you need three at least five people on the committee</Typography>
+        <h3>Adding Committee Members:</h3>
+        <Typography>For a Thesis, you need at least three people on the committee.</Typography>
+        <Typography>For an EdD, you need at least four people on the committee.</Typography>
+        <Typography>For a PhD, you need at least five people on the committee.</Typography>
 
         <CommitteeMemberBox boxtitle={"Committee Chair"} handler={(e) => setForm({...form, committeeChair: e.target.value})} text={form.committeeChair}/>
         

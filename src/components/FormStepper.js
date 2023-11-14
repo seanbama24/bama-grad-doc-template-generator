@@ -199,7 +199,11 @@ function FormStepper() {
     setChapterHeadingStrings(updatedArray);
   };
   const handleAbstractText = (event) => {
-    setAbstractText(event.target.value)
+    const words = event.target.value.trim().split(/\s+/).filter(Boolean)
+    if (words.length <= 350) {
+      setAbstractText(event.target.value)
+    }
+    
   };
   const handleIncludeDedication = () => {
     setIncludeDedication(!includeDedication);
@@ -241,7 +245,7 @@ function FormStepper() {
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
       {/* This handles the actual stepper component */}
-      <h2 style={{"color": "grey"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
+      <h2 style={{"color": "#9E1B32"}}>The University of Alabama Graduate School Thesis and Dissertation Document Generator</h2>
       <hr></hr>
       <div style={{"display": "flex", "flexGrow": "1"}}>
         <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
@@ -292,7 +296,7 @@ function FormStepper() {
           {/* This contains previous, next, skip buttons for stepping */}
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
-              style={{color: '#9E1B32'}}
+              style={{color: 'white', backgroundColor: '#9E1B32'}}
               color="inherit"
               disabled={activeStep === 0}
               onClick={handleBack}
@@ -301,13 +305,13 @@ function FormStepper() {
               Back
             </Button>
             <Box sx={{ flex: '1 1 auto' }} />
-            {isStepOptional(activeStep) && (
+            {/* {isStepOptional(activeStep) && (
               <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
                 Skip
               </Button>
-            )}
+            )} */}
 
-            {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: '#9E1B32'}}>Next</Button>}
+            {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
           </Box>
         </div>
       </div>

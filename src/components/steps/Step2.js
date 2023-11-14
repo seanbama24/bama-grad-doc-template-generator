@@ -108,6 +108,7 @@ export default function Step2({ form, setForm }) {
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
+                maxLength: 90
               }}
               value={form.titleLine1}
               onChange={(e) => setForm({...form, titleLine1: e.target.value})}
@@ -124,11 +125,12 @@ export default function Step2({ form, setForm }) {
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
+                maxLength: 60
               }}
               value={form.titleLine2}
               onChange={(e) => setForm({...form, titleLine2: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 60 characters.</FormHelperText>
           </FormControl>
         </div>
         <div>
@@ -141,11 +143,12 @@ export default function Step2({ form, setForm }) {
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
+                maxLength: 30
               }}
               value={form.titleLine3}
               onChange={(e) => setForm({...form, titleLine3: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 30 characters.</FormHelperText>
           </FormControl>
         </div>
       </div>
