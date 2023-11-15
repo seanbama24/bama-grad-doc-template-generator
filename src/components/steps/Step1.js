@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
 import TextField from '@mui/material/TextField';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -21,8 +22,11 @@ export default function Step1({ form, setForm }) {
       noValidate
       autoComplete="off"
     >
-      <h3>What is your full name?</h3>
-      <TextField value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}></TextField>
+      <h3>What is your full legal name?</h3>
+      <FormControl sx={{ m: 1, minWidth: 250 }}>
+        <TextField value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}></TextField>
+        <FormHelperText>Please enter your full legal name</FormHelperText>
+      </FormControl>
       <h3>What degree are you currently pursuing?</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
         <TextField id="degree-selection" select label="Select" value={form.degree} onChange={(e) => setForm({...form, degree: e.target.value})}>
@@ -32,6 +36,7 @@ export default function Step1({ form, setForm }) {
                 </MenuItem>
             ))}
         </TextField>
+        <FormHelperText>Select current degree being pursued</FormHelperText>
       </FormControl>
       <h3>When is your anticipated graduation year?</h3>
       <DatePicker
