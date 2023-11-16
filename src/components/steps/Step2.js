@@ -20,7 +20,7 @@ export default function Step2({ form, setForm }) {
     >
       <div>
           <h3>Choose Style Guide *</h3>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <FormControl sx={{ m: 1, minWidth: 120, width: '25ch' }}>
           <InputLabel id="demo-simple-select-helper-label">Style</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
@@ -47,7 +47,7 @@ export default function Step2({ form, setForm }) {
         </div>
         <div>
           <h3>What is your document type? *</h3>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <FormControl sx={{ m: 1, minWidth: 120, width: '25ch'}}>
           <InputLabel id="demo-simple-select-helper-label">Document Type</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
@@ -74,7 +74,7 @@ export default function Step2({ form, setForm }) {
         </div>
         <div>
           <h3>Choose an approved font *</h3>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <FormControl sx={{ m: 1, minWidth: 120, width: '25ch'}}>
           <InputLabel id="demo-simple-select-helper-label">Font Type</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
