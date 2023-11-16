@@ -6,8 +6,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import TextField from '@mui/material/TextField';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { DatePicker } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { degreeList } from '../../fieldValues';
 import { colors } from '@mui/material';
 import { red } from '@mui/material/colors';
@@ -15,7 +16,6 @@ import { red } from '@mui/material/colors';
 export default function Step1({ form, setForm }) {
   degreeList.sort();
 
-  
   return (
     <Box
       component="form"
@@ -23,9 +23,9 @@ export default function Step1({ form, setForm }) {
       autoComplete="off"
     >
       <h3>What is your full legal name?</h3>
-      <FormControl sx={{ m: 1, minWidth: 250 }}>
+      <FormControl sx={{ m: 1, minWidth: 250, maxWidth: 250}}>
         <TextField value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}></TextField>
-        <FormHelperText>Please enter your full legal name</FormHelperText>
+        <FormHelperText>Please enter your full legal name (First M. Last)</FormHelperText>
       </FormControl>
       <h3>What degree are you currently pursuing?</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
@@ -39,12 +39,24 @@ export default function Step1({ form, setForm }) {
         <FormHelperText>Select current degree being pursued</FormHelperText>
       </FormControl>
       <h3>When is your anticipated graduation year?</h3>
-      <DatePicker
+      <FormControl sx={{ m: 1, minWidth: 250 }}>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+            label={'YYYY'} 
+            views={['year']}
+            selected={form.gradYear}
+            onChange={(e) => setForm({...form, gradYear: e})}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
+        <FormHelperText>Select anticipated graduation year</FormHelperText>
+      </FormControl>
+      {/* <DatePicker
           selected={form.gradYear}
           onChange={(e) => setForm({...form, gradYear: e})}
-          showYearPicker
-          dateFormat="yyyy"
-        />
+          format={'YYYY'}
+          value={moment('2023', 'YYYY')}
+      /> */}
     </Box>
   );
 }
