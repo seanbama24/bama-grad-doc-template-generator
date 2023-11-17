@@ -1,170 +1,170 @@
-Accounting MMA
-Accounting PhD
-Advertising Public Relations MA
-Aerospace Engineering and Mechanics MSAEM
-Aerospace Engineering and Mechanics PhD
-American Studies MA
-Anthropology MA
-Anthropology PhD
-Applied Mathematics PhD
-Applied Statistics MS
-Applied Statistics PhD
-Archival Studies CRT
-Art History MA
-Athletic Training MS
-Biological Sciences MA
-Biology MS
-Biology PhD
-Book Arts CRT
-Book Arts MFA
-Business Administration EMBA
-Business Administration MBA
-Business Analytics MS
-Chemical Engineering MCE
-Chemical Engineering PhD
-Chemistry MSC
-Chemistry PhD
-Civil Engineering MCV
-Civil Engineering PhD
-College Teaching CRT
-Communication & Information Sciences PhD
-Communication Studies MA
-Computer Science MSCS
-Computer Science PhD
-Conflict Resolution CRT
-Consumer Sciences MS
-Counselor Education EDS
-Counselor Education PhD
-Counselor Education-Clinical Mental Health Counseling MA
-Counselor Education-Rehabilitation Counseling MA
-Counselor Education-School Counseling MA
-Creative Writing MFA
-Criminology & Criminal Justice MS
-Curriculum and Instruction EDD
-Curriculum and Instruction PHD
-Dance MFA
-Digital Communication CRT
-Economics (Quantitative) MA
-Economics (Quantitative) PHD
-Educational Leadership EDD
-Educational Leadership EDS
-Educational Leadership MA
-Educational Leadership PhD
-Educational Psychology EDS
-Educational Psychology MA
-Educational Psychology PhD
-Educational Research PhD
-Electrical Engineering MSEE
-Electrical Engineering PhD
-Elementary Education EDS
-Elementary Education MA
-English MA
-English PhD
-English as a Second Language MA
-Environmental Engineering MS
-Family Nurse Practitioner CRT
-Finance MS
-Finance PhD
-Geographic Information Systems CRT
-Geography MS
-Geography PhD
-Geology MS
-Geology PhD
-German MA
-Health Education & Promotion MPH
-Health Education & Promotion PhD
-Health Studies MA
-Higher Education Administration EDD
-Higher Education Administration MA
-Higher Education Administration PhD
-History MA
-History PhD
-Hospitality Management MS
-Human Development and Family Studies MS
-Human Environmental Sciences MHS
-Human Nutrition MS
-Human Nutrition PhD
-Instructional Leadership EDD
-Instructional Leadership PhD
-Instructional Technology CRT
-Instructional Technology MA
-Interdisciplinary MA
-Interdisciplinary MS
-Interdisciplinary PhD
-Journalism and Media Studies MA
-Kinesiology MA
-Kinesiology PhD
-Library & Information Studies MLIS
-Literacy Research, Theory & Pedagogy CRT
-Management Information Systems MS
-Management MA
-Management PhD
-Marine Science MS
-Marketing MS
-Marketing PhD
-Master's Entry to the Profession of Nursing MSN
-Materials Metallurgical Engineering PhD
-Materials Science PhD
-Mathematics MA
-Mathematics PhD
-Mechanical Engineering MSME
-Mechanical Engineering PhD
-Metallurgical Engineering MS
-Museum Studies CRT
-Music DMA
-Music MM
-Non-Degree Arts & Sciences Student
-Non-Degree Business Student
-Non-Degree Business Student (Distance Learning)
-Non-Degree Communication & Information Sciences Student
-Non-Degree Communication & Information Sciences Student (Distance Learning)
-Non-Degree Community Health Sciences Student
-Non-Degree Education Student
-Non-Degree Education Student (Distance Learning)
-Non-Degree Education Student Certification
-Non-Degree Engineering Student
-Non-Degree Engineering Student (Distance Learning)
-Non-Degree Human Environmental Sciences Student
-Non-Degree Human Environmental Sciences Student (Distance Learning)
-Non-Degree Nursing Student
-Non-Degree Nursing Student (Distance Learning)
-Non-Degree Social Work Student
-Non-Degree Social Work Student (Distance Learning)
-Nursing DNP
-Nursing MSN
-Nursing PhD
-Operations Management MS
-Operations Management PhD
-Physics MS
-Physics PhD
-Political Science MA
-Political Science PhD
-Population Health Sciences MS
-Psychiatric Mental Health Nurse Practitioner CRT
-Psychology PhD
-Public Administration MPA
-Qualitative Research CRT
-Quantitative Research CRT
-Religion in Culture MA
-Romance Languages MA
-Romance Languages PhD
-Rural Community Health MS
-School Psychology PhD
-Secondary Education EDS
-Secondary Education MA
-Social & Cultural Studies CRT
-Social Work DSW
-Social Work MSW
-Social Work PhD
-Special Education EDD
-Special Education EDS
-Special Education MA
-Special Education PhD
-Speech Language Pathology MS
-Studio Art MA
-Studio Art MFA
-Tax Accounting MTA
-Teaching English to Speakers of Other Languages
-Theatre MFA
-Women Studies CRT
-Women Studies MA
+Degree: Accounting MMA label: Accounting MMA College: Business
+Degree: Accounting PhD label: Accounting PhD College: Business
+Degree: Advertising Public Relations MA label: Advertising Public Relations MA College: Communication and Information Sciences
+Degree: Aerospace Engineering and Mechanics MSAEM label: Aerospace Engineering and Mechanics MSAEM College: Engineering
+Degree: Aerospace Engineering and Mechanics PhD label: Aerospace Engineering and Mechanics PhD College: Engineering
+Degree: American Studies MA label: American Studies MA College: Arts and Sciences
+Degree: Anthropology MA label: Anthropology MA College: Arts and Sciences
+Degree: Anthropology PhD label: Anthropology PhD College: Arts and Sciences
+Degree: Applied Mathematics PhD label: Applied Mathematics PhD College: Arts and Sciences
+Degree: Applied Statistics MS label: Applied Statistics MS College: Business
+Degree: Applied Statistics PhD label: Applied Statistics PhD College: Business
+Degree: Archival Studies CRT label: Archival Studies CRT College: Communication and Information Sciences
+Degree: Art History MA label: Art History MA College: Arts and Sciences
+Degree: Athletic Training MS label: Athletic Training MS College: Human Environmental Sciences
+Degree: Biological Sciences MA label: Biological Sciences MA College: Arts and Sciences
+Degree: Biology MS label: Biology MS College: Arts and Sciences
+Degree: Biology PhD label: Biology PhD College: Arts and Sciences
+Degree: Book Arts CRT label: Book Arts CRT College: Communication and Information Sciences
+Degree: Book Arts MFA label: Book Arts MFA College: Communication and Information Sciences
+Degree: Business Administration EMBA label: Business Administration EMBA College: Business
+Degree: Business Administration MBA label: Business Administration MBA College: Business
+Degree: Business Analytics MS label: Business Analytics MS College: Business
+Degree: Chemical Engineering MCE label: Chemical Engineering MCE College: Engineering
+Degree: Chemical Engineering PhD label: Chemical Engineering PhD College: Engineering
+Degree: Chemistry MSC label: Chemistry MSC College: Arts and Sciences
+Degree: Chemistry PhD label: Chemistry PhD College: Arts and Sciences
+Degree: Civil Engineering MCV label: Civil Engineering MCV College: Engineering
+Degree: Civil Engineering PhD label: Civil Engineering PhD College: Engineering
+Degree: College Teaching CRT label: College Teaching CRT College: Education
+Degree: Communication & Information Sciences PhD label: Communication & Information Sciences PhD College: Communication and Information Sciences
+Degree: Communication Studies MA label: Communication Studies MA College: Communication and Information Sciences
+Degree: Computer Science MSCS label: Computer Science MSCS College: Engineering
+Degree: Computer Science PhD label: Computer Science PhD College: Engineering
+Degree: Conflict Resolution CRT label: Conflict Resolution CRT College: Human Environmental Sciences
+Degree: Consumer Sciences MS label: Consumer Sciences MS College: Human Environmental Sciences
+Degree: Counselor Education EDS label: Counselor Education EDS College: Education
+Degree: Counselor Education PhD label: Counselor Education PhD College: Education
+Degree: Counselor Education-Clinical Mental Health Counseling MA label: Counselor Education-Clinical Mental Health Counseling MA College: Education
+Degree: Counselor Education-Rehabilitation Counseling MA label: Counselor Education-Rehabilitation Counseling MA College: Education
+Degree: Counselor Education-School Counseling MA label: Counselor Education-School Counseling MA College: Education
+Degree: Creative Writing MFA label: Creative Writing MFA College: Arts and Sciences
+Degree: Criminology & Criminal Justice MS label: Criminology & Criminal Justice MS College: Arts and Sciences
+Degree: Curriculum and Instruction EDD label: Curriculum and Instruction EDD College: Education
+Degree: Curriculum and Instruction PHD label: Curriculum and Instruction PHD College: Education
+Degree: Dance MFA label: Dance MFA College: Arts and Sciences
+Degree: Digital Communication CRT label: Digital Communication CRT College: Communication and Information Sciences
+Degree: Economics (Quantitative) MA label: Economics (Quantitative) MA College: Business
+Degree: Economics (Quantitative) PHD label: Economics (Quantitative) PHD College: Business
+Degree: Educational Leadership EDD label: Educational Leadership EDD College: Education
+Degree: Educational Leadership EDS label: Educational Leadership EDS College: Education
+Degree: Educational Leadership MA label: Educational Leadership MA College: Education
+Degree: Educational Leadership PhD label: Educational Leadership PhD College: Education
+Degree: Educational Psychology EDS label: Educational Psychology EDS College: Education
+Degree: Educational Psychology MA label: Educational Psychology MA College: Education
+Degree: Educational Psychology PhD label: Educational Psychology PhD College: Education
+Degree: Educational Research PhD label: Educational Research PhD College: Education
+Degree: Electrical Engineering MSEE label: Electrical Engineering MSEE College: Engineering
+Degree: Electrical Engineering PhD label: Electrical Engineering PhD College: Engineering
+Degree: Elementary Education EDS label: Elementary Education EDS College: Education
+Degree: Elementary Education MA label: Elementary Education MA College: Education
+Degree: English MA label: English MA College: Arts and Sciences
+Degree: English PhD label: English PhD College: Arts and Sciences
+Degree: English as a Second Language MA label: English as a Second Language MA College: Arts and Sciences
+Degree: Environmental Engineering MS label: Environmental Engineering MS College: Engineering
+Degree: Family Nurse Practitioner CRT label: Family Nurse Practitioner CRT College: Human Environmental Sciences
+Degree: Finance MS label: Finance MS College: Business
+Degree: Finance PhD label: Finance PhD College: Business
+Degree: Geographic Information Systems CRT label: Geographic Information Systems CRT College: Arts and Sciences
+Degree: Geography MS label: Geography MS College: Arts and Sciences
+Degree: Geography PhD label: Geography PhD College: Arts and Sciences
+Degree: Geology MS label: Geology MS College: Arts and Sciences
+Degree: Geology PhD label: Geology PhD College: Arts and Sciences
+Degree: German MA label: German MA College: Arts and Sciences
+Degree: Health Education & Promotion MPH label: Health Education & Promotion MPH College: Human Environmental Sciences
+Degree: Health Education & Promotion PhD label: Health Education & Promotion PhD College: Human Environmental Sciences
+Degree: Health Studies MA label: Health Studies MA College: Human Environmental Sciences
+Degree: Higher Education Administration EDD label: Higher Education Administration EDD College: Education
+Degree: Higher Education Administration MA label: Higher Education Administration MA College: Education
+Degree: Higher Education Administration PhD label: Higher Education Administration PhD College: Education
+Degree: History MA label: History MA College: Arts and Sciences
+Degree: History PhD label: History PhD College: Arts and Sciences
+Degree: Hospitality Management MS label: Hospitality Management MS College: Human Environmental Sciences
+Degree: Human Development and Family Studies MS label: Human Development and Family Studies MS College: Human Environmental Sciences
+Degree: Human Environmental Sciences MHS label: Human Environmental Sciences MHS College: Human Environmental Sciences
+Degree: Human Nutrition MS label: Human Nutrition MS College: Human Environmental Sciences
+Degree: Human Nutrition PhD label: Human Nutrition PhD College: Human Environmental Sciences
+Degree: Instructional Leadership EDD label: Instructional Leadership EDD College: Education
+Degree: Instructional Leadership PhD label: Instructional Leadership PhD College: Education
+Degree: Instructional Technology CRT label: Instructional Technology CRT College: Education
+Degree: Instructional Technology MA label: Instructional Technology MA College: Education
+Degree: Interdisciplinary MA label: Interdisciplinary MA College: Graduate Interdisciplinary Studies
+Degree: Interdisciplinary MS label: Interdisciplinary MS College: Graduate Interdisciplinary Studies
+Degree: Interdisciplinary PhD label: Interdisciplinary PhD College: Graduate Interdisciplinary Studies
+Degree: Journalism and Media Studies MA label: Journalism and Media Studies MA College: Communication and Information Sciences
+Degree: Kinesiology MA label: Kinesiology MA College: Education
+Degree: Kinesiology PhD label: Kinesiology PhD College: Education
+Degree: Library and Information Studies MLIS label: Library and Information Studies MLIS College: Communication and Information Sciences
+Degree: Literacy Research, Theory & Pedagogy CRT label: Literacy Research, Theory & Pedagogy CRT College: Education
+Degree: Management Information Systems MS label: Management Information Systems MS College: Business
+Degree: Management MA label: Management MA College: Business
+Degree: Management PhD label: Management PhD College: Business
+Degree: Marine Science MS label: Marine Science MS College: Arts and Sciences
+Degree: Marketing MS label: Marketing MS College: Business
+Degree: Marketing PhD label: Marketing PhD College: Business
+Degree: Master's Entry to the Profession of Nursing MSN label: Master's Entry to the Profession of Nursing MSN College: Nursing
+Degree: Materials Metallurgical Engineering PhD label: Materials Metallurgical Engineering PhD College: Engineering
+Degree: Materials Science PhD label: Materials Science PhD College: Graduate Interdisciplinary Studies
+Degree: Mathematics MA label: Mathematics MA College: Arts and Sciences
+Degree: Mathematics PhD label: Mathematics PhD College: Arts and Sciences
+Degree: Mechanical Engineering MSME label: Mechanical Engineering MSME College: Engineering
+Degree: Mechanical Engineering PhD label: Mechanical Engineering PhD College: Engineering
+Degree: Metallurgical Engineering MS label: Metallurgical Engineering MS College: Engineering
+Degree: Museum Studies CRT label: Museum Studies CRT College: Arts and Sciences
+Degree: Music DMA label: Music DMA College: Arts and Sciences
+Degree: Music MM label: Music MM College: Arts and Sciences
+Degree: Non-Degree Arts & Sciences Student label: Non-Degree Arts & Sciences Student College: Arts and Sciences
+Degree: Non-Degree Business Student label: Non-Degree Business Student College: Business
+Degree: Non-Degree Business Student (Distance Learning) label: Non-Degree Business Student (Distance Learning) College: Business
+Degree: Non-Degree Communication & Information Sciences Student label: Non-Degree Communication & Information Sciences Student College: Communication and Information Sciences
+Degree: Non-Degree Communication & Information Sciences Student (Distance Learning) label: Non-Degree Communication & Information Sciences Student (Distance Learning) College: Communication and Information Sciences
+Degree: Non-Degree Community Health Sciences Student label: Non-Degree Community Health Sciences Student College: Community Health Sciences
+Degree: Non-Degree Education Student label: Non-Degree Education Student College: Education
+Degree: Non-Degree Education Student (Distance Learning) label: Non-Degree Education Student (Distance Learning) College: Education
+Degree: Non-Degree Education Student Certification label: Non-Degree Education Student Certification College: Education
+Degree: Non-Degree Engineering Student label: Non-Degree Engineering Student College: Engineering
+Degree: Non-Degree Engineering Student (Distance Learning) label: Non-Degree Engineering Student (Distance Learning) College: Engineering
+Degree: Non-Degree Human Environmental Sciences Student label: Non-Degree Human Environmental Sciences Student College: Human Environmental Sciences
+Degree: Non-Degree Human Environmental Sciences Student (Distance Learning) label: Non-Degree Human Environmental Sciences Student (Distance Learning) College: Human Environmental Sciences
+Degree: Non-Degree Nursing Student label: Non-Degree Nursing Student College: Nursing
+Degree: Non-Degree Nursing Student (Distance Learning) label: Non-Degree Nursing Student (Distance Learning) College: Nursing
+Degree: Non-Degree Social Work Student label: Non-Degree Social Work Student College: Nursing
+Degree: Non-Degree Social Work Student (Distance Learning) label: Non-Degree Social Work Student (Distance Learning) College: Nursing
+Degree: Nursing DNP label: Nursing DNP College: Nursing
+Degree: Nursing MSN label: Nursing MSN College: Nursing
+Degree: Nursing PhD label: Nursing PhD College: Nursing
+Degree: Operations Management MS label: Operations Management MS College: Business
+Degree: Operations Management PhD label: Operations Management PhD College: Business
+Degree: Physics MS label: Physics MS College: Arts and Sciences
+Degree: Physics PhD label: Physics PhD College: Arts and Sciences
+Degree: Political Science MA label: Political Science MA College: Arts and Sciences
+Degree: Political Science PhD label: Political Science PhD College: Arts and Sciences
+Degree: Population Health Sciences MS label: Population Health Sciences MS College: Community Health Sciences
+Degree: Psychiatric Mental Health Nurse Practitioner CRT label: Psychiatric Mental Health Nurse Practitioner CRT College: Nursing
+Degree: Psychology PhD label: Psychology PhD College: Arts and Sciences
+Degree: Public Administration MPA label: Public Administration MPA College: Arts and Sciences
+Degree: Qualitative Research CRT label: Qualitative Research CRT College: Education
+Degree: Quantitative Research CRT label: Quantitative Research CRT College: Education
+Degree: Religion in Culture MA label: Religion in Culture MA College: Arts and Sciences
+Degree: Romance Languages MA label: Romance Languages MA College: Arts and Sciences
+Degree: Romance Languages PhD label: Romance Languages PhD College: Arts and Sciences
+Degree: Rural Community Health MS label: Rural Community Health MS College: Community Health Sciences
+Degree: School Psychology PhD label: School Psychology PhD College: Education
+Degree: Secondary Education EDS label: Secondary Education EDS College: Education
+Degree: Secondary Education MA label: Secondary Education MA College: Education
+Degree: Social & Cultural Studies CRT label: Social & Cultural Studies CRT College: Education
+Degree: Social Work DSW label: Social Work DSW College: Nursing
+Degree: Social Work MSW label: Social Work MSW College: Nursing
+Degree: Social Work PhD label: Social Work PhD College: Nursing
+Degree: Special Education EDD label: Special Education EDD College: Education
+Degree: Special Education EDS label: Special Education EDS College: Education
+Degree: Special Education MA label: Special Education MA College: Education
+Degree: Special Education PhD label: Special Education PhD College: Education
+Degree: Speech Language Pathology MS label: Speech Language Pathology MS College: Arts and Sciences
+Degree: Studio Art MA label: Studio Art MA College: Arts and Sciences
+Degree: Studio Art MFA label: Studio Art MFA College: Arts and Sciences
+Degree: Tax Accounting MTA label: Tax Accounting MTA College: Business
+Degree: Teaching English to Speakers of Other Languages label: Teaching English to Speakers of Other Languages College: Arts and Sciences
+Degree: Theatre MFA label: Theatre MFA College: Arts and Sciences
+Degree: Women Studies CRT label: Women Studies CRT College: Arts and Sciences
+Degree: Women Studies MA label: Women Studies MA College: Arts and Sciences
