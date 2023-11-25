@@ -167,10 +167,12 @@ export default function Step7({updateStep, form, setForm}) {
               <TableCell>Co-Chair</TableCell>
               <TableCell>{form.committeeCoChair}</TableCell>
             </TableRow> : <div></div>}
-            <TableRow>
-              <TableCell>Committee Member</TableCell>
-              <TableCell>Placeholder</TableCell>
-            </TableRow>
+            {form.committeeMembers.map(member => (
+              <TableRow>
+                <TableCell>Committee Member</TableCell>
+                <TableCell>{member}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
