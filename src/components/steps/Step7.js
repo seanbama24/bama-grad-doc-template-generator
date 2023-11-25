@@ -47,7 +47,7 @@ export default function Step7({updateStep, form, setForm}) {
               <TableCell>{form.style}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Template Type</TableCell>
+              <TableCell>Document Type</TableCell>
               <TableCell>{form.docType}</TableCell>
             </TableRow>
             <TableRow>

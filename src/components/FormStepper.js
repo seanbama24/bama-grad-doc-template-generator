@@ -162,7 +162,7 @@ function FormStepper() {
     if (form.name == '')           stuffMissing.push('Full Legal Name');
     if (form.degree == '')         stuffMissing.push('Degree');
     if (form.style == '')          stuffMissing.push('Style Guide');
-    // if (form.docType == '')        stuffMissing.push('Document Type');
+    if (form.docType == '')        stuffMissing.push('Document Type');
     if (form.font == '')           stuffMissing.push('Font');
     if (form.titleLine1 == '')     stuffMissing.push('Title Line 1');
     if (form.titleLine2 == '')     stuffMissing.push('Title Line 2');

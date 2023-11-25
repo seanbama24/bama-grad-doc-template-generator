@@ -54,7 +54,7 @@ export default function Step2({ form, setForm }) {
             id="demo-simple-select-helper"
             value={form.documentType}
             label="Document Type"
-            onChange={(e) => setForm({...form, documentType: e.target.value})}
+            onChange={(e) => setForm({...form, docType: e.target.value})}
           >
             {documentTypes.map( function (option) {
                 if (option.value === 'None') {
