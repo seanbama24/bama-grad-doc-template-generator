@@ -6,6 +6,7 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
+import Modal from '@mui/material/Modal';
 
 import Introduction from './steps/Introduction';
 import Step1 from './steps/Step1';
@@ -27,6 +28,19 @@ const steps = ['Introduction',
                'Graduate Supervisory Committee Information', 
                'Review', 
                'Create Document',];
+
+const errorPromptStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
 
 function FormStepper() {
 
@@ -95,6 +109,13 @@ function FormStepper() {
   const [committeeCoChair, setCommitteeCoChair] = React.useState('')
   const [committeeMembers, setCommitteeMembers] = React.useState([])
 
+  // Step 8 (these are not deprecated)
+  const [errorPromptOpen, setErrorPromptOpen] = React.useState(false);
+  const [missingFromForm, setMissingFromForm] = React.useState([]);
+  const handleErrorPromptOpen  = () => setErrorPromptOpen(true);
+  const handleErrorPromptClose = () => setErrorPromptOpen(false);
+
+
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -132,6 +153,31 @@ function FormStepper() {
       return newSkipped;
     });
   };
+ 
+  const handleGenerateDocument = () => {
+
+    const stuffMissing = []
+    
+    // doesnt check for valid grad date, chapter headings, committee members yet
+    if (form.name == '')           stuffMissing.push('Full Legal Name');
+    if (form.degree == '')         stuffMissing.push('Degree');
+    if (form.style == '')          stuffMissing.push('Style Guide');
+    // if (form.docType == '')        stuffMissing.push('Document Type');
+    if (form.font == '')           stuffMissing.push('Font');
+    if (form.titleLine1 == '')     stuffMissing.push('Title Line 1');
+    if (form.titleLine2 == '')     stuffMissing.push('Title Line 2');
+    if (form.titleLine3 == '')     stuffMissing.push('Title Line 3');
+    if (form.abstractText == '')   stuffMissing.push('Abstract Text');
+    if (form.committeeChair == '') stuffMissing.push('Committee Chair');
+
+    setMissingFromForm(stuffMissing);
+    if (stuffMissing.length == 0) { // if form complete, generate the doc
+        generateDocument();
+    }  else { // if form is not completed, show error prompt
+        handleErrorPromptOpen();
+    }
+
+};
 
   const handleEditActiveStep = (index) => {
     setActiveStep(index);
@@ -311,10 +357,28 @@ function FormStepper() {
               </Button>
             )} */}
 
-            {activeStep === steps.length - 1 ? <Button onClick={generateDocument} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
+            {activeStep === steps.length - 1 ? <Button onClick={handleGenerateDocument} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
           </Box>
         </div>
       </div>
+
+
+    {/*Error Prompt*/}
+    <div>
+      <Modal
+        open={errorPromptOpen}
+        onClose={handleErrorPromptClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={errorPromptStyle}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">Sections below not completed:</Typography>
+          {missingFromForm.map(item => ( <Typography id="modal-modal-description" sx={{ mt: 2 }}>-{item}</Typography> ))}
+          <hr></hr>
+          <Button onClick={generateDocument}>Generate Document Anyway (debug)</Button>
+        </Box>
+      </Modal>
+    </div>
       
       {/* This contains previous, next, skip buttons for stepping
       <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
