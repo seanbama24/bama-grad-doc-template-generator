@@ -159,16 +159,19 @@ function FormStepper() {
     const stuffMissing = []
     
     // doesnt check for valid grad date, chapter headings, committee members yet
-    if (form.name == '')           stuffMissing.push('Full Legal Name');
-    if (form.degree == '')         stuffMissing.push('Degree');
-    if (form.style == '')          stuffMissing.push('Style Guide');
-    if (form.docType == '')        stuffMissing.push('Document Type');
-    if (form.font == '')           stuffMissing.push('Font');
-    if (form.titleLine1 == '')     stuffMissing.push('Title Line 1');
-    if (form.titleLine2 == '')     stuffMissing.push('Title Line 2');
-    if (form.titleLine3 == '')     stuffMissing.push('Title Line 3');
-    if (form.abstractText == '')   stuffMissing.push('Abstract Text');
-    if (form.committeeChair == '') stuffMissing.push('Committee Chair');
+    if (form.name == '')           stuffMissing.push('Full Legal Name missing');
+    if (form.degree == '')         stuffMissing.push('Degree missing');
+    if (form.style == '')          stuffMissing.push('Style Guide missing');
+    if (form.docType == '')        stuffMissing.push('Document Type missing');
+    if (form.font == '')           stuffMissing.push('Font missing');
+    if (form.titleLine1 == '')     stuffMissing.push('Title Line 1 missing');
+    if (form.titleLine2 == '')     stuffMissing.push('Title Line 2 missing');
+    if (form.titleLine3 == '')     stuffMissing.push('Title Line 3 missing');
+    if (form.committeeChair == '') stuffMissing.push('Committee Chair missing');
+    
+    const words = form.abstractText.trim().split(/\s+/).filter(Boolean);
+    if (words.length == 0)  stuffMissing.push('Abstract missing');
+    if (words.length > 350) stuffMissing.push('Abstract over 350 words');
 
     setMissingFromForm(stuffMissing);
     if (stuffMissing.length == 0) { // if form complete, generate the doc
@@ -372,7 +375,7 @@ function FormStepper() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={errorPromptStyle}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">Sections below not completed:</Typography>
+          <Typography id="modal-modal-title" variant="h6" component="h2">Please address the following issues:</Typography>
           {missingFromForm.map(item => ( <Typography id="modal-modal-description" sx={{ mt: 2 }}>-{item}</Typography> ))}
           <hr></hr>
           <Button onClick={generateDocument}>Generate Document Anyway (debug)</Button>
