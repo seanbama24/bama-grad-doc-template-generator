@@ -158,21 +158,38 @@ function FormStepper() {
 
     const stuffMissing = []
     
-    // doesnt check for valid grad date, chapter headings, committee members yet
-    if (form.name == '')           stuffMissing.push('Full Legal Name missing');
-    if (form.degree == '')         stuffMissing.push('Degree missing');
-    if (form.style == '')          stuffMissing.push('Style Guide missing');
-    if (form.docType == '')        stuffMissing.push('Document Type missing');
-    if (form.font == '')           stuffMissing.push('Font missing');
-    if (form.titleLine1 == '')     stuffMissing.push('Title Line 1 missing');
-    if (form.titleLine2 == '')     stuffMissing.push('Title Line 2 missing');
-    if (form.titleLine3 == '')     stuffMissing.push('Title Line 3 missing');
-    if (form.committeeChair == '') stuffMissing.push('Committee Chair missing');
+    // doesnt check for valid grad date
+    if (form.name == '')       stuffMissing.push('Full Legal Name missing');
+    if (form.degree == '')     stuffMissing.push('Degree missing');
+    if (form.style == '')      stuffMissing.push('Style Guide missing');
+    if (form.docType == '')    stuffMissing.push('Document Type missing');
+    if (form.font == '')       stuffMissing.push('Font missing');
+    if (form.titleLine1 == '') stuffMissing.push('Title Line 1 missing');
+    if (form.titleLine2 == '') stuffMissing.push('Title Line 2 missing');
+    if (form.titleLine3 == '') stuffMissing.push('Title Line 3 missing');
+    
+    if (form.includesChapterHeadings) {
+        for (let chapter of form.chapterHeadings) {
+            if (chapter == '') {
+                stuffMissing.push('Invalid Chapter Heading(s)');
+                break;
+            }
+        }
+    }
     
     const words = form.abstractText.trim().split(/\s+/).filter(Boolean);
     if (words.length == 0)  stuffMissing.push('Abstract missing');
     if (words.length > 350) stuffMissing.push('Abstract over 350 words');
-
+    
+    if (form.committeeChair == '') stuffMissing.push('Committee Chair missing');
+    if (form.includesCoChair && form.committeeCoChair == '') stuffMissing.push('Committee Co-Chair missing');
+    for (let member of form.committeeMembers) {
+        if (member == '') {
+            stuffMissing.push('Invalid Committee Member(s)');
+            break;
+        }
+    }
+    
     setMissingFromForm(stuffMissing);
     if (stuffMissing.length == 0) { // if form complete, generate the doc
         generateDocument();

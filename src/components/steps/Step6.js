@@ -26,6 +26,7 @@ export default function Step6({ form, setForm }) {
         <Typography>For a Thesis, you need at least three people on the committee.</Typography>
         <Typography>For an EdD, you need at least four people on the committee.</Typography>
         <Typography>For a PhD, you need at least five people on the committee.</Typography>
+        <Typography>Do NOT include prefixes such as 'Dr.' in the name box.</Typography>
 
         <CommitteeMemberBox boxtitle={"Committee Chair *"} handler={(e) => setForm({...form, committeeChair: e.target.value})} text={form.committeeChair}/>
         
