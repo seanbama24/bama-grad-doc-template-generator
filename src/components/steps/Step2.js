@@ -99,7 +99,7 @@ export default function Step2({ form, setForm }) {
           <FormHelperText>Select Prefered Font Ex. Times New Roman</FormHelperText>
         </FormControl>
         <div>
-          <h3>Please enter the first line of your title here</h3>
+          <h3>Please enter the first line of your title here *</h3>
           {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
           <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
             <TextField
@@ -117,7 +117,7 @@ export default function Step2({ form, setForm }) {
           </FormControl>
         </div>
         <div>
-          <h3>Please enter the second line of your title here</h3>
+          <h3>Please enter the second line of your title here *</h3>
           <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
             <TextField
               id="filled-adornment-weight"
@@ -134,7 +134,7 @@ export default function Step2({ form, setForm }) {
           </FormControl>
         </div>
         <div>
-          <h3>Please enter the third line of your title here</h3>
+          <h3>Please enter the third line of your title here *</h3>
           {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
           <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
             <TextField
