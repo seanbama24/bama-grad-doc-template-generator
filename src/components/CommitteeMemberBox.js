@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TextField } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
 import InputAdornment from '@mui/material/InputAdornment';
 
 export const CommitteeMemberBox = ({ boxtitle, text, handler }) => {
@@ -22,6 +23,7 @@ export const CommitteeMemberBox = ({ boxtitle, text, handler }) => {
             value={text}
             onChange={handler}
           />
+          <FormHelperText id="filled-weight-helper-text">Please enter name without prefixes (First M. Last)</FormHelperText>
         </FormControl>
       </div>
     )

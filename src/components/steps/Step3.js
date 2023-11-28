@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/base';
 import { ChapterTitleBox } from '../ChapterTitleBox';
 import { FormControl, FormControlLabel, Checkbox, TextField, InputAdornment } from '@mui/material';
+import FormHelperText from '@mui/material/FormHelperText';
 
 export default function Step3({ form, setForm }) {
 
@@ -41,6 +42,7 @@ export default function Step3({ form, setForm }) {
                         value={form.chapterHeadings[index]}
                         onChange={(e) => updateHeading(e.target.value, index)}
                       />
+                      <FormHelperText id="filled-weight-helper-text">Enter chapter title</FormHelperText>
                     </FormControl>
                   </div>)
           })}
