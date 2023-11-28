@@ -192,7 +192,7 @@ function FormStepper() {
     
     setMissingFromForm(stuffMissing);
     if (stuffMissing.length == 0) { // if form complete, generate the doc
-        generateDocument();
+        generateDocument(form);
     }  else { // if form is not completed, show error prompt
         handleErrorPromptOpen();
     }
@@ -377,7 +377,7 @@ function FormStepper() {
               </Button>
             )} */}
 
-            {activeStep === steps.length - 1 ? <Button onClick={() => generateDocument(form)} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
+            {activeStep === steps.length - 1 ? <Button onClick={handleGenerateDocument} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
           </Box>
         </div>
       </div>
