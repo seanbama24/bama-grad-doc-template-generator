@@ -22,12 +22,12 @@ export default function Step1({ form, setForm }) {
       noValidate
       autoComplete="off"
     >
-      <h3>What is your full legal name?</h3>
+      <h3>What is your full legal name? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250, maxWidth: 250}}>
         <TextField value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}></TextField>
         <FormHelperText>Please enter your full legal name (First M. Last)</FormHelperText>
       </FormControl>
-      <h3>What degree are you currently pursuing?</h3>
+      <h3>What degree are you currently pursuing? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
         <TextField id="degree-selection" select label="Select" value={form.degree} onChange={(e) => setForm({...form, degree: e.target.value})}>
             {degreeList.map((option) => (
@@ -38,7 +38,7 @@ export default function Step1({ form, setForm }) {
         </TextField>
         <FormHelperText>Select current degree being pursued</FormHelperText>
       </FormControl>
-      <h3>When is your anticipated graduation year?</h3>
+      <h3>When is your anticipated graduation year? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DatePicker

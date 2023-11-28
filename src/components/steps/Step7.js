@@ -47,7 +47,7 @@ export default function Step7({updateStep, form, setForm}) {
               <TableCell>{form.style}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Template Type</TableCell>
+              <TableCell>Document Type</TableCell>
               <TableCell>{form.docType}</TableCell>
             </TableRow>
             <TableRow>
@@ -76,18 +76,31 @@ export default function Step7({updateStep, form, setForm}) {
 
       <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(3)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Table of Contents</h3>
       <TableContainer sx={{border: '1px solid black'}}>
-        <Table aria-label='simple table'>
-          <TableBody>
-            <TableRow>
-              <TableCell>Format Type</TableCell>
-              <TableCell>Placeholder</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Generate TOC</TableCell>
-              <TableCell>Placeholder</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        {form.includesChapterHeadings ?
+          <Table aria-label='simple table'>
+            <TableBody>
+              <TableRow>
+                <TableCell>Auto-Create Sample Chapter Headings</TableCell>
+                <TableCell>Yes</TableCell>
+              </TableRow>
+              {form.chapterHeadings.map((chapter, index) => (
+                <TableRow>
+                  <TableCell>Chapter {index + 1}</TableCell>
+                  <TableCell>{chapter}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        :
+          <Table aria-label='simple table'>
+            <TableBody>
+              <TableRow>
+                <TableCell>Auto-Create Sample Chapter Headings</TableCell>
+                <TableCell>No</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        }
       </TableContainer>
 
       <h3 style={{'color':'black'}}>Click <a onClick={() => handleEditInfo(4)} style={{'color':'#9E1B32', 'text-decoration': 'underline'}}>here</a> to edit Abstract</h3>
@@ -95,7 +108,6 @@ export default function Step7({updateStep, form, setForm}) {
         <Table aria-label='simple table'>
           <TableBody>
             <TableRow>
-              {/* <TableCell>Abstract</TableCell> */}
               <TableCell>{form.abstractText}</TableCell>
             </TableRow>
           </TableBody>
@@ -155,10 +167,12 @@ export default function Step7({updateStep, form, setForm}) {
               <TableCell>Co-Chair</TableCell>
               <TableCell>{form.committeeCoChair}</TableCell>
             </TableRow> : <div></div>}
-            <TableRow>
-              <TableCell>Committee Member</TableCell>
-              <TableCell>Placeholder</TableCell>
-            </TableRow>
+            {form.committeeMembers.map(member => (
+              <TableRow>
+                <TableCell>Committee Member</TableCell>
+                <TableCell>{member}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

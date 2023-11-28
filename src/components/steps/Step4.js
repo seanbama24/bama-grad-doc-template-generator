@@ -17,7 +17,7 @@ export default function Step4({form, setForm}) {
       autoComplete="off"
     >
       <div>
-        <Typography variant="h7" fontWeight="bold">Abstract</Typography>
+        <Typography variant="h7" fontWeight="bold">Abstract *</Typography>
         <TextField 
           variant="outlined" 
           required
