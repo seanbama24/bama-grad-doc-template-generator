@@ -1,8 +1,5 @@
 import * as React from 'react';
-import { TextField } from '@mui/material';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-import InputAdornment from '@mui/material/InputAdornment';
+import { FormControl, FormHelperText, TextField, InputAdornment } from '@mui/material';
 
 export const CommitteeMemberBox = ({ boxtitle, text, handler }) => {
     // const [text, setText] = React.useState('')

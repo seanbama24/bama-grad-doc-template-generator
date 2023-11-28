@@ -4,8 +4,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/base';
 import { ChapterTitleBox } from '../ChapterTitleBox';
-import { FormControl, FormControlLabel, Checkbox, TextField, InputAdornment } from '@mui/material';
-import FormHelperText from '@mui/material/FormHelperText';
+import { FormControl, FormHelperText, FormControlLabel, Checkbox, TextField, InputAdornment } from '@mui/material';
 
 export default function Step3({ form, setForm }) {
 
