@@ -4,6 +4,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
+import StepButton from '@mui/material/StepButton';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import Modal from '@mui/material/Modal';
@@ -186,9 +187,14 @@ function FormStepper() {
     });
   };
 
+  const handleStep = (step) => () => {
+    touchNewStep();
+    setActiveStep(step);
+  };
+
   const touchNewStep = () => {
     const newTouched = touched;
-    newTouched[activeStep] = true;
+    newTouched[activeStep + 1] = true; // '+ 1' to enable clicking activeStep + 1
     setTouched(newTouched);
   };
  
@@ -323,13 +329,13 @@ function FormStepper() {
       <hr></hr>
       <div style={{"display": "flex", "flexGrow": "1"}}>
         <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
-          <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
+          <Stepper  nonLinear activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
             {steps.map((label, index) => {
               const stepProps = {};
               const labelProps = {};
               return (
                 <Step key={label} {...stepProps}
-                      completed={isStepCompleted(index) && touched[index]}
+                      completed={(isStepCompleted(index) && touched[index]) || index == 0}
                       sx={{ 
                         '& .MuiStepLabel-root .Mui-completed': {
                           color: '#9E1B32'
@@ -338,10 +344,11 @@ function FormStepper() {
                           color: '#9E1B32'
                         }
                       }}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
+                  <StepButton color="inherit" onClick={handleStep(index)} disabled={!touched[index] && !touched[index - 1] && index > 1}>{label}</StepButton>
                 </Step>
               );
             })}
+
           </Stepper>
         </div>
 
