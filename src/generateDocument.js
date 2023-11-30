@@ -1,5 +1,78 @@
 import { saveAs } from "file-saver"
-import { Document, Packer, Paragraph, TextRun, AlignmentType, Footer, PageNumber, NumberFormat, VerticalAlign, HeadingLevel, TableOfContents, StyleLevel, UnderlineType } from "docx";
+import { degreeList } from "./fieldValues";
+import { Document, Packer, Paragraph, TextRun, AlignmentType, Footer, PageNumber, NumberFormat, VerticalAlign, HeadingLevel, TableOfContents, StyleLevel, ExternalHyperlink } from "docx";
+
+function buildCommittee(form) {
+    console.log(form.gradYear.getYear())
+    let result = [
+            new TextRun({
+            text: form.committeeChair.toUpperCase(),
+            size: 24
+        }),
+    ]
+
+    if(form.includesCoChair) {
+        result.push(
+            new TextRun({
+                text: form.committeeCoChair.toUpperCase(),
+                break: 1,
+                size: 24
+            })
+        )
+    }
+
+    form.committeeMembers.forEach((member) => {
+        result.push(
+            new TextRun({
+                text: member.toUpperCase(),
+                break: 1,
+                size: 24
+            }),
+        )
+    })
+
+    let dept
+    degreeList.forEach((entry) => {
+        if(entry.value === form.degree) {
+            dept = entry.College
+        }
+    })
+ 
+    result.push(
+        new TextRun({
+            text: "A " + form.docType.toUpperCase(),
+            break: 4,
+            size: 24
+        }),
+        new TextRun({
+            text: "Submitted in partial fulfillment of the requirements",
+            break: 4,
+            size: 24
+        }),
+        new TextRun({
+            text: "for the degree of " + form.degree,
+            break: 1,
+            size: 24
+        }),
+        new TextRun({
+            text: "in the Department of " + dept,
+            break: 1,
+            size: 24
+        }),
+        new TextRun({
+            text: "in the Graduate School of",
+            break: 1,
+            size: 24
+        }),
+        new TextRun({
+            text: "The University of Alabama",
+            break: 1,
+            size: 24
+        }),
+    )
+
+    return result;
+}
 
 export default function generateDocument(form) {
     let contentParagraphs = [
@@ -29,6 +102,9 @@ export default function generateDocument(form) {
         new Paragraph({
             spacing: {
                 line: 480
+            },
+            indent: {
+                firstLine: 720,
             },
             children: [
                 new TextRun({
@@ -67,6 +143,9 @@ export default function generateDocument(form) {
                 new Paragraph({
                     spacing: {
                         line: 480
+                    },
+                    indent: {
+                        firstLine: 720,
                     },
                     children: [
                         new TextRun({
@@ -144,9 +223,12 @@ export default function generateDocument(form) {
             spacing: {
                 line: 480
             },
+            indent: {
+                firstLine: 720,
+            },
             children: [
                 new TextRun({
-                    text: "\tInsert first appendix here. Format with APPENDIX, then number, then title. Start new page for each appendix. Include IRB approval letter here, with blank or redacted signatures.",
+                    text: "Insert first appendix here. Format with APPENDIX, then number, then title. Start new page for each appendix. Include IRB approval letter here, with blank or redacted signatures.",
                     size: 24
                 }),
             ]
@@ -177,6 +259,9 @@ export default function generateDocument(form) {
         new Paragraph({
             spacing: {
                 line: 480
+            },
+            indent: {
+                firstLine: 720,
             },
             children: [
                 new TextRun({
@@ -242,16 +327,16 @@ export default function generateDocument(form) {
                         },
                         children: [
                             new TextRun({
-                                text: form.titleLine1,
+                                text: form.titleLine1.toUpperCase(),
                                 size: 24
                             }),
                             new TextRun({
-                                text: "DOUBLE-SPACING IN BETWEEN LINES]",
+                                text: form.titleLine2.toUpperCase(),
                                 break: 1,
                                 size: 24
                             }),
                             new TextRun({
-                                text: "DOUBLE-SPACING IN BETWEEN LINES]",
+                                text: form.titleLine3.toUpperCase(),
                                 break: 1,
                                 size: 24
                             }),
@@ -261,7 +346,7 @@ export default function generateDocument(form) {
                                 size: 24
                             }),
                             new TextRun({
-                                text: "[AUTHOR NAME, FIRST M. LAST, OMIT TITLES AND DEGREES]",
+                                text: form.name.toUpperCase(),
                                 break: 1,
                                 size: 24
                             }),
@@ -272,57 +357,7 @@ export default function generateDocument(form) {
                         spacing: {
                             line: 240
                         },
-                        children: [
-                                new TextRun({
-                                text: "[NAME OF COMMITTEE CHAIR, FIRST M. LAST, WITH TITLE]",
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "[NAME OF CO-CHAIR (IF APPOINTED), FIRST M. LAST, WITH TITLE]",
-                                break: 1,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "[OTHER COMMITTEE MEMBERS, FIRST M. LAST]",
-                                break: 1,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "(OMIT TITLES AND DEGREES)",
-                                break: 1,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "A DISSERTATION (OR THESIS)",
-                                break: 3,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "Submitted in partial fulfillment of the requirements",
-                                break: 4,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "for the degree of [Doctor of Philosophy]",
-                                break: 1,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "in the Department of [official Department Name]",
-                                break: 1,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "in the Graduate School of",
-                                break: 1,
-                                size: 24
-                            }),
-                            new TextRun({
-                                text: "The University of Alabama",
-                                break: 1,
-                                size: 24
-                            }),
-                        ]
+                        children: buildCommittee(form)
                     }),
                     new Paragraph({
                         alignment: AlignmentType.CENTER,
@@ -336,7 +371,7 @@ export default function generateDocument(form) {
                                 size: 24
                             }),
                             new TextRun({
-                                text: "[YEAR OF PUBLICATION]",
+                                text: (form.gradYear.getYear() + 1900).toString(),
                                 break: 1,
                                 size: 24
                             }),
@@ -353,13 +388,17 @@ export default function generateDocument(form) {
                 },
                 children: [
                     new Paragraph({
+                        spacing: {
+                            line: 240
+                        },
                         children: [
                             new TextRun({
-                                text: "Copyright Beverly Dianne Eads 2022",
+                                text: "Copyright Beverly Dianne Eads " + (form.gradYear.getYear() + 1900).toString(),
                                 size: 24
                             }),
                             new TextRun({
                                 text: "ALL RIGHTS RESERVED",
+                                break: 1,
                                 size: 24
                             }),
                         ],
@@ -429,6 +468,9 @@ export default function generateDocument(form) {
                         spacing: {
                             line: 480
                         },
+                        indent: {
+                            firstLine: 720,
+                        },
                         children: [
                             new TextRun({
                                 text: form.abstractText,
@@ -458,6 +500,9 @@ export default function generateDocument(form) {
                     new Paragraph({
                         spacing: {
                             line: 480
+                        },
+                        indent: {
+                            firstLine: 720,
                         },
                         children: [
                             new TextRun({
@@ -519,6 +564,9 @@ export default function generateDocument(form) {
                         spacing: {
                             line: 480
                         },
+                        indent: {
+                            firstLine: 720,
+                        },
                         children: [
                             new TextRun({
                                 text: "Write your acknowledgements here",
@@ -572,8 +620,17 @@ export default function generateDocument(form) {
                         },
                         children: [
                             new TextRun({
-                                text: "TODO - list of tables",
+                                text: "You will have to manually insert a table of figures here, ",
                                 size: 24
+                            }),
+                            new ExternalHyperlink({
+                                children: [
+                                    new TextRun({
+                                        text: "click here to get started.",
+                                        style: "Hyperlink",
+                                    }),
+                                ],
+                                link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
                             }),
                         ]
                     }),
@@ -602,8 +659,17 @@ export default function generateDocument(form) {
                         },
                         children: [
                             new TextRun({
-                                text: "TODO - list of figures",
+                                text: "You will have to manually insert a table of figures here, ",
                                 size: 24
+                            }),
+                            new ExternalHyperlink({
+                                children: [
+                                    new TextRun({
+                                        text: "click here to get started.",
+                                        style: "Hyperlink",
+                                    }),
+                                ],
+                                link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
                             }),
                         ]
                     }),
@@ -632,8 +698,17 @@ export default function generateDocument(form) {
                         },
                         children: [
                             new TextRun({
-                                text: "TODO - list of illustrations",
+                                text: "You will have to manually insert a table of figures here, ",
                                 size: 24
+                            }),
+                            new ExternalHyperlink({
+                                children: [
+                                    new TextRun({
+                                        text: "click here to get started.",
+                                        style: "Hyperlink",
+                                    }),
+                                ],
+                                link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
                             }),
                         ]
                     }),

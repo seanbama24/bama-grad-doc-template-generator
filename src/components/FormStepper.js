@@ -79,37 +79,6 @@ function FormStepper() {
 
   // Introduction
   const [att, setATT] = React.useState(false);
-  // Step 1
-  const [name, setName] = React.useState('');
-  const [degree, setDegree] = React.useState(null);
-  const [graduationYear, setGraduationYear] = React.useState(new Date());
-  // Step 2
-  const [style, setStyle] = React.useState(null);
-  const [docType, setDocType] = React.useState(null);
-  const [font, setFont] = React.useState(null);
-  const [titleLine1, setTitleLine1] = React.useState('');
-  const [titleLine2, setTitleLine2] = React.useState('');
-  const [titleLine3, setTitleLine3] = React.useState('');
-  // Step 3
-  const [includesChapterHeadings, setIncludesChapterHeadings] = React.useState(false);
-  const [chapterHeadingStrings, setChapterHeadingStrings] = React.useState([]);
-  const [chapterHeadings, setChapterHeadings] = React.useState([]);
-  // Step 4
-  const [abstractText, setAbstractText] = React.useState('');
-  // Step 5
-  const [includeDedication, setIncludeDedication] = React.useState(false);
-  const [includeAcknowledgement, setIncludeAcknowledgement] = React.useState(false);
-  const [includePreface, setIncludePreface] = React.useState(false);
-  const [includeFigures, setIncludeFigures] = React.useState(false);
-  const [includeTables, setIncludeTables] = React.useState(false);
-  const [includeSymbols, setIncludeSymbols] = React.useState(false);
-  const [includeAppendix, setIncludeAppendix] = React.useState(false);
-  const [includeBiographical, setInlcudeBiographical] = React.useState(false);
-  // Step 6
-  const [includesCoChair, setIncludesCoChair] = React.useState(false)
-  const [committeeChair, setCommitteeChair] = React.useState('')
-  const [committeeCoChair, setCommitteeCoChair] = React.useState('')
-  const [committeeMembers, setCommitteeMembers] = React.useState([])
 
   // Step 8 (these are not deprecated)
   const [errorPromptOpen, setErrorPromptOpen] = React.useState(false);
@@ -211,115 +180,15 @@ function FormStepper() {
         handleErrorPromptOpen();
     }
 
-};
+  };
 
   const handleEditActiveStep = (index) => {
     setActiveStep(index);
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
   const handleCheckBox = () => {
     const newATTVal = !att
     setATT(newATTVal);
-  };
-
-  const handleName = (event) => {
-    setName(event.target.value);
-  }
-
-  const handleDegree = (event) => {
-    setDegree(event.target.value);
-  };
-
-  const handleYear = (date) => {
-    setGraduationYear(date);
-  };
-
-  const handleStyle = (event) => {
-    setStyle(event.target.value);
-  };
-
-  const handleDocType = (event) => {
-    setDocType(event.target.value);
-  };
-
-  const handleFont = (event) => {
-    setFont(event.target.value);
-  };
-
-  const handleTL1 = (event) => { // Title Line 1
-    setTitleLine1(event.target.value);
-  };
-
-  const handleTL2 = (event) => { // Title Line 2
-    setTitleLine2(event.target.value);
-  };
-
-  const handleTL3 = (event) => { // Title Line 3
-    setTitleLine3(event.target.value);
-  };
-
-  const handleIncludeChapterHeadings = () => {
-    setIncludesChapterHeadings(!includesChapterHeadings);
-  };
-
-  // const handleChapterHeadings = (event) => {
-  //   setChapterHeadings(event.target.value);
-  // };
-  const handleChapterHeadingStrings = (event, index) => {
-    const specificString = chapterHeadingStrings[index];
-    const newStrings = [...chapterHeadingStrings];
-    // newStrings[index] = event.target;
-    setChapterHeadingStrings(newStrings);
-  };
-  const handleAddNewText = (updatedArray) => {
-    setChapterHeadingStrings(updatedArray);
-  };
-  const handleAbstractText = (event) => {
-    const words = event.target.value.trim().split(/\s+/).filter(Boolean)
-    if (words.length <= 350) {
-      setAbstractText(event.target.value)
-    }
-    
-  };
-  const handleIncludeDedication = () => {
-    setIncludeDedication(!includeDedication);
-  };
-  const handleIncludeAcknowledgments = () => {
-    setIncludeAcknowledgement(!includeAcknowledgement);
-  };
-  const handleIncludePreface = () => {
-    setIncludePreface(!includePreface);
-  };
-  const handleIncludeFigures = () => {
-    setIncludeFigures(!includeFigures);
-  };
-  const handleIncludeTables = () => {
-    setIncludeTables(!includeTables);
-  };
-  const handleIncludeSymbols = () => {
-    setIncludeSymbols(!includeSymbols);
-  };
-  const handleIncludeAppendix = () => {
-    setIncludeAppendix(!includeAppendix);
-  };
-  const handleIncludeBiographical = () => {
-    setInlcudeBiographical(!includeBiographical);
-  };
-  const handleIncludeCoChairs = () => {
-    setIncludesCoChair(!includesCoChair);
-    if (includesCoChair){ // if box is not checked
-        setCommitteeCoChair('');
-    }
-  };
-  const handleCommitteeChair = (event) => {
-    setCommitteeChair(event.target.value);
-  };
-  const handleCommitteeCoChair = (event) => {
-    setCommitteeCoChair(event.target.value);
   };
 
   return (
