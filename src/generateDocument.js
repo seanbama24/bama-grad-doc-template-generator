@@ -783,13 +783,7 @@ export default function generateDocument(form) {
         ],
     });
 
-    let filename = "Thesis"
-    console.log(form)
-    if(form.docType !== "Thesis") {
-        filename = "Dissertation"
-    }
-
-    saveDocumentAsFile(doc, filename + ".docx");
+    saveDocumentAsFile(doc, form.docType + ".docx");
 }
 
 function saveDocumentAsFile(doc, filename) {
