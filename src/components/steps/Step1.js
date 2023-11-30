@@ -25,7 +25,7 @@ export default function Step1({ form, setForm }) {
       <h3>What is your full legal name? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250, maxWidth: 250}}>
         <TextField value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}></TextField>
-        <FormHelperText>Please enter your full legal name (First M. Last)</FormHelperText>
+        <FormHelperText>Please enter your full legal name (First Middle Last)</FormHelperText>
       </FormControl>
       <h3>What degree are you currently pursuing? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
