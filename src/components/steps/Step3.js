@@ -29,7 +29,7 @@ export default function Step3({ form, setForm }) {
         {form.includesChapterHeadings ? <div id="chapter-input">
           {form.chapterHeadings.map((heading, index) => {
             return(<div>
-                    <h3>Chapter Title {index + 1}</h3>
+                    <h3>Chapter Title {index + 1} *</h3>
                     <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
                       <TextField
                         id="filled-adornment-weight"

@@ -27,7 +27,7 @@ export default function Step4({form, setForm}) {
           width="100%"
           value={form.abstractText}
           onChange={(e) => setForm({...form, abstractText: e.target.value})}/>
-        <Typography marginBottom="20px">Type or copy your abstract here</Typography>
+        <Typography marginBottom="20px">Type or copy your abstract here.</Typography>
 
         <Typography>Quick notes about the abstract:</Typography>
         <ol>
@@ -39,7 +39,7 @@ export default function Step4({form, setForm}) {
         </ol>
 
         <Typography fontWeight="bold">Please note: The abstract must not exceed 350 words.</Typography>
-        <Typography>Your word count is {getWordCount()}</Typography>
+        <Typography>Your word count is {getWordCount()}.</Typography>
       </div>
     </Box>
   );
