@@ -99,7 +99,7 @@ function FormStepper() {
         if (form.name == '' || form.degree == '') return false;
         break;
       case 2: // Document Information
-        if (form.style == '' || form.docType == '' || form.font == '' || form.titleLine1 == '' || form.titleLine2 == '' || form.titleLine3 == '') return false;
+        if (form.docType == '' || form.font == '' || form.titleLine1 == '' || form.titleLine2 == '' || form.titleLine3 == '') return false;
         break;
       case 3: // Table of Contents
         if (form.includesChapterHeadings) {

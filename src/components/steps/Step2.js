@@ -18,33 +18,6 @@ export default function Step2({ form, setForm }) {
       noValidate
       autoComplete="off"
     >
-      <div>
-          <h3>Choose Style Guide *</h3>
-          <FormControl sx={{ m: 1, minWidth: 120, width: '25ch' }}>
-          <InputLabel id="demo-simple-select-helper-label">Style</InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            value={form.style}
-            label="Style"
-            onChange={(e) => setForm({...form, style: e.target.value})}
-          >
-            {styles.map( function (option) {
-                if (option.value === 'None') {
-                  return <MenuItem disabled={true} value={styles[0].value}>
-                    <em>None</em>
-                  </MenuItem>
-                } 
-                else {
-                return <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                </MenuItem>
-                }
-            })}            
-          </Select>
-          <FormHelperText>Select Prefered Style Ex. MLA</FormHelperText>
-        </FormControl>
-        </div>
         <div>
           <h3>What is your document type? *</h3>
           <FormControl sx={{ m: 1, minWidth: 120, width: '25ch'}}>
@@ -52,9 +25,9 @@ export default function Step2({ form, setForm }) {
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={form.documentType}
+            value={form.docType}
             label="Document Type"
-            onChange={(e) => setForm({...form, docType: e.target.value})}
+            onChange={(e) => {setForm({...form, docType: e.target.value}); console.log(form)}}
           >
             {documentTypes.map( function (option) {
                 if (option.value === 'None') {
@@ -108,12 +81,12 @@ export default function Step2({ form, setForm }) {
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
-                maxLength: 90
+                maxLength: 30
               }}
               value={form.titleLine1}
               onChange={(e) => setForm({...form, titleLine1: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 90 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 30 characters.</FormHelperText>
           </FormControl>
         </div>
         <div>
@@ -125,12 +98,12 @@ export default function Step2({ form, setForm }) {
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
-                maxLength: 60
+                maxLength: 25
               }}
               value={form.titleLine2}
               onChange={(e) => setForm({...form, titleLine2: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 60 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 25 characters.</FormHelperText>
           </FormControl>
         </div>
         <div>
@@ -143,12 +116,12 @@ export default function Step2({ form, setForm }) {
               aria-describedby="filled-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
-                maxLength: 30
+                maxLength: 20
               }}
               value={form.titleLine3}
               onChange={(e) => setForm({...form, titleLine3: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 30 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 20 characters.</FormHelperText>
           </FormControl>
         </div>
       </div>

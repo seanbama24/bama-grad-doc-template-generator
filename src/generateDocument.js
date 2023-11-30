@@ -3,7 +3,7 @@ import { degreeList } from "./fieldValues";
 import { Document, Packer, Paragraph, TextRun, AlignmentType, Footer, PageNumber, NumberFormat, VerticalAlign, HeadingLevel, TableOfContents, StyleLevel, ExternalHyperlink } from "docx";
 
 function buildCommittee(form) {
-    console.log(form.gradYear.getYear())
+    console.log(form)
     let result = [
             new TextRun({
             text: form.committeeChair.toUpperCase(),
@@ -377,7 +377,7 @@ function buildPreliminaries(form) {
     return result;
 }
 
-export default function generateDocument(form) {
+function buildContent(form) {
     let contentParagraphs = [
         // j. Chapter 1, first page. Arabic numeral page number – restarts with 1 always.
         // k. Subsequent pages. Arabic numeral page number next in sequence.
@@ -575,7 +575,11 @@ export default function generateDocument(form) {
         }),
     )
 
+    return contentParagraphs
+}
 
+export default function generateDocument(form) {
+    
     const doc = new Document({
         features: {
             updateFields: true,
@@ -585,6 +589,7 @@ export default function generateDocument(form) {
                 document: {
                     run: {
                         size: "12pt",
+                        font: form.font
                     },
                     paragraph: {
                         spacing: {
@@ -773,7 +778,7 @@ export default function generateDocument(form) {
                     }),
                 },
 
-                children: contentParagraphs,
+                children: buildContent(form),
             },
         ],
     });

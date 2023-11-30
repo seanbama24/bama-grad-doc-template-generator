@@ -44,7 +44,7 @@ export default function Step1({ form, setForm }) {
           <DatePicker
             label={'YYYY'} 
             views={['year']}
-            selected={form.gradYear}
+            value={form.gradYear}
             onChange={(e) => setForm({...form, gradYear: e})}
             renderInput={(params) => <TextField {...params} />}
           />
