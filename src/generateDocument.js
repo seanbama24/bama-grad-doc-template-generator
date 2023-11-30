@@ -74,6 +74,309 @@ function buildCommittee(form) {
     return result;
 }
 
+function buildPreliminaries(form) {
+    let result = [
+        // c. Abstract. Always page ii.
+        // d. Dedication (optional). Page iii if present.
+        // e. List of Abbreviations. Roman numeral page number next in sequence.
+        // f. Acknowledgments. Roman numeral page number next in sequence.
+        // g. Contents. Roman numeral page number next in sequence.
+        // h. List of Tables. Roman numeral page number next in sequence.
+        // i. List of Figures. Roman numeral page number next in sequence.
+
+        //C - Abstract
+        new Paragraph({
+            pageBreakBefore: true,
+            alignment: AlignmentType.CENTER,
+            heading: HeadingLevel.HEADING_1,
+            spacing: {
+                line: 240,
+                after: 240
+            },
+            children: [
+                new TextRun({
+                    text: "ABSTRACT",
+                    color: "#000000",
+                    size: 24,
+                    break: 5
+                }),
+            ]
+        }),
+        new Paragraph({
+            spacing: {
+                line: 480
+            },
+            indent: {
+                firstLine: 720,
+            },
+            children: [
+                new TextRun({
+                    text: form.abstractText,
+                    size: 24
+                }),
+            ]
+        }),
+    ]
+
+    if(form.includeDedication) {
+        result.push(
+            //D - Dedication
+            new Paragraph({
+                pageBreakBefore: true,
+                alignment: AlignmentType.CENTER,
+                heading: HeadingLevel.HEADING_1,
+                spacing: {
+                    line: 240,
+                    after: 240
+                },
+                children: [
+                    new TextRun({
+                        text: "DEDICATION",
+                        color: "#000000",
+                        size: 24,
+                        break: 5
+                    }),
+                ]
+            }),
+            new Paragraph({
+                spacing: {
+                    line: 480
+                },
+                indent: {
+                    firstLine: 720,
+                },
+                children: [
+                    new TextRun({
+                        text: "Write your dedication here",
+                        size: 24
+                    }),
+                ]
+            }),
+        )
+    }
+
+    if(form.includeAbbreviationsAndSymbols) {
+        result.push(
+            //E - List of Abbreviations
+            new Paragraph({
+                pageBreakBefore: true,
+                alignment: AlignmentType.CENTER,
+                heading: HeadingLevel.HEADING_1,
+                spacing: {
+                    line: 240,
+                    after: 240
+                },
+                children: [
+                    new TextRun({
+                        text: "LIST OF ABBREVIATIONS AND SYMBOLS",
+                        color: "#000000",
+                        size: 24,
+                        break: 5
+                    }),
+                ]
+            }),
+            new Paragraph({
+                spacing: {
+                    line: 480
+                },
+                children: [
+                    new TextRun({
+                        text: "TODO - List of abbreviations",
+                        size: 24
+                    }),
+                ]
+            }),
+        )
+    }
+
+    result.push(
+        //F Acknowledgements
+        new Paragraph({
+            pageBreakBefore: true,
+            alignment: AlignmentType.CENTER,
+            heading: HeadingLevel.HEADING_1,
+            spacing: {
+                line: 240,
+                after: 240
+            },
+            children: [
+                new TextRun({
+                    text: "ACKNOWLEDGEMENTS",
+                    color: "#000000",
+                    size: 24,
+                    break: 5
+                }),
+            ]
+        }),
+        new Paragraph({
+            spacing: {
+                line: 480
+            },
+            indent: {
+                firstLine: 720,
+            },
+            children: [
+                new TextRun({
+                    text: "Write your acknowledgements here",
+                    size: 24
+                }),
+            ]
+        }),
+
+        //G Contents
+        new Paragraph({
+            pageBreakBefore: true,
+            alignment: AlignmentType.CENTER,
+            spacing: {
+                line: 240,
+                after: 240
+            },
+            children: [
+                new TextRun({
+                    text: "CONTENTS",
+                    break: 5
+                }),
+            ]
+        }),
+        new TableOfContents("Contents", {
+            hyperlink: true,
+            headingStyleRange: "1-5",
+            stylesWithLevels: [new StyleLevel("MySpectacularStyle", 1)],
+        }),
+    )
+
+    if(form.includeTables) {
+        result.push(
+            //H - List of tables
+            new Paragraph({
+                pageBreakBefore: true,
+                alignment: AlignmentType.CENTER,
+                heading: HeadingLevel.HEADING_1,
+                spacing: {
+                    line: 240,
+                    after: 240
+                },
+                children: [
+                    new TextRun({
+                        text: "LIST OF TABLES",
+                        color: "#000000",
+                        size: 24,
+                        break: 5
+                    }),
+                ]
+            }),
+            new Paragraph({
+                spacing: {
+                    line: 480
+                },
+                children: [
+                    new TextRun({
+                        text: "You will have to manually insert a table of figures here, ",
+                        size: 24
+                    }),
+                    new ExternalHyperlink({
+                        children: [
+                            new TextRun({
+                                text: "click here to get started.",
+                                style: "Hyperlink",
+                            }),
+                        ],
+                        link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
+                    }),
+                ]
+            }),
+        )
+    }
+
+    if(form.includeFigures) {
+        result.push(
+            //I list of figures
+            new Paragraph({
+                pageBreakBefore: true,
+                alignment: AlignmentType.CENTER,
+                heading: HeadingLevel.HEADING_1,
+                spacing: {
+                    line: 240,
+                    after: 240
+                },
+                children: [
+                    new TextRun({
+                        text: "LIST OF FIGURES",
+                        color: "#000000",
+                        size: 24,
+                        break: 5
+                    }),
+                ]
+            }),
+            new Paragraph({
+                spacing: {
+                    line: 480
+                },
+                children: [
+                    new TextRun({
+                        text: "You will have to manually insert a table of figures here, ",
+                        size: 24
+                    }),
+                    new ExternalHyperlink({
+                        children: [
+                            new TextRun({
+                                text: "click here to get started.",
+                                style: "Hyperlink",
+                            }),
+                        ],
+                        link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
+                    }),
+                ]
+            }),
+        )
+    }
+
+    if(form.includeIllustrations) {
+        result.push(
+            //J list of illustrations
+            new Paragraph({
+                pageBreakBefore: true,
+                alignment: AlignmentType.CENTER,
+                heading: HeadingLevel.HEADING_1,
+                spacing: {
+                    line: 240,
+                    after: 240
+                },
+                children: [
+                    new TextRun({
+                        text: "LIST OF ILLUSTRATIONS",
+                        color: "#000000",
+                        size: 24,
+                        break: 5
+                    }),
+                ]
+            }),
+            new Paragraph({
+                spacing: {
+                    line: 480
+                },
+                children: [
+                    new TextRun({
+                        text: "You will have to manually insert a table of figures here, ",
+                        size: 24
+                    }),
+                    new ExternalHyperlink({
+                        children: [
+                            new TextRun({
+                                text: "click here to get started.",
+                                style: "Hyperlink",
+                            }),
+                        ],
+                        link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
+                    }),
+                ]
+            }),
+        )
+    }
+
+    return result;
+}
+
 export default function generateDocument(form) {
     let contentParagraphs = [
         // j. Chapter 1, first page. Arabic numeral page number – restarts with 1 always.
@@ -393,7 +696,7 @@ export default function generateDocument(form) {
                         },
                         children: [
                             new TextRun({
-                                text: "Copyright Beverly Dianne Eads " + (form.gradYear.getYear() + 1900).toString(),
+                                text: "Copyright " + form.name + " " + (form.gradYear.getYear() + 1900).toString(),
                                 size: 24
                             }),
                             new TextRun({
@@ -437,282 +740,7 @@ export default function generateDocument(form) {
                     }),
                 },
 
-                children: [
-                    // c. Abstract. Always page ii.
-                    // d. Dedication (optional). Page iii if present.
-                    // e. List of Abbreviations. Roman numeral page number next in sequence.
-                    // f. Acknowledgments. Roman numeral page number next in sequence.
-                    // g. Contents. Roman numeral page number next in sequence.
-                    // h. List of Tables. Roman numeral page number next in sequence.
-                    // i. List of Figures. Roman numeral page number next in sequence.
-
-                    //C - Abstract
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "ABSTRACT",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        indent: {
-                            firstLine: 720,
-                        },
-                        children: [
-                            new TextRun({
-                                text: form.abstractText,
-                                size: 24
-                            }),
-                        ]
-                    }),
-
-                    //D - Dedication
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "DEDICATION",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        indent: {
-                            firstLine: 720,
-                        },
-                        children: [
-                            new TextRun({
-                                text: "Write your dedication here",
-                                size: 24
-                            }),
-                        ]
-                    }),
-
-                    //E - List of Abbreviations
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "LIST OF ABBREVIATIONS AND SYMBOLS",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        children: [
-                            new TextRun({
-                                text: "TODO - List of abbreviations",
-                                size: 24
-                            }),
-                        ]
-                    }),
-
-                    //F Acknowledgements
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "ACKNOWLEDGEMENTS",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        indent: {
-                            firstLine: 720,
-                        },
-                        children: [
-                            new TextRun({
-                                text: "Write your acknowledgements here",
-                                size: 24
-                            }),
-                        ]
-                    }),
-
-                    //G Contents
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "CONTENTS",
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new TableOfContents("Contents", {
-                        hyperlink: true,
-                        headingStyleRange: "1-5",
-                        stylesWithLevels: [new StyleLevel("MySpectacularStyle", 1)],
-                    }),
-
-                    //H - List of tables
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "LIST OF TABLES",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        children: [
-                            new TextRun({
-                                text: "You will have to manually insert a table of figures here, ",
-                                size: 24
-                            }),
-                            new ExternalHyperlink({
-                                children: [
-                                    new TextRun({
-                                        text: "click here to get started.",
-                                        style: "Hyperlink",
-                                    }),
-                                ],
-                                link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
-                            }),
-                        ]
-                    }),
-
-                    //I list of figures
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "LIST OF FIGURES",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        children: [
-                            new TextRun({
-                                text: "You will have to manually insert a table of figures here, ",
-                                size: 24
-                            }),
-                            new ExternalHyperlink({
-                                children: [
-                                    new TextRun({
-                                        text: "click here to get started.",
-                                        style: "Hyperlink",
-                                    }),
-                                ],
-                                link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
-                            }),
-                        ]
-                    }),
-
-                    //J list of illustrations
-                    new Paragraph({
-                        pageBreakBefore: true,
-                        alignment: AlignmentType.CENTER,
-                        heading: HeadingLevel.HEADING_1,
-                        spacing: {
-                            line: 240,
-                            after: 240
-                        },
-                        children: [
-                            new TextRun({
-                                text: "LIST OF ILLUSTRATIONS",
-                                color: "#000000",
-                                size: 24,
-                                break: 5
-                            }),
-                        ]
-                    }),
-                    new Paragraph({
-                        spacing: {
-                            line: 480
-                        },
-                        children: [
-                            new TextRun({
-                                text: "You will have to manually insert a table of figures here, ",
-                                size: 24
-                            }),
-                            new ExternalHyperlink({
-                                children: [
-                                    new TextRun({
-                                        text: "click here to get started.",
-                                        style: "Hyperlink",
-                                    }),
-                                ],
-                                link: "https://support.microsoft.com/en-au/office/insert-a-table-of-figures-c5ea59c5-487c-4fb2-bd48-e34dd57f0ec1",
-                            }),
-                        ]
-                    }),
-                ],
+                children: buildPreliminaries(form)
             },
 
 
