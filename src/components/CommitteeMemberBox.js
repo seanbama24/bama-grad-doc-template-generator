@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { TextField } from '@mui/material';
-import FormControl from '@mui/material/FormControl';
-import InputAdornment from '@mui/material/InputAdornment';
+import { FormControl, FormHelperText, TextField, InputAdornment } from '@mui/material';
 
 export const CommitteeMemberBox = ({ boxtitle, text, handler }) => {
     // const [text, setText] = React.useState('')
@@ -22,6 +20,7 @@ export const CommitteeMemberBox = ({ boxtitle, text, handler }) => {
             value={text}
             onChange={handler}
           />
+          <FormHelperText id="filled-weight-helper-text">Please enter name without prefixes (First M. Last)</FormHelperText>
         </FormControl>
       </div>
     )

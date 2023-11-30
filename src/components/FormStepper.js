@@ -4,6 +4,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
+import StepButton from '@mui/material/StepButton';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import Modal from '@mui/material/Modal';
@@ -46,6 +47,7 @@ function FormStepper() {
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+  const [touched, setTouched] = React.useState({});
 
   const [form, setForm] = useState({
     att: false,
@@ -124,6 +126,36 @@ function FormStepper() {
     return skipped.has(step);
   };
 
+  const isStepCompleted = (step) => {
+    switch(step) {
+      case 1: // Student Information
+        // doesnt check for valid grad date
+        if (form.name == '' || form.degree == '') return false;
+        break;
+      case 2: // Document Information
+        if (form.style == '' || form.docType == '' || form.font == '' || form.titleLine1 == '' || form.titleLine2 == '' || form.titleLine3 == '') return false;
+        break;
+      case 3: // Table of Contents
+        if (form.includesChapterHeadings) {
+          for (let chapter of form.chapterHeadings) {
+            if (chapter == '') return false;
+          }
+        }
+        break;
+      case 4: // Abstract
+        const words = form.abstractText.trim().split(/\s+/).filter(Boolean);
+        if (words.length == 0 || words.length > 350) return false;
+        break;
+      case 6: // Graduate Supervisory Committee Information
+        if (form.committeeChair == '' || (form.includesCoChair && form.committeeCoChair == '')) return false;
+        for (let member of form.committeeMembers) {
+          if (member == '') return false;
+        }
+        break;
+    }
+    return true;
+  }
+
   const handleNext = () => {
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
@@ -133,6 +165,7 @@ function FormStepper() {
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     setSkipped(newSkipped);
+    touchNewStep();
   };
 
   const handleBack = () => {
@@ -153,46 +186,27 @@ function FormStepper() {
       return newSkipped;
     });
   };
+
+  const handleStep = (step) => () => {
+    touchNewStep();
+    setActiveStep(step);
+  };
+
+  const touchNewStep = () => {
+    const newTouched = touched;
+    newTouched[activeStep + 1] = true; // '+ 1' to enable clicking activeStep + 1
+    setTouched(newTouched);
+  };
  
   const handleGenerateDocument = () => {
 
-    const stuffMissing = []
+    const stepsMissing = []
     
-    // doesnt check for valid grad date
-    if (form.name == '')       stuffMissing.push('Full Legal Name missing');
-    if (form.degree == '')     stuffMissing.push('Degree missing');
-    if (form.style == '')      stuffMissing.push('Style Guide missing');
-    if (form.docType == '')    stuffMissing.push('Document Type missing');
-    if (form.font == '')       stuffMissing.push('Font missing');
-    if (form.titleLine1 == '') stuffMissing.push('Title Line 1 missing');
-    if (form.titleLine2 == '') stuffMissing.push('Title Line 2 missing');
-    if (form.titleLine3 == '') stuffMissing.push('Title Line 3 missing');
+    for (let i = 0; i < steps.length; i++) if (!isStepCompleted(i)) stepsMissing.push(steps[i]);
     
-    if (form.includesChapterHeadings) {
-        for (let chapter of form.chapterHeadings) {
-            if (chapter == '') {
-                stuffMissing.push('Invalid Chapter Heading(s)');
-                break;
-            }
-        }
-    }
-    
-    const words = form.abstractText.trim().split(/\s+/).filter(Boolean);
-    if (words.length == 0)  stuffMissing.push('Abstract missing');
-    if (words.length > 350) stuffMissing.push('Abstract over 350 words');
-    
-    if (form.committeeChair == '') stuffMissing.push('Committee Chair missing');
-    if (form.includesCoChair && form.committeeCoChair == '') stuffMissing.push('Committee Co-Chair missing');
-    for (let member of form.committeeMembers) {
-        if (member == '') {
-            stuffMissing.push('Invalid Committee Member(s)');
-            break;
-        }
-    }
-    
-    setMissingFromForm(stuffMissing);
-    if (stuffMissing.length == 0) { // if form complete, generate the doc
-        generateDocument();
+    setMissingFromForm(stepsMissing);
+    if (stepsMissing.length == 0) { // if form complete, generate the doc
+        generateDocument(form);
     }  else { // if form is not completed, show error prompt
         handleErrorPromptOpen();
     }
@@ -315,20 +329,13 @@ function FormStepper() {
       <hr></hr>
       <div style={{"display": "flex", "flexGrow": "1"}}>
         <div style={{"max-height": "100px"/*, "marginTop": "68px"*/}}>
-          <Stepper activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
+          <Stepper  nonLinear activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
             {steps.map((label, index) => {
               const stepProps = {};
               const labelProps = {};
-              // if (isStepOptional(index)) {
-              //   labelProps.optional = (
-              //     <Typography variant="caption">Optional</Typography>
-              //   );
-              // }
-              if (isStepSkipped(index)) {
-                stepProps.completed = false;
-              }
               return (
                 <Step key={label} {...stepProps}
+                      completed={(isStepCompleted(index) && touched[index]) || index == 0}
                       sx={{ 
                         '& .MuiStepLabel-root .Mui-completed': {
                           color: '#9E1B32'
@@ -337,10 +344,11 @@ function FormStepper() {
                           color: '#9E1B32'
                         }
                       }}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
+                  <StepButton color="inherit" onClick={handleStep(index)} disabled={!touched[index] && !touched[index - 1] && index > 1}>{label}</StepButton>
                 </Step>
               );
             })}
+
           </Stepper>
         </div>
 
@@ -377,7 +385,7 @@ function FormStepper() {
               </Button>
             )} */}
 
-            {activeStep === steps.length - 1 ? <Button onClick={() => generateDocument(form)} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
+            {activeStep === steps.length - 1 ? <Button onClick={handleGenerateDocument} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
           </Box>
         </div>
       </div>
@@ -392,7 +400,7 @@ function FormStepper() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={errorPromptStyle}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">Please address the following issues:</Typography>
+          <Typography id="modal-modal-title" variant="h6" component="h2">The following steps are incomplete:</Typography>
           {missingFromForm.map(item => ( <Typography id="modal-modal-description" sx={{ mt: 2 }}>-{item}</Typography> ))}
           <hr></hr>
           <Button onClick={generateDocument}>Generate Document Anyway (debug)</Button>
