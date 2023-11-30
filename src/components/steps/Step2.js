@@ -42,7 +42,6 @@ export default function Step2({ form, setForm }) {
                 }
             })}   
           </Select>
-          <FormHelperText>Select Document Type Ex. Dissertation</FormHelperText>
         </FormControl>
         </div>
         <div>
@@ -69,7 +68,6 @@ export default function Step2({ form, setForm }) {
                 }
             })}       
           </Select>
-          <FormHelperText>Select Prefered Font Ex. Times New Roman</FormHelperText>
         </FormControl>
         <div>
           <h3>Please enter the first line of your title here *</h3>
@@ -86,7 +84,7 @@ export default function Step2({ form, setForm }) {
               value={form.titleLine1}
               onChange={(e) => setForm({...form, titleLine1: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 30 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Limited to 30 characters.</FormHelperText>
           </FormControl>
         </div>
         <div>
@@ -103,7 +101,7 @@ export default function Step2({ form, setForm }) {
               value={form.titleLine2}
               onChange={(e) => setForm({...form, titleLine2: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 25 characters. This should be shorter than the first line.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Limited to 25 characters. This must be shorter than the first line.</FormHelperText>
           </FormControl>
         </div>
         <div>
@@ -121,7 +119,7 @@ export default function Step2({ form, setForm }) {
               value={form.titleLine3}
               onChange={(e) => setForm({...form, titleLine3: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 20 characters. This should be shorter than the second line.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Limited to 20 characters. This must be shorter than the second line.</FormHelperText>
           </FormControl>
         </div>
       </div>
