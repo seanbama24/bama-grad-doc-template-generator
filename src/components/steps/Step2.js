@@ -74,7 +74,7 @@ export default function Step2({ form, setForm }) {
         <div>
           <h3>Please enter the first line of your title here *</h3>
           {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+          <FormControl sx={{ m: 1, width: '50ch' }} variant="filled">
             <TextField
               id="filled-adornment-weight"
               endAdornment={<InputAdornment position="end">kg</InputAdornment>}
@@ -91,7 +91,7 @@ export default function Step2({ form, setForm }) {
         </div>
         <div>
           <h3>Please enter the second line of your title here *</h3>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+          <FormControl sx={{ m: 1, width: '50ch' }} variant="filled">
             <TextField
               id="filled-adornment-weight"
               endAdornment={<InputAdornment position="end">kg</InputAdornment>}
@@ -103,13 +103,13 @@ export default function Step2({ form, setForm }) {
               value={form.titleLine2}
               onChange={(e) => setForm({...form, titleLine2: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 25 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 25 characters. This should be shorter than the first line.</FormHelperText>
           </FormControl>
         </div>
         <div>
           <h3>Please enter the third line of your title here *</h3>
           {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+          <FormControl sx={{ m: 1, width: '50ch' }} variant="filled">
             <TextField
               id="filled-adornment-weight"
               endAdornment={<InputAdornment position="end">kg</InputAdornment>}
@@ -121,7 +121,7 @@ export default function Step2({ form, setForm }) {
               value={form.titleLine3}
               onChange={(e) => setForm({...form, titleLine3: e.target.value})}
             />
-            <FormHelperText id="filled-weight-helper-text">Please limit this line to 20 characters.</FormHelperText>
+            <FormHelperText id="filled-weight-helper-text">Please limit this line to 20 characters. This should be shorter than the second line.</FormHelperText>
           </FormControl>
         </div>
       </div>
