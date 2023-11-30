@@ -43,10 +43,6 @@ export default function Step7({updateStep, form, setForm}) {
         <Table aria-label='simple table'>
           <TableBody>
             <TableRow>
-              <TableCell>Style Guide</TableCell>
-              <TableCell>{form.style}</TableCell>
-            </TableRow>
-            <TableRow>
               <TableCell>Document Type</TableCell>
               <TableCell>{form.docType}</TableCell>
             </TableRow>
