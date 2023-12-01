@@ -10,6 +10,12 @@ export default function Step4({form, setForm}) {
     const words = form.abstractText.trim().split(/\s+/).filter(Boolean);
     return words.length;
   };
+  const handleAbstractText = (event) => {
+    const words = event.target.value.trim().split(/\s+/).filter(Boolean)
+    if (words.length <= 350) {
+      setForm({...form, abstractText: event.target.value})
+    }
+  };
   return (
     <Box
       component="form"
@@ -26,7 +32,9 @@ export default function Step4({form, setForm}) {
           rows={4} 
           width="100%"
           value={form.abstractText}
-          onChange={(e) => setForm({...form, abstractText: e.target.value})}/>
+          onChange={
+            (e) => handleAbstractText(e)}/>
+          
         <Typography marginBottom="20px">Type or copy your abstract here.</Typography>
 
         <Typography>Quick notes about the abstract:</Typography>
