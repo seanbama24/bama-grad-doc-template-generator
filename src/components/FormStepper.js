@@ -61,7 +61,7 @@ function FormStepper() {
     titleLine2: '',
     titleLine3: '',
     includesChapterHeadings: false,
-    chapterHeadings: ["Title goes here..."],
+    chapterHeadings: [""],
     abstractText: '',
     includeDedication: false,
     includeFigures: false,

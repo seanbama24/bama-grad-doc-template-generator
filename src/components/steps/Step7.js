@@ -51,10 +51,6 @@ export default function Step7({updateStep, form, setForm}) {
               <TableCell>{form.font}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Font Size</TableCell>
-              <TableCell>{12}</TableCell>
-            </TableRow>
-            <TableRow>
               <TableCell>Title Line 1</TableCell>
               <TableCell>{form.titleLine1}</TableCell>
             </TableRow>

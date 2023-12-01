@@ -46,7 +46,7 @@ export default function Step3({ form, setForm }) {
                   </div>)
           })}
           <div style={{marginTop: '1em'}}>
-            <Button onClick={() => setForm({...form, chapterHeadings: [...form.chapterHeadings, "Title goes here..."]})} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add one more</Button>
+            <Button onClick={() => setForm({...form, chapterHeadings: [...form.chapterHeadings, ""]})} style={{marginRight: '1em', backgroundColor: '#9E1B32', borderRadius: '20px', color: 'white', border: '10px solid #9E1B32'}}>Add one more</Button>
             <Button 
               onClick={() => {
                 if(form.chapterHeadings.length > 0) {
