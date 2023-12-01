@@ -43,10 +43,6 @@ export default function Step7({updateStep, form, setForm}) {
         <Table aria-label='simple table'>
           <TableBody>
             <TableRow>
-              <TableCell>Style Guide</TableCell>
-              <TableCell>{form.style}</TableCell>
-            </TableRow>
-            <TableRow>
               <TableCell>Document Type</TableCell>
               <TableCell>{form.docType}</TableCell>
             </TableRow>
@@ -123,32 +119,20 @@ export default function Step7({updateStep, form, setForm}) {
               <TableCell>{form.includeDedication ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Acknowledgements</TableCell>
-              <TableCell>{form.includeAcknowledgements ? 'Included':'Not Included'}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Preface</TableCell>
-              <TableCell>{form.includePreface ? 'Included':'Not Included'}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Figures</TableCell>
-              <TableCell>{form.includeFigures ? 'Included':'Not Included'}</TableCell>
+              <TableCell>Abbreviations and Symbols</TableCell>
+              <TableCell>{form.includeAbbreviationsAndSymbols ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Tables</TableCell>
               <TableCell>{form.includeTables ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Symbols</TableCell>
-              <TableCell>{form.includeSymbols ? 'Included':'Not Included'}</TableCell>
+              <TableCell>Figures</TableCell>
+              <TableCell>{form.includeFigures ? 'Included':'Not Included'}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>References</TableCell>
-              <TableCell>{form.includeReferences ? 'Included':'Not Included'}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Appendix</TableCell>
-              <TableCell>{form.includeAppendix ? 'Included':'Not Included'}</TableCell>
+              <TableCell>Illustrations</TableCell>
+              <TableCell>{form.includeIllustrations ? 'Included':'Not Included'}</TableCell>
             </TableRow>
           </TableBody>
         </Table>

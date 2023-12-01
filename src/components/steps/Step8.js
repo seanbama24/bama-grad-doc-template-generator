@@ -11,7 +11,7 @@ export default function Step8() {
     >
       <div>
         <p>Once you have created your document, insert your text into the Additional information sections, and into each chapter. Please note: you must update the page numbers in the Table of Contents to correspond with your chapters in the document once you have inserted your content. Return to the review step to make changes to the document.</p>
-        <p>For your reference, please review the <a href='http://services.graduate.ua.edu/etd/templates.html' target='_blank'>Graduate College Format Manual</a> and <a href='http://services.graduate.ua.edu/etd/td_sample.pdf' target='_blank'>Sample Formatted Document</a>.</p>
+        <p>For your reference, please review the <a href='http://services.graduate.ua.edu/etd/templates.html' target='_blank'>Graduate School Format Manual</a> and <a href='http://services.graduate.ua.edu/etd/td_sample.pdf' target='_blank'>Sample Formatted Document</a>.</p>
         <p>By clicking the Create Document button, a Word document will be generated that meets UA Format Review guidelines. This tool has successfully been tested and verified with the version of Word that is included in Office 365. You can get Office 365 Education Edition for free <a href='https://oit.ua.edu/software/microsoft-office-365-education/' target='_blank'>here</a>.</p>
         <p>Once you have generated your document by clicking on "Create Document," save it as a Microsoft Word Document. When you open it you'll be asked if you'd like to update fields. Click yes.</p>
         <p>Guides and Hints:</p>
