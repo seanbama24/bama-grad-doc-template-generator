@@ -6,7 +6,7 @@ function buildCommittee(form) {
     console.log(form)
     let result = [
             new TextRun({
-            text: form.committeeChair.toUpperCase(),
+            text: form.committeeChair.toUpperCase() + ", COMMITTEE CHAIR",
             size: 24
         }),
     ]
@@ -14,7 +14,7 @@ function buildCommittee(form) {
     if(form.includesCoChair) {
         result.push(
             new TextRun({
-                text: form.committeeCoChair.toUpperCase(),
+                text: form.committeeCoChair.toUpperCase() + ", CO-CHAIR",
                 break: 1,
                 size: 24
             })
@@ -783,7 +783,7 @@ export default function generateDocument(form) {
         ],
     });
 
-    saveDocumentAsFile(doc, "example_filename.docx");
+    saveDocumentAsFile(doc, form.docType + ".docx");
 }
 
 function saveDocumentAsFile(doc, filename) {

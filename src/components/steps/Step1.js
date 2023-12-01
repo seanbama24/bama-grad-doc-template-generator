@@ -25,7 +25,7 @@ export default function Step1({ form, setForm }) {
       <h3>What is your full legal name? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250, maxWidth: 250}}>
         <TextField value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}></TextField>
-        <FormHelperText>Please enter your full legal name (First Middle Last)</FormHelperText>
+        <FormHelperText>(First Middle Last)</FormHelperText>
       </FormControl>
       <h3>What degree are you currently pursuing? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
@@ -36,7 +36,6 @@ export default function Step1({ form, setForm }) {
                 </MenuItem>
             ))}
         </TextField>
-        <FormHelperText>Select current degree being pursued</FormHelperText>
       </FormControl>
       <h3>When is your anticipated graduation year? *</h3>
       <FormControl sx={{ m: 1, minWidth: 250 }}>
@@ -49,7 +48,6 @@ export default function Step1({ form, setForm }) {
             renderInput={(params) => <TextField {...params} />}
           />
         </LocalizationProvider>
-        <FormHelperText>Select anticipated graduation year</FormHelperText>
       </FormControl>
       {/* <DatePicker
           selected={form.gradYear}

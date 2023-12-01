@@ -268,8 +268,10 @@ function FormStepper() {
         <Box sx={errorPromptStyle}>
           <Typography id="modal-modal-title" variant="h6" component="h2">The following steps are incomplete:</Typography>
           {missingFromForm.map(item => ( <Typography id="modal-modal-description" sx={{ mt: 2 }}>-{item}</Typography> ))}
+          {/* DEBUG BUTTON
           <hr></hr>
           <Button onClick={generateDocument}>Generate Document Anyway (debug)</Button>
+          */}
         </Box>
       </Modal>
     </div>
