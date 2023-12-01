@@ -11,7 +11,6 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { styles, documentTypes, fontList } from '../../fieldValues';
 
 export default function Step2({ form, setForm }) {
-
   return (
     <Box
       component="form"
@@ -27,7 +26,7 @@ export default function Step2({ form, setForm }) {
             id="demo-simple-select-helper"
             value={form.docType}
             label="Document Type"
-            onChange={(e) => {setForm({...form, docType: e.target.value}); console.log(form)}}
+            onChange={(e) => setForm({...form, docType: e.target.value})}
           >
             {documentTypes.map( function (option) {
                 if (option.value === 'None') {

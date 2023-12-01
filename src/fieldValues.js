@@ -180,8 +180,8 @@ export const styles = [
   ];
 export const documentTypes = [
     { value: 'None', label: 'Void' },
-    { value: 'Dissertation', label: 'Thesis' },
-    { value: 'Thesis', label: 'Dissertation' },
+    { value: 'Dissertation', label: 'Dissertation' },
+    { value: 'Thesis', label: 'Thesis' },
   ];
 export const fontList = [
     { value: 'None', label: 'Void' },
