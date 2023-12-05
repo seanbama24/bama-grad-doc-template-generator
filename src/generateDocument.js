@@ -383,39 +383,6 @@ function buildContent(form) {
         // k. Subsequent pages. Arabic numeral page number next in sequence.
         // l. References. Arabic numeral page number next in sequence.
         // m. Appendices. Arabic numeral page number next in sequence.
-
-        //INTRODUCTION
-        new Paragraph({
-            pageBreakBefore: true,
-            alignment: AlignmentType.CENTER,
-            heading: HeadingLevel.HEADING_1,
-            spacing: {
-                line: 240,
-                after: 240
-            },
-            children: [
-                new TextRun({
-                    text: "INTRODUCTION",
-                    color: "#000000",
-                    size: 24,
-                    break: 5
-                }),
-            ]
-        }),
-        new Paragraph({
-            spacing: {
-                line: 480
-            },
-            indent: {
-                firstLine: 720,
-            },
-            children: [
-                new TextRun({
-                    text: "Write your introduction here",
-                    size: 24
-                }),
-            ]
-        }),
     ]
 
     //Add sample chapter headings to content
