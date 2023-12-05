@@ -51,17 +51,9 @@ const errorPromptStyle = {
 function FormStepper() {
 
   const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set());
   const [touched, setTouched] = React.useState({});
-  const [open, setOpen] = React.useState(false);
+  const [resetFormOpen, setResetFormOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   const [form, setForm] = useState({
     att: false,
     gradYear: new Date(),
@@ -96,15 +88,6 @@ function FormStepper() {
   const handleErrorPromptOpen  = () => setErrorPromptOpen(true);
   const handleErrorPromptClose = () => setErrorPromptOpen(false);
 
-
-  const isStepOptional = (step) => {
-    return step === 1;
-  };
-
-  const isStepSkipped = (step) => {
-    return skipped.has(step);
-  };
-
   const isStepCompleted = (step) => {
     switch(step) {
       case 1: // Student Information
@@ -136,14 +119,7 @@ function FormStepper() {
   }
 
   const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
-
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
     touchNewStep();
   };
 
@@ -151,7 +127,7 @@ function FormStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {
+  const handleResetForm = () => {
     const genericForm = {
       att: false,
       gradYear: new Date(),
@@ -178,22 +154,9 @@ function FormStepper() {
     };
     setForm(genericForm);
     setActiveStep(0);
-    handleClose();
-  };
+    setTouched({})
+    handleCloseResetPrompt();
 
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
   };
 
   const handleStep = (step) => () => {
@@ -230,6 +193,14 @@ function FormStepper() {
     const newATTVal = !att
     setATT(newATTVal);
   };
+  
+  const handleResetButtonClick = () => {
+    setResetFormOpen(true);
+  };
+
+  const handleCloseResetPrompt = () => {
+    setResetFormOpen(false);
+  };
 
   return (
     <Box sx={{ width: '100%' }} md={{ width: '50%' }}>
@@ -241,7 +212,6 @@ function FormStepper() {
           <Stepper  nonLinear activeStep={activeStep} style={{margin: '1em 0em 0em 0em'}} orientation="vertical">
             {steps.map((label, index) => {
               const stepProps = {};
-              const labelProps = {};
               return (
                 <Step key={label} {...stepProps}
                       completed={(isStepCompleted(index) && touched[index]) || index == 0}
@@ -278,33 +248,15 @@ function FormStepper() {
           }
           {/* This contains previous, next, skip buttons for stepping */}
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              style={{color: 'white', backgroundColor: '#9E1B32'}}
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
+            {activeStep === 0 ?
+              <Button style={{color: 'white', backgroundColor: '#9E9E9E'}} color="inherit" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }}>Back</Button> :
+              <Button style={{color: 'white', backgroundColor: '#9E1B32'}} color="inherit" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }}>Back</Button>
+            }
             <Box sx={{ flex: '1 1 auto' }} />
-            {/* {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
-              </Button>
-            )} */}
-            <Button
-              style={{color: 'white', backgroundColor: '#9E1B32'}}
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleClickOpen}
-              sx={{ mr: 1 }}
-            >
-              Reset
-            </Button>
+            <Button style={{color: 'white', backgroundColor: '#9E1B32'}} color="inherit" onClick={handleResetButtonClick} sx={{ mr: 1 }}>Reset</Button>
             <Dialog
-              open={open}
-              onClose={handleClose}
+              open={resetFormOpen}
+              onClose={handleCloseResetPrompt}
               aria-labelledby="alert-dialog-title"
               aria-describedby="alert-dialog-description"
             >
@@ -317,10 +269,8 @@ function FormStepper() {
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
-                <Button onClick={handleClose} style={{color: 'white', backgroundColor: '#9E1B32'}}>No</Button>
-                <Button onClick={handleReset} style={{color: 'white', backgroundColor: '#9E1B32'}} autoFocus>
-                  Yes
-                </Button>
+                <Button onClick={handleCloseResetPrompt} style={{color: 'white', backgroundColor: '#9E1B32'}}>No</Button>
+                <Button onClick={handleResetForm} style={{color: 'white', backgroundColor: '#9E1B32'}} autoFocus>Yes</Button>
               </DialogActions>
             </Dialog>
             <Box sx={{ flex: '1 1 auto' }} />
