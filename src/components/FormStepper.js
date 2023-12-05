@@ -8,6 +8,11 @@ import StepButton from '@mui/material/StepButton';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import Modal from '@mui/material/Modal';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 import Introduction from './steps/Introduction';
 import Step1 from './steps/Step1';
@@ -48,7 +53,15 @@ function FormStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
   const [touched, setTouched] = React.useState({});
+  const [open, setOpen] = React.useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [form, setForm] = useState({
     att: false,
     gradYear: new Date(),
@@ -136,6 +149,36 @@ function FormStepper() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    const genericForm = {
+      att: false,
+      gradYear: new Date(),
+      name: '',
+      degree: '',
+      style: '',
+      docType: '',
+      font: '',
+      titleLine1: '',
+      titleLine2: '',
+      titleLine3: '',
+      includesChapterHeadings: false,
+      chapterHeadings: [""],
+      abstractText: '',
+      includeDedication: false,
+      includeFigures: false,
+      includeTables: false,
+      includeIllustrations: false,
+      includeAbbreviationsAndSymbols: false,
+      includesCoChair: false,
+      committeeChair: '',
+      committeeCoChair: '',
+      committeeMembers: ['']
+    };
+    setForm(genericForm);
+    setActiveStep(0);
+    handleClose();
   };
 
   const handleSkip = () => {
@@ -250,7 +293,37 @@ function FormStepper() {
                 Skip
               </Button>
             )} */}
-
+            <Button
+              style={{color: 'white', backgroundColor: '#9E1B32'}}
+              color="inherit"
+              disabled={activeStep === 0}
+              onClick={handleClickOpen}
+              sx={{ mr: 1 }}
+            >
+              Reset
+            </Button>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Are you sure you would like to reset your form data?"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  All of your data will be erased from the form and you will have to start over.
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} style={{color: 'white', backgroundColor: '#9E1B32'}}>No</Button>
+                <Button onClick={handleReset} style={{color: 'white', backgroundColor: '#9E1B32'}} autoFocus>
+                  Yes
+                </Button>
+              </DialogActions>
+            </Dialog>
+            <Box sx={{ flex: '1 1 auto' }} />
             {activeStep === steps.length - 1 ? <Button onClick={handleGenerateDocument} style={{color: 'white', backgroundColor: '#9E1B32'}}>Create Document</Button> : <Button onClick={handleNext} style={{color: 'white', backgroundColor: '#9E1B32'}}>Next</Button>}
           </Box>
         </div>
