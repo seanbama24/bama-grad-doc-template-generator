@@ -20,8 +20,8 @@ export default function Step5({ form, setForm }) {
       autoComplete="off"
     >
       <div>
-        <h1>Additional Document Sections</h1>
-        <h3>Check the box next to the additional document sections you would like to include. Please refer to the sample document and the Format Manual for an example of each additional field.</h3>
+        <h3>Additional Document Sections</h3>
+        <h4>Check the box next to the additional document sections you would like to include. Please refer to the sample document and the Format Manual for an example of each additional field.</h4>
         <FormGroup>
           <FormControlLabel control={<Checkbox checked={form.includeDedication} onChange={(e) => setForm({...form, includeDedication: e.target.checked})} style={{color: '#9E1B32'}} />} label="Dedication" />
           <FormControlLabel control={<Checkbox checked={form.includeAbbreviationsAndSymbols} onChange={(e) => setForm({...form, includeAbbreviationsAndSymbols: e.target.checked})} style={{color: '#9E1B32'}}/>} label="Abbreviations and Symbols" />
