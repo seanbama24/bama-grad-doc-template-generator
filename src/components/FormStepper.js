@@ -140,7 +140,7 @@ function FormStepper() {
       titleLine2: '',
       titleLine3: '',
       includesChapterHeadings: false,
-      chapterHeadings: [""],
+      chapterHeadings: ["Introduction"],
       abstractText: '',
       includeDedication: false,
       includeFigures: false,
